@@ -1,0 +1,388 @@
+[
+  {
+    "ticket_id": "TKT-001",
+    "customer_name": "Arjun Sharma",
+    "customer_email": "arjun.sharma@gmail.com",
+    "customer_tier": "gold",
+    "ticket_text": "I received my ProBook X15 laptop yesterday but the screen has a crack in the bottom-left corner. It was clearly damaged during shipping because the outer box was badly dented. I paid ₹74,999 for this laptop and I want a full refund immediately. I am really frustrated.",
+    "order_context": {
+      "order_id": "ORD-2026-45678",
+      "order_date": "2026-03-20",
+      "delivery_date": "2026-03-27",
+      "items": [{"name": "ProBook X15 Laptop", "sku": "ELEC-LPT-001", "category": "electronics", "price": 74999.00, "quantity": 1}],
+      "total_amount": 74999.00,
+      "payment_method": "credit_card",
+      "shipping_method": "expedited",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Maharashtra",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-002",
+    "customer_name": "Priya Patel",
+    "customer_email": "priya.patel@outlook.com",
+    "customer_tier": "platinum",
+    "ticket_text": "I ordered a kitchen knife set 2 weeks ago and would like to return it. I opened the box and tried one knife but the quality is not what I expected. The listing said 'professional grade' but these feel very cheap. I want a full refund for ₹10,999.",
+    "order_context": {
+      "order_id": "ORD-2026-45123",
+      "order_date": "2026-03-10",
+      "delivery_date": "2026-03-14",
+      "items": [{"name": "ChefPro 8-Piece Knife Set", "sku": "KIT-KNF-008", "category": "home_kitchen", "price": 10999.00, "quantity": 1}],
+      "total_amount": 10999.00,
+      "payment_method": "upi",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Gujarat",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-003",
+    "customer_name": "Rahul Verma",
+    "customer_email": "rahul.verma@yahoo.com",
+    "customer_tier": "bronze",
+    "ticket_text": "My order was supposed to arrive 3 days ago but the tracking has not updated in over a week. The last scan was at the Delhi distribution center on March 20. I need this urgently — it is a birthday gift for my daughter. Can you please help?",
+    "order_context": {
+      "order_id": "ORD-2026-43567",
+      "order_date": "2026-03-15",
+      "delivery_date": null,
+      "estimated_delivery": "2026-03-24",
+      "items": [
+        {"name": "Princess Dollhouse Set", "sku": "TOY-DLH-003", "category": "toys", "price": 3499.00, "quantity": 1},
+        {"name": "Panchatantra Story Books Collection", "sku": "BOK-FTB-012", "category": "books", "price": 799.00, "quantity": 1}
+      ],
+      "total_amount": 4298.00,
+      "payment_method": "cash_on_delivery",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Uttar Pradesh",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-004",
+    "customer_name": "Sneha Gupta",
+    "customer_email": "sneha.gupta@gmail.com",
+    "customer_tier": "silver",
+    "ticket_text": "I tried to use the promo code HOLI25 at checkout for 25% off but it says 'invalid code'. I received this code in an email from your platform yesterday. My cart has ₹12,000 worth of clothing items. Please fix this or apply the discount manually.",
+    "order_context": null
+  },
+  {
+    "ticket_id": "TKT-005",
+    "customer_name": "Ananya Singh",
+    "customer_email": "ananya.singh@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "I bought a swimsuit last week but it does not fit. I have not removed the tags or worn it outside — just tried it on indoors. I would like to exchange it for a different size. However, I noticed your site says swimwear is non-returnable. I have not used it at all, this seems unfair.",
+    "order_context": {
+      "order_id": "ORD-2026-44890",
+      "order_date": "2026-03-21",
+      "delivery_date": "2026-03-25",
+      "items": [{"name": "AquaFit One-Piece Swimsuit - Medium", "sku": "CLO-SWM-005M", "category": "swimwear", "price": 1999.00, "quantity": 1}],
+      "total_amount": 2199.00,
+      "payment_method": "upi",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Goa",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-006",
+    "customer_name": "Vikram Nair",
+    "customer_email": "vikram.nair@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "I see two charges on my credit card — ₹28,999 and ₹17,999 — but I only placed one order for ₹28,999. I did NOT make the second purchase. Someone may have hacked my account. Please investigate immediately and refund the unauthorized charge.",
+    "order_context": {
+      "order_id": "ORD-2026-45901",
+      "order_date": "2026-03-26",
+      "delivery_date": null,
+      "items": [
+        {"name": "Sony Wireless Noise-Canceling Headphones", "sku": "ELEC-AUD-020", "category": "electronics", "price": 24999.00, "quantity": 1},
+        {"name": "USB-C Charging Cable 3-Pack", "sku": "ELEC-ACC-110", "category": "accessories", "price": 999.00, "quantity": 1}
+      ],
+      "total_amount": 28999.00,
+      "payment_method": "credit_card",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Kerala",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-007",
+    "customer_name": "Deepika Reddy",
+    "customer_email": "deepika.reddy@outlook.com",
+    "customer_tier": "bronze",
+    "ticket_text": "I ordered a winter jacket to be delivered to Hyderabad, Telangana. I was charged ₹15,999 for the jacket plus ₹499 for shipping. Now the courier is asking me to pay additional customs duties. Nobody told me about extra charges. The Platform should cover these fees.",
+    "order_context": {
+      "order_id": "ORD-2026-44567",
+      "order_date": "2026-03-18",
+      "delivery_date": null,
+      "estimated_delivery": "2026-03-30",
+      "items": [{"name": "Alpine Pro Winter Jacket", "sku": "CLO-JKT-015", "category": "clothing", "price": 15999.00, "quantity": 1}],
+      "total_amount": 16498.00,
+      "payment_method": "credit_card",
+      "shipping_method": "expedited",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Telangana",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-008",
+    "customer_name": "Rajesh Kumar",
+    "customer_email": "rajesh.kumar@gmail.com",
+    "customer_tier": "gold",
+    "ticket_text": "I bought a mixer grinder from a third-party seller called 'KitchenPro Plus' on your marketplace. It stopped working after 3 weeks. I messaged the seller through your platform 5 days ago and have received no reply. The listing said it had a 1-year warranty. I want a refund of ₹6,499.",
+    "order_context": {
+      "order_id": "ORD-2026-42345",
+      "order_date": "2026-03-01",
+      "delivery_date": "2026-03-05",
+      "items": [{"name": "KitchenPro Ultra Mixer Grinder 750W", "sku": "KIT-MXR-045", "category": "small_appliances", "price": 6499.00, "quantity": 1}],
+      "total_amount": 6999.00,
+      "payment_method": "upi",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Punjab",
+      "seller_type": "seller_fulfilled",
+      "seller_name": "KitchenPro Plus"
+    }
+  },
+  {
+    "ticket_id": "TKT-009",
+    "customer_name": "Kavya Menon",
+    "customer_email": "kavya.menon@gmail.com",
+    "customer_tier": "platinum",
+    "ticket_text": "I want to cancel my order placed about 30 minutes ago. It is a Sheesham wood dining table and 4 chairs totaling ₹1,04,999. I just realized the table measurements are too large for my dining room in Bengaluru. Please cancel it before it ships.",
+    "order_context": {
+      "order_id": "ORD-2026-46001",
+      "order_date": "2026-03-28",
+      "delivery_date": null,
+      "estimated_delivery": "2026-04-08",
+      "items": [
+        {"name": "Sheesham Wood Dining Table 6-Seater", "sku": "FRN-TBL-072", "category": "furniture", "price": 74999.00, "quantity": 1},
+        {"name": "Sheesham Wood Dining Chair (Set of 4)", "sku": "FRN-CHR-004", "category": "furniture", "price": 29999.00, "quantity": 1}
+      ],
+      "total_amount": 104998.00,
+      "payment_method": "credit_card",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Karnataka",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-010",
+    "customer_name": "Amit Joshi",
+    "customer_email": "amit.joshi@rediffmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "I purchased a face cream from your site. I applied it once and had a severe allergic reaction. I understand personal care products are non-returnable, but this is a health issue. I want a full refund of ₹1,999.",
+    "order_context": {
+      "order_id": "ORD-2026-45234",
+      "order_date": "2026-03-22",
+      "delivery_date": "2026-03-26",
+      "items": [{"name": "LuxGlow Anti-Aging Face Cream 50ml", "sku": "BEA-CRM-030", "category": "personal_care", "price": 1999.00, "quantity": 1}],
+      "total_amount": 2199.00,
+      "payment_method": "cash_on_delivery",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Rajasthan",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-011",
+    "customer_name": "Pooja Iyer",
+    "customer_email": "pooja.iyer@gmail.com",
+    "customer_tier": "silver",
+    "ticket_text": "I bought boAt Airdopes wireless earbuds last week for ₹6,999. I can see they are now on sale for ₹4,999. Can I get a price difference refund? The earbuds are working great, I just feel I overpaid.",
+    "order_context": {
+      "order_id": "ORD-2026-45500",
+      "order_date": "2026-03-22",
+      "delivery_date": "2026-03-24",
+      "items": [{"name": "boAt Airdopes 441 TWS Earbuds", "sku": "ELEC-AUD-055", "category": "electronics", "price": 6999.00, "quantity": 1}],
+      "total_amount": 6999.00,
+      "payment_method": "upi",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Tamil Nadu",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-012",
+    "customer_name": "Suresh Pillai",
+    "customer_email": "suresh.pillai@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "Can I pay with cryptocurrency for a gaming PC? Also, if I pay with crypto and need to return it later, how does the refund process work?",
+    "order_context": null
+  },
+  {
+    "ticket_id": "TKT-013",
+    "customer_name": "Nisha Agarwal",
+    "customer_email": "nisha.agarwal@gmail.com",
+    "customer_tier": "gold",
+    "ticket_text": "I ordered a product listed as 'Sold by TechGadgets, Fulfilled by The Platform'. What arrived is clearly counterfeit — the brand logo is misspelled and the packaging looks completely fake. I want a full refund of ₹2,499 and I want this seller reported and removed.",
+    "order_context": {
+      "order_id": "ORD-2026-45700",
+      "order_date": "2026-03-19",
+      "delivery_date": "2026-03-23",
+      "items": [{"name": "Branded Wireless Mouse", "sku": "ELEC-MSE-100", "category": "electronics", "price": 2499.00, "quantity": 1}],
+      "total_amount": 2499.00,
+      "payment_method": "credit_card",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Delhi",
+      "seller_type": "seller_fulfilled",
+      "seller_name": "TechGadgets"
+    }
+  },
+  {
+    "ticket_id": "TKT-014",
+    "customer_name": "Meera Krishnan",
+    "customer_email": "meera.krishnan@gmail.com",
+    "customer_tier": "platinum",
+    "ticket_text": "My loyalty points balance shows 12,500 points but I made a purchase of ₹67,200 last month which should have earned me 2,016 points (3x Platinum multiplier). My balance should be 14,516 points. Can you check and correct this?",
+    "order_context": null
+  },
+  {
+    "ticket_id": "TKT-015",
+    "customer_name": "Rohit Malhotra",
+    "customer_email": "rohit.malhotra@hotmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "I see the same Smart Home Hub I just bought on Flipkart for ₹3,500 less. Are you able to price match? I purchased mine here for ₹12,999.",
+    "order_context": {
+      "order_id": "ORD-2026-45800",
+      "order_date": "2026-03-25",
+      "delivery_date": "2026-03-27",
+      "items": [{"name": "Smart Home Hub 3rd Gen", "sku": "ELEC-HME-033", "category": "electronics", "price": 12999.00, "quantity": 1}],
+      "total_amount": 12999.00,
+      "payment_method": "credit_card",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Haryana",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-016",
+    "customer_name": "Sunita Bhatt",
+    "customer_email": "sunita.bhatt@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "I want to order a laptop and have it delivered via express shipping to Leh, Ladakh. The checkout page is not showing express delivery as an option for my location. Why is express delivery not available here?",
+    "order_context": null
+  },
+  {
+    "ticket_id": "TKT-017",
+    "customer_name": "Aditya Rao",
+    "customer_email": "aditya.rao@gmail.com",
+    "customer_tier": "gold",
+    "ticket_text": "My Samsung Galaxy S23 purchased 10 months ago now barely lasts 2 hours on a full charge. It used to last the entire day. The phone has never been dropped or exposed to water. Is this battery degradation covered under warranty? I also have the extended warranty plan.",
+    "order_context": {
+      "order_id": "ORD-2025-38900",
+      "order_date": "2025-05-15",
+      "delivery_date": "2025-05-18",
+      "items": [{"name": "Samsung Galaxy S23 128GB", "sku": "ELEC-PHN-128", "category": "electronics", "price": 64999.00, "quantity": 1}],
+      "total_amount": 69999.00,
+      "payment_method": "credit_card",
+      "shipping_method": "expedited",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Andhra Pradesh",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-018",
+    "customer_name": "Kiran Desai",
+    "customer_email": "kiran.desai@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "I ordered a custom-engraved Titan Raga watch. The engraving has a spelling mistake — my name is 'Kiran' but they engraved 'Kiraan'. This is their error, not mine. I typed my name correctly in the customization form. I want a corrected replacement.",
+    "order_context": {
+      "order_id": "ORD-2026-44100",
+      "order_date": "2026-03-10",
+      "delivery_date": "2026-03-20",
+      "items": [{"name": "Titan Raga Custom Engraved Watch", "sku": "JWL-WTC-ENG", "category": "customized", "price": 12999.00, "quantity": 1}],
+      "total_amount": 12999.00,
+      "payment_method": "upi",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Madhya Pradesh",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-019",
+    "customer_name": "Gaurav Tiwari",
+    "customer_email": "gaurav.tiwari@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "If you do not resolve this immediately, I will file a complaint in the consumer court. I was charged twice for the same order. I have been waiting 3 days and nobody has helped me. This is theft and I am contacting my lawyer now.",
+    "order_context": {
+      "order_id": "ORD-2026-45999",
+      "order_date": "2026-03-25",
+      "delivery_date": null,
+      "items": [{"name": "Fitbit Charge 5 Fitness Tracker", "sku": "ELEC-FIT-050", "category": "electronics", "price": 14999.00, "quantity": 1}],
+      "total_amount": 14999.00,
+      "payment_method": "credit_card",
+      "shipping_method": "standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Bihar",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-020",
+    "customer_name": "Lakshmi Subramaniam",
+    "customer_email": "lakshmi.sub@gmail.com",
+    "customer_tier": "silver",
+    "ticket_text": "I placed an order to be delivered to Chennai, Tamil Nadu. It has been 25 days and the package has been stuck in customs for the last 10 days. The tracking shows no movement. Can The Platform help resolve the customs clearance issue?",
+    "order_context": {
+      "order_id": "ORD-2026-43200",
+      "order_date": "2026-03-01",
+      "delivery_date": null,
+      "estimated_delivery": "2026-03-20",
+      "items": [{"name": "Canon EOS 1500D DSLR Camera Kit", "sku": "ELEC-CAM-200", "category": "electronics", "price": 42999.00, "quantity": 1}],
+      "total_amount": 43999.00,
+      "payment_method": "credit_card",
+      "shipping_method": "international_standard",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Tamil Nadu",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-021",
+    "customer_name": "Harish Chandra",
+    "customer_email": "harish.chandra@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "What personal data do you store about me? I want to exercise my right to know and request deletion of my data. I also want to opt out of any sharing of my data for advertising purposes.",
+    "order_context": null
+  },
+  {
+    "ticket_id": "TKT-022",
+    "customer_name": "Rekha Pandey",
+    "customer_email": "rekha.pandey@gmail.com",
+    "customer_tier": "gold",
+    "ticket_text": "I returned a Banarasi silk saree 50 days ago and still have not received my refund of ₹15,999. It was a Diwali purchase from October. The carrier picked up the return on February 5. I have called 3 times and each time I am told to keep waiting. This is completely unacceptable.",
+    "order_context": {
+      "order_id": "ORD-2025-42000",
+      "order_date": "2025-10-29",
+      "delivery_date": "2025-11-02",
+      "items": [{"name": "Banarasi Silk Saree — Red", "sku": "CLO-SAR-BNR", "category": "clothing", "price": 15999.00, "quantity": 1}],
+      "total_amount": 15999.00,
+      "payment_method": "upi",
+      "shipping_method": "expedited",
+      "shipping_address_country": "IN",
+      "shipping_address_state": "Uttar Pradesh",
+      "seller_type": "direct"
+    }
+  },
+  {
+    "ticket_id": "TKT-023",
+    "customer_name": "Dhruv Kapoor",
+    "customer_email": "dhruv.kapoor@gmail.com",
+    "customer_tier": "bronze",
+    "ticket_text": "Do you offer same-day delivery in Bangalore? If yes, what is the order cutoff time and how much does it cost? Also, does same-day delivery apply to products from marketplace sellers or only platform-direct items?",
+    "order_context": null
+  }
+]

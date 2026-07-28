@@ -1,0 +1,34 @@
+# ── Environment ───────────────────────────────
+.env
+*.env
+
+# ── Python ────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# ── Vector Store (auto-rebuilt at startup) ────
+data/vectorstore_hf/
+data/vectorstore/
+
+# ── Docs images (replaced by /screenshots) ───
+docs/images/
+
+# ── Evaluation raw JSON (keep .md reports) ───
+evaluation_results/*.json
+
+# ── IDE ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Assessment PDF (keep off public repos) ────
+*.pdf
