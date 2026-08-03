@@ -10,6 +10,12 @@
 </p>
 
 <p align="center">
+  <a href="https://resolve-ai-as8skby2jh5cwzyddrsptj.streamlit.app/">
+    <img src="https://img.shields.io/badge/Live_Demo-Open_ResolveAI-ff4b4b?logo=streamlit&logoColor=white" alt="Open ResolveAI live demo">
+  </a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white" alt="Python 3.12">
   <img src="https://img.shields.io/badge/OpenAI-Responses_API-412991?logo=openai&logoColor=white" alt="OpenAI Responses API">
   <img src="https://img.shields.io/badge/FAISS-Vector_Search-red" alt="FAISS">
@@ -315,6 +321,8 @@ current model or policy index, so rerun evaluation after changing prompts,
 models, thresholds or policy documents.
 
 ## Deploy on Streamlit Community Cloud
+
+The deployed application is available at [ResolveAI on Streamlit](https://resolve-ai-as8skby2jh5cwzyddrsptj.streamlit.app/).
 
 1. Push the repository to GitHub.
 2. Open [share.streamlit.io](https://share.streamlit.io/).
