@@ -1,298 +1,379 @@
-<div align="center">
+# ResolveAI
 
-<!-- Animated SVG Banner -->
-<svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f0c29"/>
-      <stop offset="50%" style="stop-color:#302b63"/>
-      <stop offset="100%" style="stop-color:#24243e"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#a78bfa"/>
-      <stop offset="100%" style="stop-color:#22d3ee"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <!-- Background -->
-  <rect width="900" height="200" rx="16" fill="url(#bg)"/>
-  <!-- Decorative circles -->
-  <circle cx="780" cy="40" r="80" fill="rgba(139,92,246,0.08)"/>
-  <circle cx="820" cy="160" r="50" fill="rgba(6,182,212,0.06)"/>
-  <circle cx="100" cy="160" r="60" fill="rgba(99,102,241,0.07)"/>
-  <!-- Grid lines -->
-  <line x1="0" y1="100" x2="900" y2="100" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-  <line x1="450" y1="0" x2="450" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-  <!-- Accent bar -->
-  <rect x="60" y="60" width="4" height="80" rx="2" fill="url(#accent)"/>
-  <!-- Title text -->
-  <text x="84" y="105" font-family="'SF Pro Display', -apple-system, sans-serif" font-size="36" font-weight="900" fill="white" filter="url(#glow)">ResolveAI</text>
-  <!-- Subtitle -->
-  <text x="84" y="132" font-family="'SF Pro Display', -apple-system, sans-serif" font-size="14" fill="rgba(255,255,255,0.45)">4-Agent RAG Pipeline  ·  Gemini 2.5 Flash  ·  Zero-Hallucination Guardrails</text>
-  <!-- Badge row -->
-  <rect x="84" y="148" width="90" height="22" rx="11" fill="rgba(139,92,246,0.2)" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
-  <text x="129" y="163" font-family="sans-serif" font-size="11" fill="#c4b5fd" text-anchor="middle">CrewAI</text>
-  <rect x="182" y="148" width="90" height="22" rx="11" fill="rgba(139,92,246,0.2)" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
-  <text x="227" y="163" font-family="sans-serif" font-size="11" fill="#c4b5fd" text-anchor="middle">LangChain</text>
-  <rect x="280" y="148" width="70" height="22" rx="11" fill="rgba(139,92,246,0.2)" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
-  <text x="315" y="163" font-family="sans-serif" font-size="11" fill="#c4b5fd" text-anchor="middle">FAISS</text>
-  <rect x="358" y="148" width="100" height="22" rx="11" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
-  <text x="408" y="163" font-family="sans-serif" font-size="11" fill="#67e8f9" text-anchor="middle">Gemini 2.5 ⚡</text>
-  <rect x="466" y="148" width="80" height="22" rx="11" fill="rgba(52,211,153,0.15)" stroke="rgba(52,211,153,0.4)" stroke-width="1"/>
-  <text x="506" y="163" font-family="sans-serif" font-size="11" fill="#34d399" text-anchor="middle">Multi-Payment</text>
-</svg>
+> An AI-assisted e-commerce support system that classifies customer tickets,
+> retrieves relevant company policies from FAISS, writes a policy-grounded
+> response, and validates the result before displaying it in Streamlit.
 
-<br/>
+<p align="center">
+  <img src="screenshots/Screenshot 2026-03-29 163208.png" alt="ResolveAI dashboard" width="49%">
+  <img src="screenshots/Screenshot 2026-03-29 163402.png" alt="ResolveAI result" width="49%">
+</p>
 
-[![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![Gemini](https://img.shields.io/badge/Gemini-2.5_Flash-blueviolet?style=flat-square&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
-[![CrewAI](https://img.shields.io/badge/CrewAI-Orchestration-orange?style=flat-square)](https://crewai.com)
-[![FAISS](https://img.shields.io/badge/FAISS-Vector_Store-red?style=flat-square)](https://github.com/facebookresearch/faiss)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
-[![License](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white" alt="Python 3.12">
+  <img src="https://img.shields.io/badge/OpenAI-Responses_API-412991?logo=openai&logoColor=white" alt="OpenAI Responses API">
+  <img src="https://img.shields.io/badge/FAISS-Vector_Search-red" alt="FAISS">
+  <img src="https://img.shields.io/badge/Pydantic-Structured_Outputs-e92063" alt="Pydantic">
+  <img src="https://img.shields.io/badge/Streamlit-Web_UI-ff4b4b?logo=streamlit&logoColor=white" alt="Streamlit">
+</p>
 
-<br/>
+## Problem statement
 
-[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-resolveai.streamlit.app-7c3aed?style=for-the-badge&logo=streamlit&logoColor=white)](https://resolveai-dwyctpes9kfyykmgimwc2g.streamlit.app/)
+Customer-support agents must read long policy documents before answering
+refund, return, shipping, payment, warranty, fraud, cancellation and
+marketplace questions. A normal LLM may answer fluently but invent a rule that
+is not present in the company's policies.
 
-</div>
+ResolveAI uses Retrieval-Augmented Generation (RAG) to give the LLM relevant
+policy sections before it writes the response. Each retrieved section carries
+its original document and heading, allowing the final response to include
+traceable citations.
 
----
+## What the application does
 
-## What This Is
+1. Accepts a customer message and optional structured order information.
+2. Classifies the issue and priority with a Triage Agent.
+3. Lets the Retriever Agent create a focused policy-search query.
+4. Executes the real `search_policies()` tool against a FAISS index.
+5. Gives the retrieved text and citations to the Resolution Agent.
+6. Audits the draft with deterministic citation validation and a Compliance
+   Agent.
+7. Returns a typed `FinalResolution` that the Streamlit UI displays.
 
-A production-grade, multi-agent AI system that automatically resolves e-commerce customer support tickets. Four specialized AI agents work sequentially — each with a distinct role — to produce empathetic, policy-grounded responses with zero hallucinations.
-
----
-
-## UI Preview
-
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="screenshots/Screenshot 2026-03-29 163208.png" alt="ResolveAI Dashboard" width="100%" style="border-radius:12px"/>
-      <br/>
-      <sub><b>🖥️ Dashboard</b> — Agent pipeline, currency toggle, system config</sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="screenshots/Screenshot 2026-03-29 163402.png" alt="ResolveAI Resolution Output" width="100%" style="border-radius:12px"/>
-      <br/>
-      <sub><b>✅ Resolution Output</b> — Clean metrics, cited response, policy badges</sub>
-    </td>
-  </tr>
-</table>
-
----
+The system supports Hinglish or English customer messages because the LLM
+interprets the message before policy retrieval. Order context is optional, and
+photo or video evidence is not required during initial ticket intake.
 
 ## Architecture
 
 ```mermaid
-graph TD
-    A([🎫 Customer Ticket]) --> B
-
-    subgraph UI ["🖥️  Streamlit Dashboard"]
-        B[Input Validation\nPydantic v2]
-    end
-
-    B --> C
-
-    subgraph Pipeline ["⚡  4-Agent CrewAI Pipeline"]
-        direction TB
-        C["🔍 Triage Agent\nClassify · Prioritize · Escalation check"]
-        C --> D["📚 Policy Researcher\nMulti-query FAISS semantic search\n13 docs · 25,000+ words"]
-        D --> E["✍️  Resolution Architect\nEmpathetic response\nInline policy citations"]
-        E --> F{"🛡️  Compliance Guard\nHallucination check\nCitation verification\nPII audit"}
-        F -- "❌ Fail" --> E
-        F -- "✅ Approve" --> G
-    end
-
-    subgraph KB ["📖  Knowledge Base"]
-        H[(FAISS\nVector Store)] <--> D
-        I[HuggingFace\nall-MiniLM-L6-v2] --> H
-        J[13 Policy\nMarkdown Docs] --> I
-    end
-
-    subgraph Output ["📤  Output Layer"]
-        G[Final Resolution]
-        G --> K[Customer Response\n+ Citations]
-        G --> L[Critical Actions\nEngine]
-        G --> M[📧 Email Dispatch\nGmail SMTP]
-    end
-
-    style UI fill:#1a1a2e,stroke:#7c3aed,color:#fff
-    style Pipeline fill:#1e1e30,stroke:#4f46e5,color:#fff
-    style KB fill:#162032,stroke:#0ea5e9,color:#fff
-    style Output fill:#1a2e1a,stroke:#059669,color:#fff
+flowchart TD
+    A["Streamlit ticket form"] --> B["Pydantic TicketInput"]
+    B --> C["Triage Agent"]
+    C --> D["Retriever Agent"]
+    D --> E["search_policies tool"]
+    E --> F[("FAISS vectors")]
+    F --> G["Policy text + citations"]
+    G --> H["Resolution Agent"]
+    H --> I["Compliance checks"]
+    I -->|Approve| J["FinalResolution"]
+    I -->|Rewrite once| H
+    I -->|Unsafe or unsupported| K["Human escalation"]
+    J --> L["Streamlit result"]
 ```
 
----
+### Agents and tools are different
 
-## Compliance Loop
+| Component | Type | Responsibility |
+|---|---|---|
+| Triage Agent | LLM call | Classifies the issue, priority, missing essential fields and escalation conditions |
+| Retriever Agent | LLM call | Creates the semantic-search query and requests the FAISS tool |
+| `search_policies()` | Python tool | Embeds the search query and searches FAISS |
+| Resolution Agent | LLM call | Writes the customer response using retrieved evidence only |
+| Compliance Agent | LLM call + Python check | Audits policy claims, citations and sensitive information |
 
-```mermaid
-flowchart LR
-    A([Draft Response]) --> B{Compliance\nAudit}
-    B -->|✅ Citations OK\nNo PII\nNo Hallucinations| C([✔ Final Response])
-    B -->|❌ Issues Found| D[Feedback to\nResolution Writer]
-    D --> E([Rewrite Response])
-    E --> B
-    B -->|Max retries hit| F([🚨 Escalate to\nHuman Agent])
+## RAG pipeline
 
-    style A fill:#302b63,stroke:#7c3aed,color:#fff
-    style B fill:#1e293b,stroke:#6366f1,color:#fff
-    style C fill:#064e3b,stroke:#059669,color:#34d399
-    style D fill:#451a03,stroke:#d97706,color:#fbbf24
-    style E fill:#302b63,stroke:#7c3aed,color:#fff
-    style F fill:#450a0a,stroke:#dc2626,color:#f87171
+ResolveAI's RAG pipeline has two phases.
+
+### 1. Index-building phase
+
+```text
+Markdown policy documents
+        ↓
+Split by headings
+        ↓
+Overlapping text chunks
+        ↓
+OpenAI embeddings
+        ↓
+L2-normalized vectors
+        ↓
+FAISS IndexFlatIP
+        ↓
+policies.index + policies.json
 ```
 
----
+- `policies.index` stores the numerical FAISS vectors.
+- `policies.json` stores readable policy text, source document, section and
+  embedding-model metadata.
+- The position of a vector matches the position of its readable metadata.
+- If policy content or the embedding model changes, the index is rebuilt.
 
-## Features
+### 2. Ticket-resolution phase
 
-| Feature | Details |
-| :--- | :--- |
-| **💳 Multi-Payment** | UPI, Credit / Debit Card, and Cash on Delivery support built-in |
-| **🛡️ Zero-Hallucination** | Mandatory compliance loop — every factual claim verified against source docs |
-| **📎 100% Citation Rate** | All responses cite specific policy sections with document + section names |
-| **📧 Email Dispatch** | Sends formatted HTML email to customer via Gmail SMTP after resolution |
-| **🏆 Loyalty Tiers** | Bronze → Silver → Gold → Platinum tier-specific resolution logic |
-| **⚠️ Auto Escalation** | Legal threats, fraud, and safety issues are flagged and escalated |
-| **🔄 Compliance Loop** | Writer ↔ Auditor feedback cycle with `max_iter=3` hard cap |
-| **⚡ Stable Architecture** | UTF-8 safe, no infinite loops, optimized for 15 RPM Gemini quota |
+```text
+Customer ticket + optional order context
+        ↓
+Focused semantic-search query
+        ↓
+Query embedding
+        ↓
+Cosine-similarity search in FAISS
+        ↓
+Top policy chunks + exact citations
+        ↓
+Policy-grounded customer response
+```
 
----
+Stored vectors and the query vector are L2-normalized. Therefore, the inner
+product used by `faiss.IndexFlatIP` acts as cosine similarity.
 
-## Tech Stack
+## Key features
 
-| Component | Technology | Why This Choice |
-| :--- | :--- | :--- |
-| **LLM** | Google Gemini 2.5 Flash | Best speed/reliability balance for agentic tool-use at free tier |
-| **Orchestration** | CrewAI 1.x | Production-grade sequential agents with shared task memory |
-| **Vector Store** | FAISS | Zero-overhead in-memory similarity search for ~200 policy chunks |
-| **Embeddings** | HuggingFace all-MiniLM-L6-v2 | Local, zero-cost, high-quality semantic vectorization |
-| **Data Models** | Pydantic v2 | Strict input/output validation across all agents |
-| **Email** | Python smtplib + Gmail SMTP | Standard, dependency-free HTML email dispatch |
-| **Interface** | Streamlit | Glassmorphism dark UI with glassmorphism cards |
-| **Language** | Python 3.12 | Type-annotated, production-quality codebase |
+- Native FAISS vector search with no external vector-database server.
+- Thirteen Markdown policy documents covering major e-commerce support cases.
+- Structured Pydantic inputs and LLM outputs.
+- Exact source-and-section citations attached to retrieved evidence.
+- Configurable minimum similarity threshold.
+- One bounded compliance rewrite before human escalation.
+- Clarification flow for genuinely essential missing information.
+- Optional order context with UPI, card and cash-on-delivery support.
+- INR/USD display selection in the Streamlit interface.
+- Customer email excluded from LLM context because it is unnecessary PII.
+- HTML escaping before model-generated content is rendered in the UI.
+- Automatic FAISS loading or rebuilding during application startup.
 
----
+## Technology stack
 
-## Quick Start
+| Layer | Technology |
+|---|---|
+| User interface | Streamlit |
+| LLM and tool calling | OpenAI Responses API |
+| Embeddings | `text-embedding-3-small` by default |
+| Vector search | FAISS `IndexFlatIP` |
+| Structured validation | Pydantic v2 |
+| Application logic | Plain Python |
+| Local configuration | `python-dotenv` |
 
-### 1. Install Dependencies
+The pipeline is intentionally written with explicit Python functions rather
+than an orchestration framework so the execution flow remains easy to inspect
+and explain.
+
+## Project structure
+
+```text
+resolve-ai/
+├── app.py                       # Streamlit interface
+├── build_index.py               # Manual FAISS index builder
+├── requirements.txt             # Runtime dependencies
+├── runtime.txt                  # Cloud Python version
+├── .env.example                 # Safe configuration template
+├── .gitignore                   # Excludes secrets and generated indexes
+├── config/
+│   └── settings.py              # Central environment settings
+├── data/
+│   └── policies/                # 13 Markdown policy documents
+├── src/
+│   ├── models.py                # TicketInput and FinalResolution models
+│   └── orchestrator.py          # Active agents, FAISS tool and pipeline
+├── tests/
+│   ├── test_tickets.json        # Sample evaluation tickets
+│   └── evaluate.py              # Evaluation runner
+├── screenshots/                 # README interface previews
+└── UI_INTEGRATION.md            # UI/backend contract notes
+```
+
+`faiss_store/` is generated locally and intentionally excluded from Git. The
+active application runtime is centered in `src/orchestrator.py`; older modular
+agent/vector-store files are retained only as reference code.
+
+## Local setup
+
+### 1. Clone the repository
+
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/Adarshchauhan123/resolve-ai.git
+cd resolve-ai
 ```
 
-### 2. Configure Environment
+### 2. Create a virtual environment
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+macOS/Linux:
+
 ```bash
-copy .env.example .env
-```
-Edit `.env` and add:
-```
-GOOGLE_API_KEY=your_gemini_key_here
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
+### 3. Install dependencies
 
-### 3. Build Knowledge Base
 ```bash
-python build_index.py
+python -m pip install -r requirements.txt
 ```
 
-### 4. Launch Dashboard
+### 4. Create the environment file
+
+Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+macOS/Linux:
+
+```bash
+cp .env.example .env
+```
+
+Add your key to `.env`:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=gpt-5-mini
+EMBEDDING_MODEL=text-embedding-3-small
+VECTOR_STORE_PATH=./faiss_store
+CHUNK_SIZE=800
+CHUNK_OVERLAP=200
+RETRIEVER_K=3
+MINIMUM_POLICY_SIMILARITY=0.25
+DEBUG_MODE=false
+```
+
+Never commit `.env` or paste an API key into source code.
+
+### 5. Run the application
+
 ```bash
 streamlit run app.py
 ```
 
----
+Open the address printed by Streamlit, normally:
+
+```text
+http://localhost:8501
+```
+
+The application automatically builds the FAISS index when no compatible saved
+index exists. Building it manually is optional:
+
+```bash
+python build_index.py
+```
+
+## Example ticket
+
+```text
+Mera Wireless Bluetooth Speaker damaged condition mein deliver hua hai aur
+package bhi dented tha. Mujhe damaged item ke liye full refund chahiye.
+```
+
+The structured order fields already contain the order ID, dates, item, amount,
+payment method and shipping method, so the customer does not need to repeat
+them in the message.
+
+## Output contract
+
+The UI sends a validated `TicketInput` to:
+
+```python
+result = orchestrator.resolve_ticket(ticket)
+```
+
+The backend returns `FinalResolution` containing:
+
+- ticket ID, issue type and priority;
+- customer-facing response;
+- internal notes and operational next steps;
+- retrieved policy citations;
+- compliance status;
+- escalation flag and reason; and
+- rewrite count.
+
+Possible outcomes are:
+
+| Outcome | Meaning |
+|---|---|
+| `approved` | A policy-grounded response passed validation |
+| `needs_clarification` | Essential information must be supplied first |
+| `escalated` | Policy evidence is insufficient, conflicting or unsafe to automate |
 
 ## Evaluation
 
-```bash
-# Run full 23-ticket benchmark
-python tests/evaluate.py
+Run one sample ticket:
 
-# Quick smoke test (1 ticket)
+```bash
 python tests/evaluate.py --max 1
 ```
 
-**March 2026 Benchmark Results:**
+Run the complete local evaluation set:
 
-| Metric | Score |
-| :--- | :---: |
-| Citation Coverage Rate | **100%** |
-| Compliance Pass Rate | **100%** |
-| Error Rate | **0%** |
-
----
-
-## Deliverables
-
-| Document | Description |
-| :--- | :--- |
-| [**WRITEUP.md**](WRITEUP.md) | 1-page architecture + evaluation summary |
-| [**EXAMPLE_RUNS.md**](EXAMPLE_RUNS.md) | 3 full documented runs: exception, escalation, abstention |
-| [**evaluation_results/**](evaluation_results/) | Full benchmark report — 100% citation & compliance pass rate |
-
----
-
-## Project Structure
-
-```
-AGENTIC_AI/
-├── app.py                        # Streamlit dashboard (glassmorphism UI)
-├── build_index.py                # FAISS index builder
-├── requirements.txt
-├── .env.example                  # Environment template
-├── config/
-│   └── settings.py               # Pydantic settings management
-├── data/
-│   ├── policies/                 # 13 policy markdown documents (25k+ words)
-│   └── vectorstore_hf/           # Pre-built FAISS index
-├── src/
-│   ├── models.py                 # Pydantic data models
-│   ├── orchestrator.py           # CrewAI pipeline orchestrator
-│   ├── email_sender.py           # Gmail SMTP email dispatch
-│   ├── agents/
-│   │   ├── triage_agent.py       # Issue classification + priority
-│   │   ├── retriever_agent.py    # FAISS policy search
-│   │   ├── resolution_agent.py   # Response drafting
-│   │   └── compliance_agent.py   # Safety audit + rewrite trigger
-│   ├── ingestion/
-│   │   └── document_loader.py    # Markdown chunker
-│   └── vectorstore/
-│       └── store.py              # FAISS wrapper
-├── tests/
-│   ├── test_tickets.json         # 23 pre-built test tickets
-│   └── evaluate.py               # Automated evaluation harness
-└── evaluation_results/           # Generated reports (post-evaluation)
+```bash
+python tests/evaluate.py
 ```
 
----
+Evaluation tracks citation coverage, approval rate, escalation rate, rewrite
+rate, processing time and errors. Historical reports may not represent the
+current model or policy index, so rerun evaluation after changing prompts,
+models, thresholds or policy documents.
 
-## Policy Coverage
+## Deploy on Streamlit Community Cloud
 
-The 13 synthetic policy documents cover:
+1. Push the repository to GitHub.
+2. Open [share.streamlit.io](https://share.streamlit.io/).
+3. Select this repository, branch and `app.py` as the entry point.
+4. Select Python 3.12.
+5. Add root-level secrets in Advanced settings:
 
-- **Returns & Refunds** — Standard returns, non-returnable categories, damaged goods
-- **Shipping** — Domestic, international, express, PO box restrictions
-- **Payments** — UPI, credit card, COD, refund timelines
-- **Loyalty Program** — Tier benefits, points multipliers, redemption rules
-- **Marketplace** — Seller vs buyer protections, fulfilled-by-platform rules
-- **Fraud Prevention** — Unauthorized charges, account security, mandatory escalation
-- **Warranty** — Standard + extended warranty, battery degradation, accidental damage
-- **Privacy & Data** — Data retention, opt-out rights, deletion requests
+```toml
+OPENAI_API_KEY = "your_openai_api_key"
+OPENAI_MODEL = "gpt-5-mini"
+EMBEDDING_MODEL = "text-embedding-3-small"
+VECTOR_STORE_PATH = "faiss_store"
+RETRIEVER_K = "3"
+MINIMUM_POLICY_SIMILARITY = "0.25"
+DEBUG_MODE = "false"
+```
 
----
+6. Deploy the application. Streamlit installs `requirements.txt` and runs
+   `app.py`.
 
-<div align="center">
+Do not upload `.env` to GitHub or place an API key inside the README.
 
-**ResolveAI — Production-Grade Multi-Agent Support Resolution · 2026**
+## Policy coverage
 
-*Gemini 2.5 Flash ⚡ · CrewAI · FAISS · Streamlit*
+The policy knowledge base covers:
 
-</div>
+- returns, refunds and damaged products;
+- domestic and international shipping;
+- payments and refund processing;
+- loyalty tiers and promotional offers;
+- marketplace buyer and seller rules;
+- fraud prevention and mandatory escalation;
+- warranties and cancellations; and
+- privacy and customer-data handling.
+
+## Limitations and future improvements
+
+- An LLM can still misinterpret a retrieved policy; compliance reduces but
+  cannot guarantee zero hallucinations.
+- FAISS contains policy knowledge only. The application does not query a real
+  order-management database or verify uploaded evidence.
+- Generated indexes are local to the running machine and are rebuilt when
+  needed on a fresh cloud instance.
+- Production use should add authentication, persistent ticket storage, API
+  retry handling, observability, human-review queues and claim-level
+  evaluation.
+- Larger knowledge bases may require metadata filters, hybrid search,
+  reranking, batching and a managed vector database.
+
+## Security
+
+- `.env` and `faiss_store/` are excluded through `.gitignore`.
+- The customer email remains in the UI record but is not passed to the LLM.
+- Internal notes are displayed separately from the customer response.
+- Model-generated HTML is escaped before rendering.
+- High-risk or unsupported cases can be sent for human review.
+
+## License
+
+This repository is intended for learning, portfolio demonstration and further
+development. Add a `LICENSE` file before distributing it under a specific
+open-source license.

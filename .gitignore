@@ -13,6 +13,7 @@ build/
 # ── Vector Store (auto-rebuilt at startup) ────
 data/vectorstore_hf/
 data/vectorstore/
+faiss_store/
 
 # ── Docs images (replaced by /screenshots) ───
 docs/images/

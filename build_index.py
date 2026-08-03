@@ -4,14 +4,12 @@ Run this before using the application or evaluating.
 """
 
 import sys
-import os
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
 from config.settings import settings
-from src.ingestion.document_loader import DocumentLoader
-from src.vectorstore.store import PolicyVectorStore
+from src.orchestrator import build_policy_index, search_policies
 
 
 def build():
@@ -24,31 +22,16 @@ def build():
     # Validate
     settings.validate()
 
-    # Load and chunk documents
-    loader = DocumentLoader(
-        policies_dir=settings.POLICIES_DIR,
-        chunk_size=settings.CHUNK_SIZE,
-        chunk_overlap=settings.CHUNK_OVERLAP,
-    )
-    chunks = loader.load_and_chunk()
-
-    # Count total words
-    total_words = sum(len(c.page_content.split()) for c in chunks)
-    print(f"Total words across all chunks: {total_words:,}")
-
-    # Build vector store
-    store = PolicyVectorStore(
-        embedding_model=settings.EMBEDDING_MODEL,
-        store_path=settings.VECTOR_STORE_PATH,
-    )
-    store.build_index(chunks)
-    store.save()
+    build_policy_index()
 
     # Quick test
     print("\nQuick search test: 'return policy for damaged items'")
-    results = store.search("return policy for damaged items", k=3)
-    for i, doc in enumerate(results, 1):
-        print(f"  {i}. [{doc.metadata.get('citation', 'N/A')}] — score: {doc.metadata.get('relevance_score', 0):.3f}")
+    results = search_policies("return policy for damaged items", number_of_results=3)
+    for i, policy in enumerate(results, 1):
+        print(
+            f"  {i}. [{policy['citation']}] "
+            f"— score: {policy['similarity']:.3f}"
+        )
 
     print("\nVector store built successfully!")
     print(f"   Location: {settings.VECTOR_STORE_PATH}")

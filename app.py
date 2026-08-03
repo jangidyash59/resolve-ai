@@ -1,11 +1,12 @@
 """
 Streamlit UI — ResolveAI
-4-Agent AI Support Pipeline | Gemini 2.5 Flash ⚡
+4-Agent AI Support Pipeline | OpenAI + FAISS
 UPI · Credit Card · Cash on Delivery
 """
 
 import streamlit as st
 import json
+import html
 import time
 import os
 import sys
@@ -24,8 +25,6 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from src.models import TicketInput, OrderContext, OrderItem
 from src.orchestrator import SupportOrchestrator
-from src.ingestion.document_loader import DocumentLoader
-from src.vectorstore.store import PolicyVectorStore
 from config.settings import settings
 
 # ════════════════════════════════════════════════════
@@ -437,28 +436,7 @@ for key, default in [
 # ════════════════════════════════════════════════════
 def initialize_system():
     try:
-        loader = DocumentLoader(
-            policies_dir=settings.POLICIES_DIR,
-            chunk_size=settings.CHUNK_SIZE,
-            chunk_overlap=settings.CHUNK_OVERLAP,
-        )
-        chunks = loader.load_and_chunk()
-        store = PolicyVectorStore(
-            embedding_model=settings.EMBEDDING_MODEL,
-            store_path=settings.VECTOR_STORE_PATH,
-        )
-        try:
-            store.load()
-        except FileNotFoundError:
-            store.build_index(chunks)
-            store.save()
-
-        st.session_state.orchestrator = SupportOrchestrator(
-            google_api_key=settings.GOOGLE_API_KEY,
-            groq_api_key=settings.GROQ_API_KEY,
-            model=settings.LLM_MODEL,
-            vector_store=store,
-        )
+        st.session_state.orchestrator = SupportOrchestrator()
         st.session_state.initialized = True
         st.session_state.init_error = None
     except Exception as e:
@@ -476,15 +454,15 @@ if not st.session_state.initialized and st.session_state.init_error is None:
 # ════════════════════════════════════════════════════
 st.markdown("""
 <div class="hero-wrap">
-    <p class="hero-eyebrow">⚡ Powered by Gemini 2.5 Flash</p>
+    <p class="hero-eyebrow">⚡ Powered by OpenAI</p>
     <h1 class="hero-title">ResolveAI</h1>
     <p class="hero-sub">4-Agent RAG Pipeline &nbsp;·&nbsp; Compliance Loop &nbsp;·&nbsp; Zero-Hallucination Guardrails</p>
     <div class="badge-row">
-        <span class="badge">CrewAI</span>
-        <span class="badge">LangChain</span>
+        <span class="badge">OpenAI Responses API</span>
+        <span class="badge">Pydantic</span>
         <span class="badge">FAISS</span>
-        <span class="badge badge-cyan">Gemini 2.5 Flash ⚡</span>
-        <span class="badge">HuggingFace Embeddings</span>
+        <span class="badge badge-cyan">GPT Agents ⚡</span>
+        <span class="badge">OpenAI Embeddings</span>
         <span class="badge">Multi-Payment Support</span>
         <span class="badge">4 AI Agents</span>
     </div>
@@ -526,12 +504,12 @@ with st.sidebar:
 
     # Config
     model_name = settings.LLM_MODEL.split("/")[-1] if "/" in settings.LLM_MODEL else settings.LLM_MODEL
-    provider = settings.LLM_MODEL.split("/")[0] if "/" in settings.LLM_MODEL else "unknown"
+    provider = settings.LLM_MODEL.split("/")[0] if "/" in settings.LLM_MODEL else "openai"
     st.markdown("#### ⚙️ Configuration")
     st.markdown(f"""
 - **Provider:** `{provider}`
 - **Model:** `{model_name}`
-- **Embeddings:** `all-MiniLM-L6-v2`
+- **Embeddings:** `{settings.EMBEDDING_MODEL}`
 - **Vector Store:** FAISS
 - **Policy Docs:** 13
 - **Retriever K:** {settings.RETRIEVER_K}
@@ -624,13 +602,16 @@ def display_result(result, elapsed: float):
 
     # ── Customer Response ──
     st.markdown('<p class="section-title">Customer Response</p>', unsafe_allow_html=True)
-    response_html = (result.customer_response or "").replace("\n", "<br>")
+    response_html = html.escape(result.customer_response or "").replace("\n", "<br>")
     st.markdown(f'<div class="glass-panel glass-panel-accent">{response_html}</div>', unsafe_allow_html=True)
 
     # ── Citations ──
     if result.citations:
         st.markdown('<p class="section-title">Policy Citations</p>', unsafe_allow_html=True)
-        badges = "".join(f'<span class="cite-badge">📎 {c}</span>' for c in result.citations)
+        badges = "".join(
+            f'<span class="cite-badge">📎 {html.escape(str(c))}</span>'
+            for c in result.citations
+        )
         st.markdown(f'<div style="margin:0.4rem 0">{badges}</div>', unsafe_allow_html=True)
 
     # ── Critical Actions ──
@@ -638,7 +619,7 @@ def display_result(result, elapsed: float):
         st.markdown('<p class="section-title">Critical Actions</p>', unsafe_allow_html=True)
         for action in result.actions_to_take:
             st.markdown(
-                f'<div class="action-item"><span class="action-icon">✓</span>{action}</div>',
+                f'<div class="action-item"><span class="action-icon">✓</span>{html.escape(str(action))}</div>',
                 unsafe_allow_html=True,
             )
 
@@ -891,4 +872,3 @@ with tab3:
         if st.button("🗑️ Clear History", key="clear_hist"):
             st.session_state.results_history = []
             st.rerun()
-

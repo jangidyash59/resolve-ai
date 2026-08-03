@@ -10,7 +10,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-# Force Windows console to use UTF-8 to prevent CrewAI emoji crashes
+# Force Windows console to use UTF-8 for status output.
 if sys.stdout.encoding.lower() != 'utf-8':
     try:
         sys.stdout.reconfigure(encoding='utf-8')
@@ -21,12 +21,10 @@ if sys.stdout.encoding.lower() != 'utf-8':
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.models import TicketInput, OrderContext, OrderItem
-from src.orchestrator import SupportOrchestrator
-from src.ingestion.document_loader import DocumentLoader
-from src.vectorstore.store import PolicyVectorStore
+from src.orchestrator import SupportOrchestrator, build_policy_index
 from config.settings import settings
 
-# Rate limit delay between tickets (seconds) to avoid Groq TPM limits
+# Delay between tickets to avoid provider rate limits.
 INTER_TICKET_DELAY = 8
 
 
@@ -172,29 +170,12 @@ def run_evaluation(
 
     # Step 1: Build vector store
     safe_print("Step 1: Building vector store from policy documents...")
-    loader = DocumentLoader(
-        policies_dir=settings.POLICIES_DIR,
-        chunk_size=settings.CHUNK_SIZE,
-        chunk_overlap=settings.CHUNK_OVERLAP,
-    )
-    chunks = loader.load_and_chunk()
-
-    store = PolicyVectorStore(
-        embedding_model=settings.EMBEDDING_MODEL,
-        store_path=settings.VECTOR_STORE_PATH,
-    )
-    store.build_index(chunks)
-    store.save()
+    build_policy_index()
     safe_print("")
 
     # Step 2: Initialize orchestrator with the correct provider
     safe_print("Step 2: Initializing agent orchestrator...")
-    orchestrator = SupportOrchestrator(
-        google_api_key=settings.GOOGLE_API_KEY,
-        groq_api_key=settings.GROQ_API_KEY,
-        model=settings.LLM_MODEL,
-        vector_store=store,
-    )
+    orchestrator = SupportOrchestrator()
     safe_print("")
 
     # Step 3: Load test tickets

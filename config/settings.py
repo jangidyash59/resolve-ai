@@ -12,21 +12,18 @@ load_dotenv()
 class Settings:
     """Centralized configuration for the application."""
 
-    # Groq (Primary LLM Provider)
-    GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
-
-    # Google Gemini (Fallback)
-    GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY", "")
+    # OpenAI
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 
     # Models
-    LLM_MODEL: str = os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash")
-    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
+    LLM_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
 
     # Paths
     POLICIES_DIR: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "policies")
     VECTOR_STORE_PATH: str = os.getenv(
         "VECTOR_STORE_PATH",
-        os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "vectorstore_hf"),
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), "faiss_store"),
     )
 
     # Chunking
@@ -38,10 +35,10 @@ class Settings:
 
     @classmethod
     def validate(cls) -> None:
-        """Validate that at least one API Key is present."""
-        if not cls.GROQ_API_KEY and not cls.GOOGLE_API_KEY:
+        """Validate the required OpenAI configuration."""
+        if not cls.OPENAI_API_KEY:
             raise ValueError(
-                "Neither GROQ_API_KEY nor GOOGLE_API_KEY is set. Please set one in your .env file."
+                "OPENAI_API_KEY is not set. Add it to your .env file."
             )
 
 
