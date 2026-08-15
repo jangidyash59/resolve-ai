@@ -94,28 +94,41 @@ def load_and_chunk_policy_documents():
 
 def create_embeddings(texts):
     """
-    Use Hugging Face Inference API for embeddings (zero local RAM usage).
-    Falls back to local sentence-transformers if HF_TOKEN not available.
+    Use Hugging Face Router API for embeddings (zero local RAM usage).
+    Uses new router.huggingface.co endpoint to avoid Render DNS issues.
     """
     hf_token = os.getenv("HF_TOKEN")
     
     if hf_token:
-        # Use Hugging Face Inference API (free, no RAM usage)
+        # NEW: Use HF Router API (fixes Render DNS timeout)
         import requests
-        api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
+        api_url = "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2"
         headers = {"Authorization": f"Bearer {hf_token}"}
         
         embeddings = []
         for text in texts:
-            response = requests.post(api_url, headers=headers, json={"inputs": text})
-            if response.status_code == 200:
-                embeddings.append(response.json())
-            else:
-                print(f"HF API error: {response.status_code}, falling back to local")
-                # Fallback to local model
+            try:
+                response = requests.post(
+                    api_url,
+                    headers=headers,
+                    json={"inputs": [text], "options": {"wait_for_model": True}},
+                    timeout=30
+                )
+                
+                if response.status_code == 200:
+                    embeddings.append(response.json()[0])
+                else:
+                    print(f"HF API error: {response.status_code}, falling back to local")
+                    # Fallback to local model
+                    from sentence_transformers import SentenceTransformer
+                    model = SentenceTransformer(EMBEDDING_MODEL)
+                    return [embedding.tolist() for embedding in model.encode(texts, convert_to_numpy=True)]
+            except Exception as e:
+                print(f"HF API exception: {e}, falling back to local")
                 from sentence_transformers import SentenceTransformer
                 model = SentenceTransformer(EMBEDDING_MODEL)
                 return [embedding.tolist() for embedding in model.encode(texts, convert_to_numpy=True)]
+        
         return embeddings
     else:
         # Fallback: local sentence-transformers (requires RAM)
@@ -147,21 +160,63 @@ def build_policy_index():
 
 def search_policies(query, number_of_results=3):
     """
-    Semantic search using pre-built FAISS index and HF Inference API for query embeddings.
+    Semantic search using pre-built FAISS index and HF Router API for query embeddings.
     """
-    query_embedding = create_embeddings([query])[0]
-    query_vector = np.array([query_embedding]).astype("float32")
-    distances, indices = faiss_index.search(query_vector, number_of_results)
-    results = []
-    for idx, distance in zip(indices[0], distances[0]):
-        policy = indexed_policies[idx]
-        similarity = float(1.0 / (1.0 + distance))
-        results.append({
-            "citation": f"{policy['source']} — {policy['section']}",
-            "text": policy["text"],
-            "similarity": round(similarity, 3)
-        })
-    return results
+    try:
+        query_embedding = create_embeddings([query])[0]
+        query_vector = np.array([query_embedding]).astype("float32")
+        distances, indices = faiss_index.search(query_vector, number_of_results)
+        results = []
+        for idx, distance in zip(indices[0], distances[0]):
+            policy = indexed_policies[idx]
+            similarity = float(1.0 / (1.0 + distance))
+            results.append({
+                "citation": f"{policy['source']} — {policy['section']}",
+                "text": policy["text"],
+                "similarity": round(similarity, 3)
+            })
+        return results
+    except Exception as e:
+        print(f"Search error: {e}, using keyword fallback")
+        # Fallback to keyword search if embeddings fail
+        return keyword_search_policies(query, number_of_results)
+
+def keyword_search_policies(query, number_of_results=3):
+    """
+    Keyword-based policy search fallback.
+    """
+    if not indexed_policies:
+        return []
+    
+    query_lower = query.lower()
+    query_words = set(query_lower.split())
+    
+    scored_policies = []
+    for policy in indexed_policies:
+        policy_text_lower = policy["text"].lower()
+        policy_words = set(policy_text_lower.split())
+        
+        word_matches = len(query_words.intersection(policy_words))
+        substring_match = 5 if query_lower in policy_text_lower else 0
+        score = word_matches + substring_match
+        
+        if score > 0:
+            scored_policies.append({
+                "score": score,
+                "citation": f"{policy['source']} — {policy['section']}",
+                "text": policy["text"],
+                "similarity": round(min(score / 10.0, 0.95), 3)
+            })
+    
+    scored_policies.sort(key=lambda x: x["score"], reverse=True)
+    return scored_policies[:number_of_results] if scored_policies else [
+        {
+            "citation": f"{p['source']} — {p['section']}",
+            "text": p["text"],
+            "similarity": 0.5
+        }
+        for p in indexed_policies[:number_of_results]
+    ]
 
 def triage_ticket(ticket_text, order_context):
     prompt = f"""You are a customer support triage agent. Analyze this support ticket.
