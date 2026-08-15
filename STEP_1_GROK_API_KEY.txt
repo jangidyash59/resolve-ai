@@ -1,0 +1,98 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║           STEP 1: GET FREE GROK API KEY - ACTION REQUIRED           ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+⏱️ TIME REQUIRED: 5 minutes
+
+📋 WHAT TO DO:
+════════════════════════════════════════════════════════════════════════
+
+1️⃣  OPEN YOUR BROWSER
+   Go to: https://console.x.ai
+
+2️⃣  SIGN IN (or create account)
+   Choose one:
+   • Sign in with Google ← Easiest!
+   • Sign in with GitHub
+   • Sign in with Email
+
+   💡 No credit card required!
+
+3️⃣  NAVIGATE TO API KEYS
+   Click on "API Keys" in left sidebar
+   Or go to: https://console.x.ai/keys
+
+4️⃣  CREATE NEW API KEY
+   • Click "Create New Key" button
+   • Name it: resolveai
+   • Click "Create"
+
+5️⃣  COPY YOUR KEY
+   • Your key looks like: xai-1234567890abcdefg...
+   • 📋 COPY it (appears only once!)
+   • 💾 SAVE it somewhere safe
+
+════════════════════════════════════════════════════════════════════════
+
+✅ STEP 1 CHECKLIST
+════════════════════════════════════════════════════════════════════════
+
+Before continuing to Step 2, verify:
+
+[ ] Visited https://console.x.ai
+[ ] Signed in successfully
+[ ] Found "API Keys" section
+[ ] Created new API key
+[ ] Copied the key (starts with xai-)
+[ ] Saved the key safely
+
+════════════════════════════════════════════════════════════════════════
+
+🔑 YOUR API KEY LOCATION
+════════════════════════════════════════════════════════════════════════
+
+When you're done, you should have:
+
+API Key: xai-...........................
+         ↑
+         Your key will be used in Step 3
+
+Save it to a temporary file or text editor.
+
+════════════════════════════════════════════════════════════════════════
+
+❓ HELP
+════════════════════════════════════════════════════════════════════════
+
+Can't find API Keys?
+→ Go directly to: https://console.x.ai/keys
+
+Forgot to copy the key?
+→ Go back to API Keys page
+→ You'll see your key listed
+→ Click to copy it
+
+Key disappeared?
+→ Create a new one
+→ Old keys stay in your account
+
+════════════════════════════════════════════════════════════════════════
+
+💡 IMPORTANT NOTES
+════════════════════════════════════════════════════════════════════════
+
+✅ Grok API is 100% FREE
+✅ No credit card needed
+✅ Generous rate limits (100+ requests/min)
+✅ Key starts with: xai-
+
+════════════════════════════════════════════════════════════════════════
+
+👉 WHEN DONE:
+════════════════════════════════════════════════════════════════════════
+
+1. Come back here
+2. Tell me you have your Grok API key
+3. We'll move to Step 2: Setup MongoDB
+
+════════════════════════════════════════════════════════════════════════

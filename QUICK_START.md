@@ -49,23 +49,33 @@ cp web-api/.env.example web-api/.env
 cp client/.env.example client/.env
 ```
 
-### Step 2: Add Your OpenAI API Key
+### Step 2: Add Your API Keys
+
+**Get Grok API Key (FREE):**
+1. Go to https://console.x.ai
+2. Sign in with Google/GitHub
+3. Create API key
+4. Copy the key (starts with `xai-`)
+
+**Get OpenAI API Key (for embeddings):**
+1. Go to https://platform.openai.com
+2. Sign up for $5 free trial
+3. Create API key
+4. Copy the key (starts with `sk-`)
 
 ```bash
 nano ai-service/.env
 ```
 
-Change this line:
+Change these lines:
 ```env
-OPENAI_API_KEY=your_key_here
-```
-
-To:
-```env
+GROK_API_KEY=xai-YOUR_ACTUAL_KEY
 OPENAI_API_KEY=sk-proj-YOUR_ACTUAL_KEY
 ```
 
 **Save:** Press `Ctrl+X`, then `Y`, then `Enter`
+
+💡 **See GET_GROK_API_KEY.md for detailed instructions**
 
 ### Step 3: Configure MongoDB
 
@@ -181,7 +191,7 @@ curl http://localhost:5000/health  # API Gateway
 
 ---
 
-### "OPENAI_API_KEY not found"
+### "GROK_API_KEY not found"
 
 **Cause:** API key not configured
 
@@ -190,10 +200,13 @@ curl http://localhost:5000/health  # API Gateway
 # Edit the file
 nano ai-service/.env
 
-# Add: OPENAI_API_KEY=sk-proj-xxxxx
+# Add: GROK_API_KEY=xai-xxxxx
+# Add: OPENAI_API_KEY=sk-proj-xxxxx (for embeddings)
 
 # Restart Terminal 1 (AI Service)
 ```
+
+**Get FREE Grok API key:** See GET_GROK_API_KEY.md
 
 ---
 

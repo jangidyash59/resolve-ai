@@ -1,6 +1,7 @@
 """
 FastAPI AI Microservice for ResolveAI
 Handles customer support ticket resolution using CrewAI agents and FAISS RAG
+Powered by Grok API (xAI) - Free and Fast!
 """
 
 from fastapi import FastAPI, HTTPException, status
@@ -16,7 +17,7 @@ import logging
 sys.path.insert(0, str(Path(__file__).parent))
 
 from src.models import TicketInput, OrderContext, OrderItem, CustomerTier
-from src.orchestrator import SupportOrchestrator
+from src.orchestrator_simple import SupportOrchestrator
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -245,7 +246,7 @@ async def search_policies_endpoint(query: str, k: int = 3):
         )
     
     try:
-        from src.orchestrator import search_policies
+        from src.orchestrator_simple import search_policies
         results = search_policies(query, k)
         return {"query": query, "results": results}
     except Exception as e:

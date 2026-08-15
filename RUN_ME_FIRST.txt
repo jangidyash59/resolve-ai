@@ -4,8 +4,9 @@
 
 📝 BEFORE YOU START:
 
-1. You need an OpenAI API key (get one at platform.openai.com)
-2. You need MongoDB running (local or Atlas free cloud)
+1. You need a FREE Grok API key from xAI (get at console.x.ai)
+2. You need OpenAI API key for embeddings only (free trial available)
+3. You need MongoDB running (local or Atlas free cloud)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -34,7 +35,8 @@ cp web-api/.env.example web-api/.env
 cp client/.env.example client/.env
 
 nano ai-service/.env
-# Add: OPENAI_API_KEY=sk-proj-YOUR_KEY
+# Add: GROK_API_KEY=xai-YOUR_KEY_HERE
+# Add: OPENAI_API_KEY=sk-proj-YOUR_KEY (for embeddings only)
 
 nano web-api/.env
 # Add: MONGODB_URI=mongodb://localhost:27017/resolveai

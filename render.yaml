@@ -13,12 +13,12 @@ services:
     buildCommand: pip install -r requirements.txt && python build_index.py
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: OPENAI_API_KEY
+      - key: GROQ_API_KEY
         sync: false
-      - key: OPENAI_MODEL
-        value: gpt-4o-mini
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
       - key: EMBEDDING_MODEL
-        value: text-embedding-3-small
+        value: sentence-transformers/all-MiniLM-L6-v2
       - key: VECTOR_STORE_PATH
         value: ./faiss_store
       - key: RETRIEVER_K

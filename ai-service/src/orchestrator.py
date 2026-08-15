@@ -6,17 +6,18 @@ from typing import Literal
 import faiss
 import numpy as np
 from dotenv import load_dotenv
-from openai import OpenAI
+from groq import Groq
 from pydantic import BaseModel, Field
 
 from src.models import FinalResolution, TicketInput
 
 load_dotenv()
 
-openai_client: OpenAI | None = None
+openai_client: Groq | None = None
 
-MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+# Groq API Configuration - COMPLETELY FREE, FAST INFERENCE
+MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # Free local embeddings via HuggingFace
 
 PROJECT_DIRECTORY = Path(__file__).resolve().parent.parent
 POLICIES_DIRECTORY = PROJECT_DIRECTORY / "data" / "policies"
@@ -46,20 +47,25 @@ faiss_index = None
 indexed_policies = []
 
 
-def get_openai_client() -> OpenAI:
-    """Create the OpenAI client after Streamlit has loaded environment values."""
+def get_openai_client():
+    """Create the Groq client - FREE and FAST inference."""
 
     global openai_client
 
     if openai_client is not None:
         return openai_client
 
-    if not os.getenv("OPENAI_API_KEY"):
+    groq_api_key = os.getenv("GROQ_API_KEY")
+    
+    if not groq_api_key:
         raise ValueError(
-            "OPENAI_API_KEY was not found. Add it to your .env file."
+            "GROQ_API_KEY not found. Get a FREE API key at https://console.groq.com"
         )
 
-    openai_client = OpenAI()
+    # Use Groq SDK directly - 100% FREE, Fast Inference
+    from groq import Groq
+    openai_client = Groq(api_key=groq_api_key)
+    
     return openai_client
 
 
@@ -230,19 +236,18 @@ def load_and_chunk_policy_documents() -> list[dict]:
 def create_embeddings(
     texts: list[str]
 ) -> list[list[float]]:
-    """Convert a list of texts into embedding vectors."""
+    """Convert a list of texts into embedding vectors using FREE HuggingFace."""
 
-    response = get_openai_client().embeddings.create(
-        model=EMBEDDING_MODEL,
-        input=texts
-    )
-
-    embeddings = [
-        item.embedding
-        for item in response.data
-    ]
-
-    return embeddings
+    from sentence_transformers import SentenceTransformer
+    
+    # Load the free embedding model (runs locally, no API cost)
+    model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+    
+    # Generate embeddings (completely free)
+    embeddings = model.encode(texts, convert_to_numpy=True)
+    
+    # Return as list of lists
+    return [embedding.tolist() for embedding in embeddings]
 
 
 # =========================

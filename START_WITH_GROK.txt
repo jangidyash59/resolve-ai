@@ -1,0 +1,216 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                  🎉 START HERE - GROK API SETUP 🎉                  ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📍 LOCATION: /home/jangidworld/Desktop/resolve-ai/
+
+════════════════════════════════════════════════════════════════════════
+
+⚡ QUICK START (5 MINUTES)
+════════════════════════════════════════════════════════════════════════
+
+STEP 1: Get FREE Grok API Key (1 min)
+┌────────────────────────────────────────────────────────────────────┐
+│ 1. Open: https://console.x.ai                                      │
+│ 2. Sign in (Google / GitHub / Email)                               │
+│ 3. Click "API Keys" → "Create New Key"                             │
+│ 4. Copy your key (starts with xai-)                                │
+│                                                                     │
+│ ⚡ It's 100% FREE - No credit card needed!                          │
+└────────────────────────────────────────────────────────────────────┘
+
+STEP 2: Create Environment File (1 min)
+┌────────────────────────────────────────────────────────────────────┐
+│ Run in terminal:                                                   │
+│                                                                     │
+│ cp ai-service/.env.example ai-service/.env                         │
+│ cp web-api/.env.example web-api/.env                               │
+│ cp client/.env.example client/.env                                 │
+└────────────────────────────────────────────────────────────────────┘
+
+STEP 3: Add Your Grok Key (1 min)
+┌────────────────────────────────────────────────────────────────────┐
+│ Run in terminal:                                                   │
+│                                                                     │
+│ nano ai-service/.env                                               │
+│                                                                     │
+│ Find this line and replace YOUR_KEY:                               │
+│ GROK_API_KEY=xai-YOUR_ACTUAL_KEY_HERE                              │
+│                                                                     │
+│ Save: Press Ctrl+X, then Y, then Enter                             │
+└────────────────────────────────────────────────────────────────────┘
+
+STEP 4: Configure MongoDB (1 min)
+┌────────────────────────────────────────────────────────────────────┐
+│ nano web-api/.env                                                  │
+│                                                                     │
+│ Option A: Local MongoDB                                            │
+│ MONGODB_URI=mongodb://localhost:27017/resolveai                    │
+│                                                                     │
+│ Option B: MongoDB Atlas (Cloud - Recommended)                      │
+│ 1. Go to: https://mongodb.com/cloud/atlas                          │
+│ 2. Create FREE cluster                                             │
+│ 3. Copy connection string                                          │
+│ 4. Paste as MONGODB_URI value                                      │
+│                                                                     │
+│ Save: Press Ctrl+X, then Y, then Enter                             │
+└────────────────────────────────────────────────────────────────────┘
+
+STEP 5: Install Dependencies (1 min)
+┌────────────────────────────────────────────────────────────────────┐
+│ cd ai-service                                                      │
+│ pip install -r requirements.txt                                    │
+│                                                                     │
+│ cd ../web-api                                                      │
+│ npm install                                                        │
+│                                                                     │
+│ cd ../client                                                       │
+│ npm install                                                        │
+└────────────────────────────────────────────────────────────────────┘
+
+STEP 6: Start All Services (1 min)
+┌────────────────────────────────────────────────────────────────────┐
+│ Back in resolve-ai directory:                                      │
+│                                                                     │
+│ ./start-services.sh                                                │
+│                                                                     │
+│ This will:                                                         │
+│ • Build FAISS index (first time only)                              │
+│ • Open 3 terminal windows                                          │
+│ • Start all services                                               │
+│                                                                     │
+│ Wait 10-15 seconds for all services to start                       │
+└────────────────────────────────────────────────────────────────────┘
+
+STEP 7: Open Your App
+┌────────────────────────────────────────────────────────────────────┐
+│ Open in browser: http://localhost:3000                             │
+│                                                                     │
+│ You should see:                                                    │
+│ • ResolveAI interface                                              │
+│ • Ticket submission form                                           │
+│ • Dark glassmorphic design                                         │
+└────────────────────────────────────────────────────────────────────┘
+
+STEP 8: Submit a Test Ticket
+┌────────────────────────────────────────────────────────────────────┐
+│ 1. Form is pre-filled with sample data                             │
+│ 2. Click "Submit Ticket"                                           │
+│ 3. Wait ~30 seconds (AI is working...)                             │
+│ 4. See AI-generated response with:                                 │
+│    • Issue classification                                          │
+│    • Policy citations                                              │
+│    • Required actions                                              │
+│    • Compliance status                                             │
+└────────────────────────────────────────────────────────────────────┘
+
+════════════════════════════════════════════════════════════════════════
+
+✅ SUCCESS CHECKLIST
+════════════════════════════════════════════════════════════════════════
+
+Before you start, make sure:
+
+[ ] Grok API key obtained (from console.x.ai)
+[ ] ai-service/.env created with GROK_API_KEY
+[ ] web-api/.env created with MONGODB_URI
+[ ] MongoDB running or Atlas account setup
+[ ] Dependencies installed (pip + npm)
+[ ] Ports 3000, 5000, 8000 are free
+
+════════════════════════════════════════════════════════════════════════
+
+🔗 SERVICE URLS
+════════════════════════════════════════════════════════════════════════
+
+Frontend:      http://localhost:3000   ← Open this first!
+API Gateway:   http://localhost:5000   (Backend API)
+AI Service:    http://localhost:8000   (AI processing)
+API Docs:      http://localhost:8000/docs (Interactive docs)
+
+════════════════════════════════════════════════════════════════════════
+
+📚 MORE DOCUMENTATION
+════════════════════════════════════════════════════════════════════════
+
+Read these for more details:
+
+• GROK_ONLY_SETUP.md ..................  100% FREE setup guide
+• GROK_COMPLETE_MIGRATION.md .......... Migration & cost details
+• GROK_QUICK_REFERENCE.txt ........... Quick lookup table
+• QUICK_START.md .................... 5-minute quickstart
+• README.md ......................... Full project overview
+
+════════════════════════════════════════════════════════════════════════
+
+🐛 TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════════
+
+Problem: "GROK_API_KEY not found"
+Solution: Make sure your .env file has:
+          GROK_API_KEY=xai-xxxxx (NOT xai-YOUR_KEY_HERE)
+
+Problem: "Network Error" when submitting ticket
+Solution: Make sure all 3 terminal windows are running
+          Check: http://localhost:8000/health
+          Check: http://localhost:5000/health
+
+Problem: "MongoDB connection failed"
+Solution: If using local MongoDB: mongod --dbpath ~/data/db
+          If using Atlas: verify connection string in web-api/.env
+
+Problem: "Module not found: sentence_transformers"
+Solution: pip install sentence-transformers
+
+════════════════════════════════════════════════════════════════════════
+
+💡 TIPS
+════════════════════════════════════════════════════════════════════════
+
+• Keep all 3 terminal windows open while using the app
+• First run takes ~30s (building FAISS index) - that's normal
+• Grok API has generous free tier - don't worry about rate limits
+• Use Ctrl+C to stop any service
+• Embeddings run locally - no API costs!
+
+════════════════════════════════════════════════════════════════════════
+
+💰 COST
+════════════════════════════════════════════════════════════════════════
+
+Total Monthly Cost: $0
+
+Why? Everything is FREE:
+  ✅ Grok API (xAI) ................. FREE
+  ✅ HuggingFace Embeddings ......... FREE (local)
+  ✅ FAISS Vector Search ........... FREE
+  ✅ MongoDB Atlas ................. FREE tier
+  ✅ Render Backend ................ 750 hrs free
+  ✅ Vercel Frontend ............... FREE tier
+
+No hidden costs. No surprises. Just pure AI power! 🚀
+
+════════════════════════════════════════════════════════════════════════
+
+🎯 NEXT AFTER SETUP
+════════════════════════════════════════════════════════════════════════
+
+1. Submit several test tickets to see it working
+2. Check the Dashboard (http://localhost:3000/dashboard)
+3. View ticket statistics and history
+4. When ready: See DEPLOYMENT.md to deploy live
+
+════════════════════════════════════════════════════════════════════════
+
+🚀 YOU'RE ALL SET!
+
+Just follow the 8 steps above and you'll have a working
+AI-powered support system in 5 minutes!
+
+Questions? See the documentation files or:
+• Grok Docs: https://docs.x.ai
+• xAI Console: https://console.x.ai
+
+Happy coding! 🎉
+
+════════════════════════════════════════════════════════════════════════

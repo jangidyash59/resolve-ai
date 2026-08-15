@@ -12,12 +12,12 @@ load_dotenv()
 class Settings:
     """Centralized configuration for the application."""
 
-    # OpenAI
-    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+    # Groq API (FREE - Fast Inference)
+    GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
+    GROQ_MODEL: str = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
-    # Models
-    LLM_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-5-mini")
-    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+    # Embeddings (FREE - HuggingFace local)
+    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
 
     # Paths
     POLICIES_DIR: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "policies")
@@ -32,13 +32,17 @@ class Settings:
 
     # Retriever
     RETRIEVER_K: int = int(os.getenv("RETRIEVER_K", "3"))
+    MINIMUM_POLICY_SIMILARITY: float = float(os.getenv("MINIMUM_POLICY_SIMILARITY", "0.25"))
+
+    # Debug
+    DEBUG_MODE: bool = os.getenv("DEBUG_MODE", "false").lower() == "true"
 
     @classmethod
     def validate(cls) -> None:
-        """Validate the required OpenAI configuration."""
-        if not cls.OPENAI_API_KEY:
+        """Validate the required Groq API configuration."""
+        if not cls.GROQ_API_KEY:
             raise ValueError(
-                "OPENAI_API_KEY is not set. Add it to your .env file."
+                "GROQ_API_KEY is not set. Add it to your .env file."
             )
 
 
