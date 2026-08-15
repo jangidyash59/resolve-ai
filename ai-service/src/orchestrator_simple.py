@@ -93,38 +93,62 @@ def load_and_chunk_policy_documents():
     return all_policy_chunks
 
 def create_embeddings(texts):
-    from sentence_transformers import SentenceTransformer
-    model = SentenceTransformer(EMBEDDING_MODEL)
-    embeddings = model.encode(texts, convert_to_numpy=True)
-    return [embedding.tolist() for embedding in embeddings]
+    """
+    Use Hugging Face Inference API for embeddings (zero local RAM usage).
+    Falls back to local sentence-transformers if HF_TOKEN not available.
+    """
+    hf_token = os.getenv("HF_TOKEN")
+    
+    if hf_token:
+        # Use Hugging Face Inference API (free, no RAM usage)
+        import requests
+        api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
+        headers = {"Authorization": f"Bearer {hf_token}"}
+        
+        embeddings = []
+        for text in texts:
+            response = requests.post(api_url, headers=headers, json={"inputs": text})
+            if response.status_code == 200:
+                embeddings.append(response.json())
+            else:
+                print(f"HF API error: {response.status_code}, falling back to local")
+                # Fallback to local model
+                from sentence_transformers import SentenceTransformer
+                model = SentenceTransformer(EMBEDDING_MODEL)
+                return [embedding.tolist() for embedding in model.encode(texts, convert_to_numpy=True)]
+        return embeddings
+    else:
+        # Fallback: local sentence-transformers (requires RAM)
+        print("HF_TOKEN not set, using local sentence-transformers model")
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer(EMBEDDING_MODEL)
+        embeddings = model.encode(texts, convert_to_numpy=True)
+        return [embedding.tolist() for embedding in embeddings]
 
 def build_policy_index():
+    """
+    Load pre-built FAISS index from repository.
+    Index building happens only locally with `python build_index.py`.
+    """
     global faiss_index, indexed_policies
-    FAISS_DIRECTORY.mkdir(parents=True, exist_ok=True)
-    current_policies = load_and_chunk_policy_documents()
-    if FAISS_INDEX_PATH.exists() and FAISS_METADATA_PATH.exists():
-        with open(FAISS_METADATA_PATH, "r") as f:
-            saved_metadata = json.load(f)
-        saved_policies = saved_metadata.get("policies", [])
-        if saved_policies == current_policies:
-            faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
-            indexed_policies = saved_policies
-            print(f"Loaded {len(indexed_policies)} existing FAISS vectors.")
-            return
-    print("Creating embeddings...")
-    texts = [p["text"] for p in current_policies]
-    embeddings = create_embeddings(texts)
-    embedding_matrix = np.array(embeddings).astype("float32")
-    dimension = embedding_matrix.shape[1]
-    faiss_index = faiss.IndexFlatL2(dimension)
-    faiss_index.add(embedding_matrix)
-    indexed_policies = current_policies
-    faiss.write_index(faiss_index, str(FAISS_INDEX_PATH))
-    with open(FAISS_METADATA_PATH, "w") as f:
-        json.dump({"policies": indexed_policies, "embedding_model": EMBEDDING_MODEL}, f)
-    print(f"FAISS knowledge base created with {len(indexed_policies)} vectors.")
+    
+    if not FAISS_INDEX_PATH.exists() or not FAISS_METADATA_PATH.exists():
+        raise FileNotFoundError(
+            f"Pre-built FAISS index not found at {FAISS_INDEX_PATH}. "
+            "Run 'python build_index.py' locally first."
+        )
+    
+    print("Loading pre-built FAISS index...")
+    faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
+    with open(FAISS_METADATA_PATH, "r") as f:
+        saved_metadata = json.load(f)
+    indexed_policies = saved_metadata.get("policies", [])
+    print(f"✓ Loaded {len(indexed_policies)} policy vectors from pre-built index.")
 
 def search_policies(query, number_of_results=3):
+    """
+    Semantic search using pre-built FAISS index and HF Inference API for query embeddings.
+    """
     query_embedding = create_embeddings([query])[0]
     query_vector = np.array([query_embedding]).astype("float32")
     distances, indices = faiss_index.search(query_vector, number_of_results)
