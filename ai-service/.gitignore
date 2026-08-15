@@ -28,10 +28,10 @@ wheels/
 .env.local
 .env.*.local
 
-# FAISS Vector Store
-faiss_store/
-*.index
-*.json
+# FAISS Vector Store - COMMITTED TO GIT FOR RENDER DEPLOYMENT
+# faiss_store/
+# *.index
+# *.json
 
 # IDE
 .vscode/

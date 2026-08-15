@@ -1,0 +1,1811 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "policies": [
+    {
+      "id": "cancellation_policy-section-0-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "Order Cancellation Policy",
+      "text": "# Order Cancellation Policy\n\n**Document ID:** POL-CN-004  \n**Effective Date:** January 1, 2026  \n**Last Updated:** February 28, 2026  \n**Department:** Order Management  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "cancellation_policy-section-1-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy outlines the terms and conditions for cancelling orders on the The Platform platform. Cancellation eligibility depends on the order's fulfillment stage at the time of the cancellation request."
+    },
+    {
+      "id": "cancellation_policy-section-2-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "2. Cancellation Windows",
+      "text": "## 2. Cancellation Windows"
+    },
+    {
+      "id": "cancellation_policy-section-3-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "2.1 Before Processing (Full Cancellation)",
+      "text": "### 2.1 Before Processing (Full Cancellation)\n- Orders can be cancelled for a **full refund** if the cancellation request is made **before the order enters the \"Processing\" stage**.\n- Typically, orders remain in \"Confirmed\" status for **1-2 hours** after placement during standard business hours.\n- Cancellation at this stage is instant and requires no further action from the customer."
+    },
+    {
+      "id": "cancellation_policy-section-4-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "2.2 During Processing (Attempt to Cancel)",
+      "text": "### 2.2 During Processing (Attempt to Cancel)\n- Once an order is in \"Processing\" (picked, but not yet shipped), cancellation is **attempted but not guaranteed**.\n- The Platform will contact the fulfillment center to attempt cancellation. This process takes up to **4 hours**.\n- If cancellation is successful, a full refund is issued.\n- If the item has already been packed/labeled, it will ship, and the customer must return it per the Returns & Refunds Policy."
+    },
+    {
+      "id": "cancellation_policy-section-5-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "2.3 After Shipping (Cannot Cancel)",
+      "text": "### 2.3 After Shipping (Cannot Cancel)\n- Orders that have been shipped **cannot be cancelled**.\n- The customer must wait to receive the package and then initiate a return.\n- Exception: If the carrier has not yet picked up the package (status shows \"Label Created\" for more than 24 hours), The Platform may intercept the shipment. In this case, a full refund is issued upon confirmation."
+    },
+    {
+      "id": "cancellation_policy-section-6-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "3. Multi-Item Order Cancellation",
+      "text": "## 3. Multi-Item Order Cancellation"
+    },
+    {
+      "id": "cancellation_policy-section-7-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "3.1 Partial Cancellation",
+      "text": "### 3.1 Partial Cancellation\n- Customers may cancel individual items in a multi-item order without affecting the remaining items.\n- The refund applies only to the cancelled item(s).\n- If the partial cancellation brings the order total below the free shipping threshold, the original shipping cost is **not retroactively charged** to the customer."
+    },
+    {
+      "id": "cancellation_policy-section-8-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "3.2 Bundle/Set Cancellation",
+      "text": "### 3.2 Bundle/Set Cancellation\n- Items purchased as a bundle or set must be cancelled as a complete unit. Individual items within a bundle cannot be cancelled separately.\n- If a bundle item is out of stock after order placement, The Platform cancels the entire bundle and issues a full refund."
+    },
+    {
+      "id": "cancellation_policy-section-9-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "4. Cancellation by The Platform",
+      "text": "## 4. Cancellation by The Platform"
+    },
+    {
+      "id": "cancellation_policy-section-10-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "4.1 Reasons for Seller-Initiated Cancellation",
+      "text": "### 4.1 Reasons for Seller-Initiated Cancellation\nThe Platform may cancel an order for the following reasons:\n- Item is out of stock or discontinued\n- Pricing error (significantly below intended price due to technical glitch)\n- Suspected fraudulent order (flagged by the Trust & Safety team)\n- Customer's payment method declined after initial authorization\n- Regulatory or legal restrictions (e.g., age-restricted items shipped to ineligible recipients)"
+    },
+    {
+      "id": "cancellation_policy-section-11-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "4.2 Communication",
+      "text": "### 4.2 Communication\n- Customers are notified via email and in-app notification immediately upon seller-initiated cancellation.\n- The notification includes the reason for cancellation and any recommended alternatives.\n- A full refund is issued automatically within **24 hours** of The Platform-initiated cancellation."
+    },
+    {
+      "id": "cancellation_policy-section-12-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "4.3 Compensation for The Platform-Initiated Cancellations",
+      "text": "### 4.3 Compensation for The Platform-Initiated Cancellations\n- If The Platform cancels an order due to a stock or pricing issue:\n  - The customer receives a **$10 inconvenience credit** (The Platform Wallet)\n  - Platinum members receive a **$20 inconvenience credit**\n  - If the cancellation occurs on a time-sensitive purchase (gift with a specific event date), additional compensation up to **$50** may be offered at the discretion of the support supervisor."
+    },
+    {
+      "id": "cancellation_policy-section-13-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "5. Pre-Order and Backorder Cancellations",
+      "text": "## 5. Pre-Order and Backorder Cancellations"
+    },
+    {
+      "id": "cancellation_policy-section-14-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "5.1 Pre-Order Cancellation",
+      "text": "### 5.1 Pre-Order Cancellation\n- Pre-orders can be cancelled at any time before the item ships with a full refund.\n- No cancellation fees apply to pre-orders.\n- If the pre-order item's price changes between order placement and shipping, the customer is charged/refunded the difference and may cancel at that point."
+    },
+    {
+      "id": "cancellation_policy-section-15-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "5.2 Backorder Cancellation",
+      "text": "### 5.2 Backorder Cancellation\n- Items on backorder can be cancelled at any time before shipment.\n- If the estimated backorder fulfillment date is extended by more than **14 days** from the original estimate, the customer is proactively notified and given the option to cancel or continue waiting."
+    },
+    {
+      "id": "cancellation_policy-section-16-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "6. Subscription Order Cancellations",
+      "text": "## 6. Subscription Order Cancellations"
+    },
+    {
+      "id": "cancellation_policy-section-17-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "6.1 Subscription Cancellation",
+      "text": "### 6.1 Subscription Cancellation\n- Subscription orders (auto-replenishment) can be cancelled at any time through the customer's account settings.\n- If a subscription order has already been submitted for the current cycle, it follows the same cancellation rules as standard orders (see Section 2).\n- Cancelling a subscription does not affect previously shipped orders."
+    },
+    {
+      "id": "cancellation_policy-section-18-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "6.2 Subscription Pause",
+      "text": "### 6.2 Subscription Pause\n- Customers may pause their subscription for up to **3 months** without cancellation.\n- Pausing does not affect the customer's subscription pricing or discount tier."
+    },
+    {
+      "id": "cancellation_policy-section-19-chunk-0",
+      "source": "cancellation_policy.md",
+      "section": "7. Refund Processing for Cancellations",
+      "text": "## 7. Refund Processing for Cancellations\n\n- **Credit/Debit Card:** Refund within **3-5 business days** of cancellation confirmation\n- **The Platform Wallet:** Instant refund upon cancellation confirmation\n- **PayPal:** Refund within **3-5 business days**\n- **Cash on Delivery:** If the order was COD and the customer pre-paid any partial amount, refund via bank transfer within **5-7 business days**\n- **Gift Card/Store Credit:** Balance restored within **24 hours**\n\n---\n\n**Policy Contact:** orders@The Platform.com  \n**Escalation:** Order cancellation disputes → Order Management Lead at orders-escalation@The Platform.com  \n**Policy Owner:** Director of Order Management"
+    },
+    {
+      "id": "escalation_guidelines-section-0-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "Escalation Guidelines",
+      "text": "# Escalation Guidelines\n\n**Document ID:** POL-EG-013  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 22, 2026  \n**Department:** Customer Experience  \n**Classification:** Internal Policy — Agent Reference  \n\n---"
+    },
+    {
+      "id": "escalation_guidelines-section-1-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis document provides guidelines for customer support agents on when and how to escalate issues beyond their standard resolution authority. Proper escalation ensures complex or sensitive issues are handled by the appropriate team."
+    },
+    {
+      "id": "escalation_guidelines-section-2-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "2. Escalation Levels",
+      "text": "## 2. Escalation Levels"
+    },
+    {
+      "id": "escalation_guidelines-section-3-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "Level 1: Frontline Support Agent",
+      "text": "### Level 1: Frontline Support Agent\n**Authority:**\n- Process standard returns and refunds per policy\n- Apply store credits up to **$25**\n- Extend return windows by up to **5 days** for documented extenuating circumstances\n- Provide standard shipping cost waivers\n- Reset customer passwords and update account information (with identity verification)\n\n**Cannot:**\n- Override system-blocked returns (final sale, past return window beyond 5-day extension)\n- Issue refunds exceeding the original purchase price\n- Apply retroactive promo codes or discounts\n- Override fraud holds or account suspensions"
+    },
+    {
+      "id": "escalation_guidelines-section-4-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "Level 2: Senior Support Agent / Team Lead",
+      "text": "### Level 2: Senior Support Agent / Team Lead\n**Authority:**\n- All Level 1 authorities plus:\n- Apply courtesy credits up to **$75**\n- Extend return windows by up to **15 days** beyond standard\n- Override system-blocked returns with documented justification\n- Apply one-time retroactive discounts (up to 15% or $50, whichever is less)\n- Manage seller-customer disputes (first review)\n- Authorize partial refunds on opened/used items at custom percentages\n\n**Cannot:**\n- Issue refunds over $500 without VP approval\n- Make exceptions to final sale/no-return policy for restricted categories (hygiene, custom items)\n- Override Trust & Safety decisions (fraud holds, account suspensions)"
+    },
+    {
+      "id": "escalation_guidelines-section-5-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "Level 3: Support Manager",
+      "text": "### Level 3: Support Manager\n**Authority:**\n- All Level 2 authorities plus:\n- Approve refunds up to **$2,000**\n- Grant exceptions to non-returnable categories on a case-by-case basis (with documentation)\n- Override seller policies when buyer protection is warranted\n- Authorize re-shipment of high-value orders without return receipt\n- Approve escalated A-to-Z marketplace claims\n- Issue compensation packages (product + credit) up to $200"
+    },
+    {
+      "id": "escalation_guidelines-section-6-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "Level 4: VP / Director",
+      "text": "### Level 4: VP / Director\n**Authority:**\n- All Level 3 authorities plus:\n- Approve refunds of any amount\n- Make policy exceptions at their discretion\n- Handle legal threats, media complaints, and regulatory inquiries\n- Authorize account reinstatement after Trust & Safety suspension\n- Approve compensation exceeding $200"
+    },
+    {
+      "id": "escalation_guidelines-section-7-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "3. When to Escalate",
+      "text": "## 3. When to Escalate"
+    },
+    {
+      "id": "escalation_guidelines-section-8-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "3.1 Mandatory Escalation Triggers",
+      "text": "### 3.1 Mandatory Escalation Triggers\nThe following situations **must** be escalated regardless of the agent's confidence:\n\n| Situation | Escalate To |\n|-----------|------------|\n| Customer mentions legal action or attorney | Level 4 (VP) + Legal Team |\n| Customer references media coverage or influencer status | Level 3 (Manager) |\n| Order involves potential counterfeit product | Trust & Safety Team |\n| Suspected data breach or unauthorized account access | Trust & Safety Team + Security |\n| Customer reports discrimination or harassment by staff | Level 4 (VP) + HR |\n| Order value exceeds $1,000 and issue is complex | Level 3 (Manager) |\n| Customer is a verified business/enterprise account | Enterprise Support Team |\n| Safety concern (product caused injury or property damage) | Level 4 (VP"
+    },
+    {
+      "id": "escalation_guidelines-section-8-chunk-1",
+      "source": "escalation_guidelines.md",
+      "section": "3.1 Mandatory Escalation Triggers",
+      "text": "00 and issue is complex | Level 3 (Manager) |\n| Customer is a verified business/enterprise account | Enterprise Support Team |\n| Safety concern (product caused injury or property damage) | Level 4 (VP) + Product Safety Team |\n| Government or regulatory inquiry | Level 4 (VP) + Legal Team |"
+    },
+    {
+      "id": "escalation_guidelines-section-9-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "3.2 Recommended Escalation Triggers",
+      "text": "### 3.2 Recommended Escalation Triggers\nThe following should generally be escalated, but agents may use judgment:\n- Customer is highly upset after two resolution attempts\n- Issue spans multiple departments (e.g., payment + shipping + seller)\n- Policy is ambiguous for the specific scenario\n- Resolution requires coordination with a third-party seller who is unresponsive\n- Customer has extreme loyalty (Platinum tier, 5+ years, high lifetime value)"
+    },
+    {
+      "id": "escalation_guidelines-section-10-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "4. Escalation Process",
+      "text": "## 4. Escalation Process"
+    },
+    {
+      "id": "escalation_guidelines-section-11-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "4.1 Internal Escalation Steps",
+      "text": "### 4.1 Internal Escalation Steps\n1. **Document:** Record the full issue history, actions taken, and reason for escalation in the ticket system\n2. **Warm handoff:** When possible, introduce the customer to the next-level agent (don't just transfer)\n3. **Set expectations:** Tell the customer the escalation timeline (e.g., \"A senior agent will contact you within 4 hours\")\n4. **Follow up:** Check the ticket status within 24 hours to ensure the escalation was addressed"
+    },
+    {
+      "id": "escalation_guidelines-section-12-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "4.2 Escalation Response Times",
+      "text": "### 4.2 Escalation Response Times\n| Escalation Level | Response Time |\n|-----------------|---------------|\n| Level 2 (Senior Agent) | Within **4 hours** (business hours) |\n| Level 3 (Manager) | Within **8 hours** (business hours) |\n| Level 4 (VP/Director) | Within **24 hours** |\n| Legal Team | Within **24-48 hours** |\n| Trust & Safety | Within **2 hours** (24/7) |"
+    },
+    {
+      "id": "escalation_guidelines-section-13-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "4.3 Customer Communication During Escalation",
+      "text": "### 4.3 Customer Communication During Escalation\n- Always confirm to the customer that their issue has been escalated and provide a reference/ticket number\n- Provide an estimated resolution timeline\n- Never promise a specific outcome (\"I'll make sure you get a refund\") — instead say \"I've escalated this to a senior team member who has the authority to review your case\"\n- If the customer calls back before the escalation is resolved, any agent should be able to see the escalation status and provide an update"
+    },
+    {
+      "id": "escalation_guidelines-section-14-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "5. Escalation for Special Customer Segments",
+      "text": "## 5. Escalation for Special Customer Segments"
+    },
+    {
+      "id": "escalation_guidelines-section-15-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "5.1 Platinum Loyalty Members",
+      "text": "### 5.1 Platinum Loyalty Members\n- All Platinum member issues should be handled by the **Platinum Concierge Team** (dedicated queue)\n- If the Concierge Team is unavailable, escalate to Level 2 minimum\n- Resolution authority for Platinum members is one level higher than standard (e.g., a Level 1 agent has Level 2 authority for Platinum issues)"
+    },
+    {
+      "id": "escalation_guidelines-section-16-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "5.2 Enterprise/Business Accounts",
+      "text": "### 5.2 Enterprise/Business Accounts\n- Enterprise accounts have a dedicated Account Manager\n- All issues should be routed to the Enterprise Support Team\n- If the Account Manager is unavailable, escalate to Level 3"
+    },
+    {
+      "id": "escalation_guidelines-section-17-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "5.3 First-Time Customers",
+      "text": "### 5.3 First-Time Customers\n- Extra care should be taken with first-time customer issues\n- If a standard resolution won't fully satisfy the customer, escalate to Level 2 with a note: \"First-time customer — retention priority\"\n- Level 2 agents may offer a **$15 goodwill credit** in addition to the standard resolution"
+    },
+    {
+      "id": "escalation_guidelines-section-18-chunk-0",
+      "source": "escalation_guidelines.md",
+      "section": "6. De-Escalation Techniques (Before Escalating)",
+      "text": "## 6. De-Escalation Techniques (Before Escalating)\n\nBefore escalating, agents should attempt these de-escalation techniques:\n1. **Acknowledge the frustration:** \"I understand this is frustrating, and I want to help resolve this.\"\n2. **Summarize the issue:** Show the customer you understand by repeating the issue back.\n3. **Offer the maximum resolution within your authority:** Don't escalate when you have the tools to resolve.\n4. **Explain the 'why':** If a policy prevents the desired outcome, explain the reasoning clearly.\n5. **Provide alternatives:** \"While I can't do X, I can offer Y.\"\n6. Only escalate when the customer's request genuinely exceeds your authority or the situation meets a mandatory trigger.\n\n---\n\n**Policy Contact:** escalations@The Platform.com  \n**On-Call Escalation Manag"
+    },
+    {
+      "id": "escalation_guidelines-section-18-chunk-1",
+      "source": "escalation_guidelines.md",
+      "section": "6. De-Escalation Techniques (Before Escalating)",
+      "text": "ly escalate when the customer's request genuinely exceeds your authority or the situation meets a mandatory trigger.\n\n---\n\n**Policy Contact:** escalations@The Platform.com  \n**On-Call Escalation Manager:** Available 24/7 via internal escalation pager  \n**Policy Owner:** VP of Customer Experience"
+    },
+    {
+      "id": "fraud_prevention-section-0-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "Fraud Prevention & Account Security Policy",
+      "text": "# Fraud Prevention & Account Security Policy\n\n**Document ID:** POL-FP-010  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 18, 2026  \n**Department:** Trust & Safety  \n**Classification:** Internal Policy — Confidential (Customer-Facing Summary)  \n\n---"
+    },
+    {
+      "id": "fraud_prevention-section-1-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy outlines The Platform's approach to fraud prevention, account security, unauthorized access, and identity theft protection. It applies to all customer accounts and transactions on the platform."
+    },
+    {
+      "id": "fraud_prevention-section-2-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "2. Account Security",
+      "text": "## 2. Account Security"
+    },
+    {
+      "id": "fraud_prevention-section-3-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "2.1 Password Requirements",
+      "text": "### 2.1 Password Requirements\n- Minimum **8 characters** with at least one uppercase letter, one lowercase letter, one number, and one special character\n- Passwords are hashed using **bcrypt** and never stored in plaintext\n- Password reuse of the last 5 passwords is not permitted\n- Account lockout after **5 consecutive failed login attempts** (30-minute lockout, extendable)"
+    },
+    {
+      "id": "fraud_prevention-section-4-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "2.2 Two-Factor Authentication (2FA)",
+      "text": "### 2.2 Two-Factor Authentication (2FA)\n- Available for all accounts; **mandatory** for Platinum tier members\n- Supported methods: SMS code, authenticator app (Google Authenticator, Authy), email code\n- 2FA is required for: password changes, payment method changes, address additions, and orders over $500"
+    },
+    {
+      "id": "fraud_prevention-section-5-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "2.3 Account Recovery",
+      "text": "### 2.3 Account Recovery\n- Customers who lose access can recover their account through:\n  1. **Email verification:** A reset link sent to the registered email\n  2. **Phone verification:** An OTP sent to the registered phone number\n  3. **Identity verification:** Upload of a government-issued ID (processed within 24-48 hours)\n- Account recovery resets the 2FA settings, and the customer must re-enable 2FA after accessing their account"
+    },
+    {
+      "id": "fraud_prevention-section-6-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "3. Transaction Fraud Detection",
+      "text": "## 3. Transaction Fraud Detection"
+    },
+    {
+      "id": "fraud_prevention-section-7-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "3.1 Automated Screening",
+      "text": "### 3.1 Automated Screening\nEvery transaction is screened in real-time for fraud indicators:\n- **Address Verification System (AVS):** Billing address is checked against the card issuer's records\n- **Card Verification Value (CVV):** Required for all card transactions\n- **Velocity checks:** Multiple orders from the same account, IP, or card within a short period\n- **Behavioral analysis:** Unusual browsing patterns, rapid price-point escalation, or large first-time orders\n- **Device fingerprinting:** Identification of device attributes to detect known fraudulent devices"
+    },
+    {
+      "id": "fraud_prevention-section-8-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "3.2 Manual Review Triggers",
+      "text": "### 3.2 Manual Review Triggers\nOrders are escalated for manual review if they exhibit:\n- Shipping address in a different country from the billing address (for first-time orders)\n- Order value exceeding **$1,000** (first-time customers only)\n- Multiple payment method failures followed by a successful payment\n- Use of known fraud-associated email domains or proxy/VPN IP addresses\n- Request for overnight shipping on high-value electronics (first-time customer)"
+    },
+    {
+      "id": "fraud_prevention-section-9-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "3.3 Review Process",
+      "text": "### 3.3 Review Process\n- Manual reviews are completed within **2-4 hours** during business hours, **8-12 hours** outside business hours\n- During review, the order is placed on \"Payment Verification\" hold — the customer sees a notification explaining the delay\n- If the order passes review, it proceeds to fulfillment\n- If the order fails review, it is cancelled, the payment is voided, and the customer is notified with next steps (identity verification or alternative payment)"
+    },
+    {
+      "id": "fraud_prevention-section-10-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "4. Unauthorized Account Activity",
+      "text": "## 4. Unauthorized Account Activity"
+    },
+    {
+      "id": "fraud_prevention-section-11-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "4.1 Detection",
+      "text": "### 4.1 Detection\nThe Platform monitors for unauthorized account activity including:\n- Logins from new devices or locations\n- Changes to payment information\n- Changes to shipping addresses\n- Unusual order patterns"
+    },
+    {
+      "id": "fraud_prevention-section-12-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "4.2 Customer Reporting",
+      "text": "### 4.2 Customer Reporting\nIf a customer suspects unauthorized activity:\n1. **Immediately** contact The Platform support via the \"Report Unauthorized Activity\" button in Account Settings or by calling the Priority Security Line\n2. The Platform freezes the account within **15 minutes** of a verified report\n3. All pending orders are held for review\n4. Recent orders (last 72 hours) are reviewed for unauthorized transactions"
+    },
+    {
+      "id": "fraud_prevention-section-13-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "4.3 Resolution",
+      "text": "### 4.3 Resolution\n- Unauthorized transactions are fully reversed (refunded) within **3 business days** of confirmation\n- The customer receives a new account with transferred loyalty status and points (if verified identity match)\n- A detailed incident report is provided to the customer for their records (useful for filing police reports)\n- The Platform cooperates with law enforcement investigations when required"
+    },
+    {
+      "id": "fraud_prevention-section-14-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "5. Refund Fraud Prevention",
+      "text": "## 5. Refund Fraud Prevention"
+    },
+    {
+      "id": "fraud_prevention-section-15-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "5.1 Empty Box / Wrong Item Return Fraud",
+      "text": "### 5.1 Empty Box / Wrong Item Return Fraud\n- All returned items are inspected at the fulfillment center before refunds are processed\n- Weight verification is performed on received packages and compared to expected weight\n- Serial numbers (for electronics) are checked against the original shipment\n- Discrepancies result in refund denial and investigation"
+    },
+    {
+      "id": "fraud_prevention-section-16-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "5.2 Claim Abuse Patterns",
+      "text": "### 5.2 Claim Abuse Patterns\nAccounts flagged for potential claim abuse:\n- **3 or more** \"item not received\" claims within 6 months\n- Return rate exceeding **40%** of purchases in any 90-day period\n- Multiple claims on high-value items ($200+) within a short period\n- Claims that contradict delivery photo evidence"
+    },
+    {
+      "id": "fraud_prevention-section-17-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "5.3 Consequences",
+      "text": "### 5.3 Consequences\n- First offense: Warning email and account flag\n- Second offense: Loss of return privileges for 90 days\n- Third offense: Account suspension pending review by Trust & Safety\n- Confirmed fraud: Permanent account ban, referral to law enforcement, and debt collection for any unrecovered funds"
+    },
+    {
+      "id": "fraud_prevention-section-18-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "6. Identity Theft Protection",
+      "text": "## 6. Identity Theft Protection"
+    },
+    {
+      "id": "fraud_prevention-section-19-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "6.1 If a Customer's Identity Is Used to Create a The Platform Account",
+      "text": "### 6.1 If a Customer's Identity Is Used to Create a The Platform Account\n- The victim should contact The Platform immediately with:\n  1. A government-issued photo ID\n  2. A police report or FTC Identity Theft Report\n  3. Any The Platform order numbers or account details if known\n- The Platform will close the fraudulent account within **24 hours** of verification\n- Any outstanding charges or collections associated with the fraudulent account are halted\n- The Platform issues a letter confirming the identity theft for the victim's records"
+    },
+    {
+      "id": "fraud_prevention-section-20-chunk-0",
+      "source": "fraud_prevention.md",
+      "section": "6.2 Data Breach Notification",
+      "text": "### 6.2 Data Breach Notification\n- In the event of a data breach affecting customer data, The Platform will:\n  1. Notify affected customers within **72 hours** of discovery (per regulatory requirements)\n  2. Provide free credit monitoring for **12 months**\n  3. Reset all affected account passwords\n  4. Offer identity theft insurance through a partner service\n\n---\n\n**Policy Contact:** security@The Platform.com  \n**Urgent Security Line:** 1-800-SHOP-SEC (available 24/7)  \n**Escalation:** Account security → Trust & Safety Lead at trust-safety@The Platform.com  \n**Policy Owner:** Chief Security Officer"
+    },
+    {
+      "id": "loyalty_program-section-0-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "Customer Loyalty Program Policy",
+      "text": "# Customer Loyalty Program Policy\n\n**Document ID:** POL-LP-007  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 1, 2026  \n**Department:** Customer Experience & Retention  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "loyalty_program-section-1-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThe The Platform Loyalty Program rewards repeat customers with exclusive discounts, perks, and priority services across all tiers. This policy defines the program structure, earning and redemption rules, and tier benefits."
+    },
+    {
+      "id": "loyalty_program-section-2-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "2. Program Tiers",
+      "text": "## 2. Program Tiers"
+    },
+    {
+      "id": "loyalty_program-section-3-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "2.1 Tier Structure",
+      "text": "### 2.1 Tier Structure\n\n| Tier | Annual Spend Requirement | Points Multiplier | Badge |\n|------|--------------------------|-------------------|-------|\n| **Bronze** | $0 (auto-enrolled) | 1x | 🥉 |\n| **Silver** | $500+ | 1.5x | 🥈 |\n| **Gold** | $1,500+ | 2x | 🥇 |\n| **Platinum** | $5,000+ | 3x | 💎 |"
+    },
+    {
+      "id": "loyalty_program-section-4-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "2.2 Tier Qualification",
+      "text": "### 2.2 Tier Qualification\n- Tier qualification is based on **cumulative spend** within a **rolling 12-month period** (calendar months, not from enrollment date).\n- Only eligible purchases count toward tier qualification. Excluded: gift cards, taxes, shipping charges, and items that were returned.\n- Tier status is evaluated monthly. If spend falls below the qualification threshold at the end of the 12-month rolling period, the customer is demoted one tier (with a **30-day grace period** before benefits change).\n- Tier promotions (upgrades) are applied **immediately** upon reaching a spend threshold."
+    },
+    {
+      "id": "loyalty_program-section-5-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "3. Points System",
+      "text": "## 3. Points System"
+    },
+    {
+      "id": "loyalty_program-section-6-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "3.1 Earning Points",
+      "text": "### 3.1 Earning Points\n- **Base rate:** 1 point per $1 spent (before tax, after discounts)\n- Points multipliers apply based on tier (see table above)\n- **Bonus points events:** The Platform runs 2x/3x/5x bonus point events throughout the year, announced via email\n- Points are credited after the return window closes (30 days from delivery) to prevent earn-and-return abuse"
+    },
+    {
+      "id": "loyalty_program-section-7-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "3.2 Redeeming Points",
+      "text": "### 3.2 Redeeming Points\n- Points can be redeemed for **The Platform Wallet credit** at a rate of **100 points = $1.00**\n- Minimum redemption: **500 points** ($5.00)\n- Points can be redeemed at checkout or through the Loyalty dashboard\n- Points cannot be redeemed for cash, transferred to another account, or used to purchase gift cards"
+    },
+    {
+      "id": "loyalty_program-section-8-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "3.3 Points Expiration",
+      "text": "### 3.3 Points Expiration\n- Points expire **18 months** after being earned if no purchase or redemption activity occurs on the account\n- At least one qualifying purchase or redemption within any 18-month window resets the expiration clock for ALL points\n- Expired points are non-recoverable\n- Customers receive email reminders **60 days** and **30 days** before points are set to expire"
+    },
+    {
+      "id": "loyalty_program-section-9-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "4. Tier Benefits",
+      "text": "## 4. Tier Benefits"
+    },
+    {
+      "id": "loyalty_program-section-10-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "4.1 Bronze Tier (Default)",
+      "text": "### 4.1 Bronze Tier (Default)\n- Access to the The Platform Loyalty points system\n- Birthday discount: 10% off (max $20), valid 7 days\n- Early access to annual sale events (2 hours before general public)"
+    },
+    {
+      "id": "loyalty_program-section-11-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "4.2 Silver Tier ($500+ annual spend)",
+      "text": "### 4.2 Silver Tier ($500+ annual spend)\nAll Bronze benefits plus:\n- **Free standard shipping** on all orders (no minimum)\n- Birthday discount: 15% off (max $30), valid 7 days\n- Exclusive Silver-only promotional events (2-3 per year)\n- Priority email support (48-hour response guarantee)"
+    },
+    {
+      "id": "loyalty_program-section-12-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "4.3 Gold Tier ($1,500+ annual spend)",
+      "text": "### 4.3 Gold Tier ($1,500+ annual spend)\nAll Silver benefits plus:\n- **Free expedited shipping** on orders over $75\n- Birthday discount: 20% off (max $50), valid 7 days\n- **Extended return window:** 45 days (vs. standard 30 days)\n- **5% loyalty discount** on select categories (home, fashion, electronics) — auto-applied at checkout\n- Dedicated support queue (4-hour response guarantee)\n- Early access to new product launches (24 hours before general availability)"
+    },
+    {
+      "id": "loyalty_program-section-13-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "4.4 Platinum Tier ($5,000+ annual spend)",
+      "text": "### 4.4 Platinum Tier ($5,000+ annual spend)\nAll Gold benefits plus:\n- **Free standard, expedited, overnight shipping** on all orders + **free same-day delivery** in eligible metro areas\n- Birthday discount: 25% off (max $75), valid 14 days\n- **Extended return window:** 60 days\n- **10% loyalty discount** on all categories — auto-applied at checkout\n- **Priority customer support:** Dedicated Platinum phone line with <2 minute wait time\n- **Concierge service:** Personal shopping assistant for product recommendations and VIP access to limited-edition products\n- **$20 inconvenience credit** for The Platform-initiated cancellations (vs. $10 for other tiers)\n- Annual **$50 loyalty bonus credit** (credited to The Platform Wallet on the account anniversary)\n- Free gift wrapping on all orders\n- Exc"
+    },
+    {
+      "id": "loyalty_program-section-13-chunk-1",
+      "source": "loyalty_program.md",
+      "section": "4.4 Platinum Tier ($5,000+ annual spend)",
+      "text": "e Platform-initiated cancellations (vs. $10 for other tiers)\n- Annual **$50 loyalty bonus credit** (credited to The Platform Wallet on the account anniversary)\n- Free gift wrapping on all orders\n- Exclusive invitations to The Platform partner events and brand previews"
+    },
+    {
+      "id": "loyalty_program-section-14-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "5. Loyalty Program Restrictions",
+      "text": "## 5. Loyalty Program Restrictions"
+    },
+    {
+      "id": "loyalty_program-section-15-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "5.1 Account Limitations",
+      "text": "### 5.1 Account Limitations\n- Each customer is limited to **one loyalty account** per person\n- Loyalty accounts are tied to the customer's verified email address and cannot be merged after creation\n- Points and tier status are non-transferable between accounts\n- Households sharing an address may have separate loyalty accounts, but The Platform may review unusual earning patterns"
+    },
+    {
+      "id": "loyalty_program-section-16-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "5.2 Abuse Prevention",
+      "text": "### 5.2 Abuse Prevention\n- Purchasing items solely for the purpose of earning points and subsequently returning them (\"churning\") is prohibited\n- Accounts exhibiting churning behavior may have points revoked and tier status frozen\n- Using multiple accounts to circumvent referral limits or accumulate benefits is a violation of Terms of Service"
+    },
+    {
+      "id": "loyalty_program-section-17-chunk-0",
+      "source": "loyalty_program.md",
+      "section": "6. Program Changes",
+      "text": "## 6. Program Changes\n\n- The Platform reserves the right to modify tier thresholds, benefits, and point values with **60 days' notice** to members\n- Material changes are communicated via email and in-app notification\n- Points earned before a program change retain their value through the transition period (minimum 90 days)\n\n---\n\n**Policy Contact:** loyalty@The Platform.com  \n**Escalation:** Loyalty issues → Loyalty Program Manager at loyalty-escalation@The Platform.com  \n**Policy Owner:** VP of Customer Experience"
+    },
+    {
+      "id": "marketplace_buyer-section-0-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "Marketplace Buyer Protection Policy",
+      "text": "# Marketplace Buyer Protection Policy\n\n**Document ID:** POL-MB-009  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 15, 2026  \n**Department:** Customer Experience — Marketplace  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "marketplace_buyer-section-1-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy outlines the protections and rights afforded to buyers purchasing from third-party sellers on the The Platform Marketplace. It complements the Returns & Refunds Policy and the Marketplace Seller Policy."
+    },
+    {
+      "id": "marketplace_buyer-section-2-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "2. Buyer Rights",
+      "text": "## 2. Buyer Rights"
+    },
+    {
+      "id": "marketplace_buyer-section-3-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "2.1 Right to Accurate Product Information",
+      "text": "### 2.1 Right to Accurate Product Information\n- Buyers have the right to receive products that match the seller's listing, including:\n  - Product description, specifications, and dimensions\n  - Condition (new, refurbished, used — as stated)\n  - Images (must be representative; no stock photos that misrepresent the actual product)\n  - Country of origin and material composition\n- If a product does not match the listing, the buyer is entitled to a full refund + return shipping at the seller's expense."
+    },
+    {
+      "id": "marketplace_buyer-section-4-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "2.2 Right to Timely Delivery",
+      "text": "### 2.2 Right to Timely Delivery\n- Buyers have the right to receive their order within the delivery timeline stated on the product page at the time of purchase.\n- If the delivery is late by more than **5 business days** beyond the estimated delivery date:\n  - The buyer may cancel the order for a full refund.\n  - The buyer may choose to wait, in which case the seller must provide a revised delivery estimate."
+    },
+    {
+      "id": "marketplace_buyer-section-5-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "2.3 Right to Communication",
+      "text": "### 2.3 Right to Communication\n- Buyers have the right to a response from the seller within **48 hours** of contacting them through the The Platform messaging platform.\n- If the seller fails to respond, the buyer may escalate directly to The Platform without waiting further."
+    },
+    {
+      "id": "marketplace_buyer-section-6-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "2.4 Right to Return",
+      "text": "### 2.4 Right to Return\n- Buyers have the right to return marketplace items per the seller's stated return policy (which must meet The Platform's minimum standards of a 15-day return window).\n- For items that arrive damaged, defective, or materially different from the listing, the buyer has the right to a full refund regardless of the seller's return policy."
+    },
+    {
+      "id": "marketplace_buyer-section-7-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "3. Buyer Responsibilities",
+      "text": "## 3. Buyer Responsibilities"
+    },
+    {
+      "id": "marketplace_buyer-section-8-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "3.1 Accurate Shipping Information",
+      "text": "### 3.1 Accurate Shipping Information\n- Buyers must provide accurate and complete shipping addresses.\n- Failed deliveries due to incorrect addresses are the buyer's responsibility, and reshipping costs apply."
+    },
+    {
+      "id": "marketplace_buyer-section-9-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "3.2 Timely Reporting",
+      "text": "### 3.2 Timely Reporting\n- Issues with orders (damaged, missing, wrong item) must be reported within **5 business days** of delivery.\n- Late claims may be handled at The Platform's discretion but are not guaranteed coverage under A-to-Z protection."
+    },
+    {
+      "id": "marketplace_buyer-section-10-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "3.3 Good Faith Participation",
+      "text": "### 3.3 Good Faith Participation\n- Buyers must act in good faith when filing claims and return requests.\n- Fraudulent claims (returning different items, claiming non-receipt when delivery is confirmed with photo) result in account penalties.\n- Buyers with excessive claim rates (>20% of marketplace purchases in any 6-month period) may be flagged for review."
+    },
+    {
+      "id": "marketplace_buyer-section-11-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "4. Refund Guarantees for Marketplace Purchases",
+      "text": "## 4. Refund Guarantees for Marketplace Purchases"
+    },
+    {
+      "id": "marketplace_buyer-section-12-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "4.1 Guaranteed Full Refund Scenarios",
+      "text": "### 4.1 Guaranteed Full Refund Scenarios\nThe buyer receives a **full refund** (product price + original shipping) in these situations:\n- Item not received (confirmed non-delivery or no tracking update for 7+ days)\n- Item materially different from listing\n- Item arrived damaged or defective\n- Seller failed to respond to return request within 48 hours\n- Seller refused a valid return within their stated policy\n- Counterfeit item received (verified by The Platform)"
+    },
+    {
+      "id": "marketplace_buyer-section-13-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "4.2 Partial Refund Scenarios",
+      "text": "### 4.2 Partial Refund Scenarios\nA **partial refund** may be issued when:\n- Buyer returns an item outside the seller's return window but within 30 days of delivery (50-80% refund at The Platform's discretion)\n- Item shows signs of use beyond what is necessary to inspect it (per seller's assessment, validated by The Platform)\n- Buyer and seller agree to a partial refund as a resolution without full return"
+    },
+    {
+      "id": "marketplace_buyer-section-14-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "4.3 No Refund Scenarios",
+      "text": "### 4.3 No Refund Scenarios\nA refund is **not issued** when:\n- The buyer failed to report the issue within the reporting window and no evidence supports the claim\n- The product matches the listing and functions as described (buyer's remorse on a 3P no-return item)\n- The buyer has already received a chargeback from their bank for the same transaction"
+    },
+    {
+      "id": "marketplace_buyer-section-15-chunk-0",
+      "source": "marketplace_buyer.md",
+      "section": "5. Marketplace-Specific Escalation Path",
+      "text": "## 5. Marketplace-Specific Escalation Path\n\n1. **Step 1:** Buyer contacts the seller through The Platform messaging\n2. **Step 2:** If seller doesn't respond in 48 hours or resolution is unsatisfactory → Buyer files an A-to-Z claim\n3. **Step 3:** The Platform Marketplace Support reviews the claim (5 business days)\n4. **Step 4:** Decision issued — refund, partial refund, or claim denied (with reason)\n5. **Step 5:** Either party may appeal within 7 days; final decision within 5 business days\n6. **Step 6:** If the buyer is still dissatisfied after appeal → External arbitration through The Platform's dispute resolution partner (optional, binding)\n\n---\n\n**Policy Contact:** buyer-support@The Platform.com  \n**Escalation:** Marketplace buyer issues → Marketplace Trust & Safety at marketplace-safety"
+    },
+    {
+      "id": "marketplace_buyer-section-15-chunk-1",
+      "source": "marketplace_buyer.md",
+      "section": "5. Marketplace-Specific Escalation Path",
+      "text": "'s dispute resolution partner (optional, binding)\n\n---\n\n**Policy Contact:** buyer-support@The Platform.com  \n**Escalation:** Marketplace buyer issues → Marketplace Trust & Safety at marketplace-safety@The Platform.com  \n**Policy Owner:** VP of Customer Experience"
+    },
+    {
+      "id": "marketplace_seller-section-0-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "Marketplace Seller Policy",
+      "text": "# Marketplace Seller Policy\n\n**Document ID:** POL-MS-008  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 15, 2026  \n**Department:** Marketplace Operations  \n**Classification:** Internal Policy — Seller & Customer-Facing  \n\n---"
+    },
+    {
+      "id": "marketplace_seller-section-1-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThe Platform operates as both a direct retailer and a marketplace platform. This policy governs the relationship between The Platform, third-party sellers, and customers for marketplace transactions. It outlines seller obligations, customer protections, and dispute resolution for marketplace orders."
+    },
+    {
+      "id": "marketplace_seller-section-2-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "2. Marketplace Structure",
+      "text": "## 2. Marketplace Structure"
+    },
+    {
+      "id": "marketplace_seller-section-3-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "2.1 Seller Types",
+      "text": "### 2.1 Seller Types\n- **The Platform Direct (1P):** Products sold and fulfilled by The Platform. Full The Platform policies apply.\n- **Fulfilled by The Platform (FBS):** Products sold by third-party sellers but stored, packed, and shipped by The Platform fulfillment centers. The Platform return/shipping policies apply.\n- **Seller-Fulfilled (3P):** Products sold and shipped directly by the third-party seller. Seller's own return/refund policies apply, subject to The Platform minimum standards (see Section 3)."
+    },
+    {
+      "id": "marketplace_seller-section-4-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "2.2 Identifying Seller Type",
+      "text": "### 2.2 Identifying Seller Type\n- The product page clearly identifies the seller: \"Sold by [Seller Name]\" and \"Fulfilled by [The Platform/Seller Name].\"\n- Customers can filter search results by fulfillment type.\n- The order confirmation email specifies the seller and fulfillment method for each item."
+    },
+    {
+      "id": "marketplace_seller-section-5-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "3. Minimum Standards for Seller-Fulfilled (3P) Orders",
+      "text": "## 3. Minimum Standards for Seller-Fulfilled (3P) Orders"
+    },
+    {
+      "id": "marketplace_seller-section-6-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "3.1 Return Policy Minimums",
+      "text": "### 3.1 Return Policy Minimums\nThird-party sellers on The Platform must adhere to the following minimum return standards:\n- **Return window:** At least **15 days** from delivery (vs. The Platform's 30-day standard)\n- **Refund processing:** Within **7 business days** of receiving the returned item\n- **Damaged/defective items:** Full refund + free return shipping (mandatory, non-negotiable)\n- **Wrong item received:** Full refund + free return shipping + immediate correct item shipment (if available)\n- Sellers may offer more generous policies but cannot fall below these minimums."
+    },
+    {
+      "id": "marketplace_seller-section-7-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "3.2 Shipping Standards",
+      "text": "### 3.2 Shipping Standards\n- Sellers must ship orders within **3 business days** of order confirmation (or the listed handling time, whichever is longer)\n- All shipments must include tracking information uploaded to the The Platform platform within **24 hours** of shipment\n- Sellers must achieve a minimum on-time delivery rate of **90%**\n- Sellers falling below shipping performance standards receive warnings; repeated violations result in listing suspension"
+    },
+    {
+      "id": "marketplace_seller-section-8-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "3.3 Communication Standards",
+      "text": "### 3.3 Communication Standards\n- Sellers must respond to customer messages within **24 hours** (business days)\n- Sellers must provide clear, accurate product listings (description, dimensions, materials, images)\n- Misleading or inaccurate listings result in listing removal and potential seller account suspension"
+    },
+    {
+      "id": "marketplace_seller-section-9-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "4. Customer Protections for Marketplace Orders",
+      "text": "## 4. Customer Protections for Marketplace Orders"
+    },
+    {
+      "id": "marketplace_seller-section-10-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "4.1 The Platform A-to-Z Purchase Protection",
+      "text": "### 4.1 The Platform A-to-Z Purchase Protection\nAll marketplace purchases are covered by the The Platform A-to-Z Purchase Protection program:\n- **Coverage:** If a seller fails to deliver the item, sends the wrong item, sends a materially different item, or refuses a valid return — the customer can file an A-to-Z claim.\n- **Filing window:** Within **30 days** of the latest estimated delivery date, or within **30 days** of the return request (if return-related).\n- **Process:**\n  1. Customer contacts the seller first and waits **48 hours** for a response.\n  2. If unresolved, the customer files an A-to-Z claim through the Resolution Center.\n  3. The Platform reviews the claim within **5 business days**.\n  4. If the claim is approved, The Platform issues a **full refund** from its own funds and"
+    },
+    {
+      "id": "marketplace_seller-section-10-chunk-1",
+      "source": "marketplace_seller.md",
+      "section": "4.1 The Platform A-to-Z Purchase Protection",
+      "text": "A-to-Z claim through the Resolution Center.\n  3. The Platform reviews the claim within **5 business days**.\n  4. If the claim is approved, The Platform issues a **full refund** from its own funds and recovers the amount from the seller."
+    },
+    {
+      "id": "marketplace_seller-section-11-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "4.2 Claim Eligibility",
+      "text": "### 4.2 Claim Eligibility\nA-to-Z claims are eligible when:\n- Item not received and tracking shows no delivery\n- Item received is materially different from the listing (wrong product, wrong size, damaged beyond use)\n- Seller refuses a return that falls within the seller's stated return policy\n- Seller does not respond to the customer within 48 hours of a return/issue request\n\nA-to-Z claims are NOT eligible when:\n- Customer has already received a refund from the seller\n- The dispute is about personal taste or subjective quality (not a defect or mismatch)\n- The item was damaged after delivery due to customer handling\n- The customer filed a chargeback with their bank (cannot dual-claim)"
+    },
+    {
+      "id": "marketplace_seller-section-12-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "4.3 Seller-Fulfilled Returns Process",
+      "text": "### 4.3 Seller-Fulfilled Returns Process\n1. Customer initiates a return through the The Platform Returns Center\n2. The return request is sent to the seller with a **48-hour response deadline**\n3. Seller provides a return shipping label or instructions\n4. Customer ships the item back using the provided method\n5. Seller inspects and processes the refund\n6. If the seller does not respond or refuses without valid reason, The Platform intervenes (see A-to-Z protection)"
+    },
+    {
+      "id": "marketplace_seller-section-13-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "5. Marketplace Disputes",
+      "text": "## 5. Marketplace Disputes"
+    },
+    {
+      "id": "marketplace_seller-section-14-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "5.1 Buyer-Seller Communication",
+      "text": "### 5.1 Buyer-Seller Communication\n- All communications between buyers and sellers must go through the The Platform messaging system for record-keeping.\n- The Platform may review message history when resolving disputes.\n- Harassment, threats, or abusive language in messages results in immediate action against the offending party."
+    },
+    {
+      "id": "marketplace_seller-section-15-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "5.2 Dispute Resolution Timeline",
+      "text": "### 5.2 Dispute Resolution Timeline\n| Step | Action | Deadline |\n|------|--------|----------|\n| 1 | Customer contacts seller | — |\n| 2 | Seller responds | 48 hours |\n| 3 | If unresolved, customer files A-to-Z claim | Within 30 days |\n| 4 | The Platform reviews claim | 5 business days |\n| 5 | Decision issued; refund or denial with explanation | Same day as review |\n| 6 | Appeal (if denied) | Within 7 days |\n| 7 | Final appeal decision | 5 business days |"
+    },
+    {
+      "id": "marketplace_seller-section-16-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "5.3 Seller Impact of Claims",
+      "text": "### 5.3 Seller Impact of Claims\n- Sellers with an A-to-Z claim rate exceeding **1%** of total orders receive a warning\n- Sellers with a claim rate exceeding **2%** have listing visibility reduced\n- Sellers with a claim rate exceeding **5%** are subject to account suspension and review\n- Claim rate is calculated on a rolling 90-day basis"
+    },
+    {
+      "id": "marketplace_seller-section-17-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "6. Counterfeit and Prohibited Items",
+      "text": "## 6. Counterfeit and Prohibited Items"
+    },
+    {
+      "id": "marketplace_seller-section-18-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "6.1 Anti-Counterfeit Policy",
+      "text": "### 6.1 Anti-Counterfeit Policy\n- Selling counterfeit, replica, or knockoff items on The Platform is strictly prohibited\n- A single verified counterfeit complaint results in **immediate listing removal** and investigation\n- Confirmed counterfeit sellers face **permanent account termination** and funds withholding\n- Customers who receive suspected counterfeit items should report through the \"Report Counterfeit\" button on the order page"
+    },
+    {
+      "id": "marketplace_seller-section-19-chunk-0",
+      "source": "marketplace_seller.md",
+      "section": "6.2 Prohibited Marketplace Items",
+      "text": "### 6.2 Prohibited Marketplace Items\n- Recalled products\n- Expired consumables (food, supplements, cosmetics past expiration date)\n- Items that infringe intellectual property rights\n- Regulated items without proper documentation (e.g., FDA-regulated supplements without labeling compliance)\n\n---\n\n**Policy Contact:** marketplace@The Platform.com  \n**Escalation:** Marketplace disputes → Marketplace Trust & Safety at marketplace-safety@The Platform.com  \n**Policy Owner:** VP of Marketplace Operations"
+    },
+    {
+      "id": "payment_policy-section-0-chunk-0",
+      "source": "payment_policy.md",
+      "section": "Payment Policy",
+      "text": "# Payment Policy\n\n**Document ID:** POL-PM-005  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 5, 2026  \n**Department:** Finance & Payments  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "payment_policy-section-1-chunk-0",
+      "source": "payment_policy.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy outlines the accepted payment methods, billing procedures, payment security measures, and dispute resolution processes for all transactions on the The Platform platform."
+    },
+    {
+      "id": "payment_policy-section-2-chunk-0",
+      "source": "payment_policy.md",
+      "section": "2. Accepted Payment Methods",
+      "text": "## 2. Accepted Payment Methods"
+    },
+    {
+      "id": "payment_policy-section-3-chunk-0",
+      "source": "payment_policy.md",
+      "section": "2.1 Credit and Debit Cards",
+      "text": "### 2.1 Credit and Debit Cards\n- **Visa** (credit, debit, prepaid)\n- **Mastercard** (credit, debit, prepaid)\n- **American Express** (credit only)\n- **Discover** (credit, debit)\n- All cards must be 3D Secure enabled for transactions over $500."
+    },
+    {
+      "id": "payment_policy-section-4-chunk-0",
+      "source": "payment_policy.md",
+      "section": "2.2 Digital Wallets",
+      "text": "### 2.2 Digital Wallets\n- **PayPal** (including PayPal Credit and Pay in 4)\n- **Apple Pay** (on iOS devices and Safari browser)\n- **Google Pay** (on Android devices and Chrome browser)\n- **The Platform Wallet** (preloaded balance, store credit, or gift card balance)\n- **Amazon Pay** (via integrated checkout)"
+    },
+    {
+      "id": "payment_policy-section-5-chunk-0",
+      "source": "payment_policy.md",
+      "section": "2.3 Buy Now, Pay Later (BNPL)",
+      "text": "### 2.3 Buy Now, Pay Later (BNPL)\n- **Affirm:** Available for purchases between $50 and $5,000. 0% APR for select items (promotional periods), otherwise standard APR applies.\n- **Klarna:** Pay in 4 installments (interest-free) for purchases up to $1,000. Monthly financing for large purchases.\n- **Afterpay:** 4 interest-free installments for purchases between $35 and $2,000.\n- BNPL is not available for gift cards, digital products, or subscription orders."
+    },
+    {
+      "id": "payment_policy-section-6-chunk-0",
+      "source": "payment_policy.md",
+      "section": "2.4 Cash on Delivery (COD)",
+      "text": "### 2.4 Cash on Delivery (COD)\n- Available for domestic orders within the US (select regions) and India.\n- COD orders are limited to a maximum value of **$200 (US)** or **₹15,000 (India)**.\n- A flat COD handling fee of **$2.99 (US)** or **₹49 (India)** applies.\n- COD is not available for marketplace/third-party seller items or pre-orders."
+    },
+    {
+      "id": "payment_policy-section-7-chunk-0",
+      "source": "payment_policy.md",
+      "section": "2.5 Gift Cards and Store Credit",
+      "text": "### 2.5 Gift Cards and Store Credit\n- The Platform gift cards (physical and digital) can be used as full or partial payment.\n- Multiple gift cards can be combined on a single order.\n- Store credit earned through returns, promotions, or loyalty rewards is automatically applied to the The Platform Wallet.\n- Gift cards cannot be used to purchase other gift cards."
+    },
+    {
+      "id": "payment_policy-section-8-chunk-0",
+      "source": "payment_policy.md",
+      "section": "2.6 Cryptocurrency (Beta)",
+      "text": "### 2.6 Cryptocurrency (Beta)\n- The Platform accepts **Bitcoin (BTC)** and **Ethereum (ETH)** via the Coinbase Commerce integration.\n- Available for select product categories only. Not available for subscription orders.\n- Cryptocurrency payments are final and non-refundable. Refunds for crypto payments are issued as The Platform Store Credit.\n- This is a beta feature and may be discontinued without notice."
+    },
+    {
+      "id": "payment_policy-section-9-chunk-0",
+      "source": "payment_policy.md",
+      "section": "3. Billing and Authorization",
+      "text": "## 3. Billing and Authorization"
+    },
+    {
+      "id": "payment_policy-section-10-chunk-0",
+      "source": "payment_policy.md",
+      "section": "3.1 Authorization Holds",
+      "text": "### 3.1 Authorization Holds\n- When an order is placed, The Platform places an **authorization hold** on the payment method for the full order amount.\n- The hold is not a charge — it temporarily reserves funds to ensure they are available when the order ships.\n- Authorization holds are released automatically if the order is cancelled or after **7 days** if the order has not shipped.\n- Some banks may take up to **10 business days** to release expired authorization holds."
+    },
+    {
+      "id": "payment_policy-section-11-chunk-0",
+      "source": "payment_policy.md",
+      "section": "3.2 Charge Timing",
+      "text": "### 3.2 Charge Timing\n- **Credit/Debit Cards:** Charged when the order ships (not when placed).\n- **PayPal:** Charged immediately upon order confirmation.\n- **Digital Wallets (Apple Pay, Google Pay):** Charged when the order ships.\n- **BNPL:** First installment charged immediately; subsequent installments per the BNPL provider's schedule.\n- **Gift Cards/Store Credit:** Deducted immediately upon order confirmation.\n- **COD:** Collected at the time of delivery by the carrier.\n- **Cryptocurrency:** Charged immediately upon order confirmation (blockchain confirmation required)."
+    },
+    {
+      "id": "payment_policy-section-12-chunk-0",
+      "source": "payment_policy.md",
+      "section": "3.3 Multi-Item Order Billing",
+      "text": "### 3.3 Multi-Item Order Billing\n- For multi-item orders, The Platform may process separate charges if items ship from different fulfillment centers or at different times.\n- Each charge corresponds to a shipment and includes only the items in that specific shipment.\n- The customer's bank statement may show multiple charges that, combined, equal the original order total."
+    },
+    {
+      "id": "payment_policy-section-13-chunk-0",
+      "source": "payment_policy.md",
+      "section": "4. Payment Security",
+      "text": "## 4. Payment Security"
+    },
+    {
+      "id": "payment_policy-section-14-chunk-0",
+      "source": "payment_policy.md",
+      "section": "4.1 Fraud Detection",
+      "text": "### 4.1 Fraud Detection\n- All transactions are screened through The Platform's fraud detection system, which evaluates:\n  - Billing and shipping address match\n  - Transaction amount vs. historical spending patterns\n  - Device fingerprint and IP geolocation\n  - Velocity checks (multiple orders in a short period)\n- Orders flagged as potentially fraudulent are placed on hold for **manual review** (up to 24 hours).\n- The customer may be asked to verify their identity through a secondary verification step (SMS code, email verification, or ID upload)."
+    },
+    {
+      "id": "payment_policy-section-15-chunk-0",
+      "source": "payment_policy.md",
+      "section": "4.2 Secure Transactions",
+      "text": "### 4.2 Secure Transactions\n- All payment data is encrypted using **TLS 1.3** during transmission.\n- The Platform is **PCI DSS Level 1** compliant. Card data is never stored on The Platform servers; it is tokenized through our payment processor.\n- Two-Factor Authentication (2FA) is available and recommended for account security."
+    },
+    {
+      "id": "payment_policy-section-16-chunk-0",
+      "source": "payment_policy.md",
+      "section": "4.3 Declined Payments",
+      "text": "### 4.3 Declined Payments\n- If a payment is declined, the customer is notified immediately and given the opportunity to:\n  1. Retry with the same payment method\n  2. Use an alternative payment method\n  3. Contact their bank/card issuer\n- Orders with declined payments are held for **24 hours** before automatic cancellation.\n- If the customer's card is repeatedly declined (3+ attempts), the order is cancelled, and the customer is asked to contact their bank."
+    },
+    {
+      "id": "payment_policy-section-17-chunk-0",
+      "source": "payment_policy.md",
+      "section": "5. Payment Disputes and Chargebacks",
+      "text": "## 5. Payment Disputes and Chargebacks"
+    },
+    {
+      "id": "payment_policy-section-18-chunk-0",
+      "source": "payment_policy.md",
+      "section": "5.1 Customer-Initiated Disputes",
+      "text": "### 5.1 Customer-Initiated Disputes\n- Customers should first contact The Platform support before filing a payment dispute with their bank/card issuer.\n- The Platform resolves most disputes within **48 hours** of initial contact.\n- If a dispute cannot be resolved through support, the customer may escalate to the Payment Disputes team."
+    },
+    {
+      "id": "payment_policy-section-19-chunk-0",
+      "source": "payment_policy.md",
+      "section": "5.2 Chargebacks",
+      "text": "### 5.2 Chargebacks\n- If a customer files a chargeback with their bank without first contacting The Platform:\n  - The Platform will attempt to resolve the issue and may provide evidence to the card issuer to contest the chargeback.\n  - Orders associated with successful chargebacks are treated as returns, and any future orders from the account may be subject to additional verification.\n- Accounts with **3 or more chargebacks** in a 12-month period are subject to suspension and review by the Trust & Safety team."
+    },
+    {
+      "id": "payment_policy-section-20-chunk-0",
+      "source": "payment_policy.md",
+      "section": "5.3 Unauthorized Charges",
+      "text": "### 5.3 Unauthorized Charges\n- If a customer identifies an unauthorized charge from The Platform:\n  1. Contact The Platform support immediately\n  2. The account is frozen pending investigation\n  3. Unauthorized transactions are fully refunded within **3 business days** of confirmation\n  4. The customer is advised to update their password and enable 2FA"
+    },
+    {
+      "id": "payment_policy-section-21-chunk-0",
+      "source": "payment_policy.md",
+      "section": "6. Pricing and Tax",
+      "text": "## 6. Pricing and Tax"
+    },
+    {
+      "id": "payment_policy-section-22-chunk-0",
+      "source": "payment_policy.md",
+      "section": "6.1 Price Display",
+      "text": "### 6.1 Price Display\n- All prices on The Platform are displayed exclusive of tax (pre-tax) for US customers.\n- International prices may or may not include VAT/GST depending on the destination (see International Shipping Policy)."
+    },
+    {
+      "id": "payment_policy-section-23-chunk-0",
+      "source": "payment_policy.md",
+      "section": "6.2 Sales Tax",
+      "text": "### 6.2 Sales Tax\n- The Platform collects applicable state and local sales tax based on the shipping destination.\n- The Platform is registered for sales tax collection in all 50 US states and DC where applicable.\n- Tax-exempt customers (e.g., qualifying organizations) may apply for tax-exempt status by uploading a valid exemption certificate. Processing takes 3-5 business days."
+    },
+    {
+      "id": "payment_policy-section-24-chunk-0",
+      "source": "payment_policy.md",
+      "section": "6.3 Currency",
+      "text": "### 6.3 Currency\n- All domestic US transactions are in USD.\n- International customers see prices in their local currency (converted at checkout using live exchange rates).\n- The actual charge amount may vary slightly from the displayed amount due to exchange rate fluctuations between checkout and payment processing.\n\n---\n\n**Policy Contact:** payments@The Platform.com  \n**Escalation:** Payment disputes → Payment Disputes Team at payment-disputes@The Platform.com  \n**Policy Owner:** VP of Finance"
+    },
+    {
+      "id": "privacy_data-section-0-chunk-0",
+      "source": "privacy_data.md",
+      "section": "Privacy & Data Protection Policy",
+      "text": "# Privacy & Data Protection Policy\n\n**Document ID:** POL-PD-012  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 20, 2026  \n**Department:** Legal & Compliance  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "privacy_data-section-1-chunk-0",
+      "source": "privacy_data.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy describes how The Platform collects, uses, stores, and protects customer personal data. It applies to all users of the The Platform platform, including the website, mobile app, and customer support interactions."
+    },
+    {
+      "id": "privacy_data-section-2-chunk-0",
+      "source": "privacy_data.md",
+      "section": "2. Data We Collect",
+      "text": "## 2. Data We Collect"
+    },
+    {
+      "id": "privacy_data-section-3-chunk-0",
+      "source": "privacy_data.md",
+      "section": "2.1 Information You Provide",
+      "text": "### 2.1 Information You Provide\n- **Account information:** Name, email address, phone number, date of birth, gender (optional)\n- **Billing information:** Credit/debit card numbers (tokenized), billing address, bank account details (for COD refunds)\n- **Shipping information:** Delivery addresses, delivery instructions, recipient names\n- **Communications:** Customer support chat transcripts, emails, phone call recordings (with consent), product reviews\n- **Preferences:** Language, currency, notification settings, marketing opt-in/out"
+    },
+    {
+      "id": "privacy_data-section-4-chunk-0",
+      "source": "privacy_data.md",
+      "section": "2.2 Information We Collect Automatically",
+      "text": "### 2.2 Information We Collect Automatically\n- **Browsing behavior:** Pages viewed, products searched, items added to cart/wishlist, time on page\n- **Device information:** Browser type, operating system, device type, screen resolution, IP address\n- **Location data:** Approximate location based on IP address; precise location only with explicit consent (for same-day delivery)\n- **Transaction history:** Purchase history, return history, payment method usage\n- **Cookies and tracking:** Session cookies, persistent cookies, third-party analytics cookies (Google Analytics, Meta Pixel)"
+    },
+    {
+      "id": "privacy_data-section-5-chunk-0",
+      "source": "privacy_data.md",
+      "section": "3. How We Use Your Data",
+      "text": "## 3. How We Use Your Data"
+    },
+    {
+      "id": "privacy_data-section-6-chunk-0",
+      "source": "privacy_data.md",
+      "section": "3.1 Core Business Purposes",
+      "text": "### 3.1 Core Business Purposes\n- Processing and fulfilling orders\n- Communicating about orders (confirmation, shipping, delivery)\n- Processing returns, refunds, and warranty claims\n- Managing your The Platform account and loyalty program\n- Fraud prevention and security monitoring\n- Customer support and dispute resolution"
+    },
+    {
+      "id": "privacy_data-section-7-chunk-0",
+      "source": "privacy_data.md",
+      "section": "3.2 Personalization",
+      "text": "### 3.2 Personalization\n- Recommending products based on browsing and purchase history\n- Customizing the homepage and email content\n- Tailoring promotional offers based on preferences and behavior"
+    },
+    {
+      "id": "privacy_data-section-8-chunk-0",
+      "source": "privacy_data.md",
+      "section": "3.3 Communication",
+      "text": "### 3.3 Communication\n- Order status updates (mandatory, cannot be opted out of)\n- Marketing emails and promotional offers (opt-in, can be unsubscribed)\n- Loyalty program notifications (tier changes, points expiration)\n- Survey and feedback requests (opt-in)"
+    },
+    {
+      "id": "privacy_data-section-9-chunk-0",
+      "source": "privacy_data.md",
+      "section": "4. Data Sharing",
+      "text": "## 4. Data Sharing"
+    },
+    {
+      "id": "privacy_data-section-10-chunk-0",
+      "source": "privacy_data.md",
+      "section": "4.1 We Share Data With:",
+      "text": "### 4.1 We Share Data With:\n- **Payment processors:** Card networks, PayPal, BNPL providers — for transaction processing\n- **Shipping carriers:** Name, address, phone number — for delivery purposes\n- **Third-party sellers:** Name, shipping address, order details — for marketplace order fulfillment\n- **Analytics providers:** Aggregated, anonymized data for business intelligence (Google Analytics, Mixpanel)\n- **Legal/regulatory authorities:** When required by law, court order, or regulatory investigation"
+    },
+    {
+      "id": "privacy_data-section-11-chunk-0",
+      "source": "privacy_data.md",
+      "section": "4.2 We Do NOT:",
+      "text": "### 4.2 We Do NOT:\n- Sell personal data to data brokers or advertising networks\n- Share full payment card details with sellers or other third parties\n- Use customer data for purposes other than those described in this policy without explicit consent"
+    },
+    {
+      "id": "privacy_data-section-12-chunk-0",
+      "source": "privacy_data.md",
+      "section": "5. Customer Data Rights",
+      "text": "## 5. Customer Data Rights"
+    },
+    {
+      "id": "privacy_data-section-13-chunk-0",
+      "source": "privacy_data.md",
+      "section": "5.1 All Customers",
+      "text": "### 5.1 All Customers\n- **Access:** Request a copy of all personal data The Platform holds about you\n- **Correction:** Request correction of inaccurate personal data\n- **Deletion:** Request deletion of your account and associated data (subject to legal retention requirements)\n- **Opt-out:** Unsubscribe from marketing communications at any time"
+    },
+    {
+      "id": "privacy_data-section-14-chunk-0",
+      "source": "privacy_data.md",
+      "section": "5.2 EU/UK Customers (GDPR/UK GDPR)",
+      "text": "### 5.2 EU/UK Customers (GDPR/UK GDPR)\nIn addition to the above:\n- **Data portability:** Receive your data in a structured, machine-readable format\n- **Right to restrict processing:** Request that The Platform limit how your data is used\n- **Right to object:** Object to data processing for legitimate interests or direct marketing\n- **Right not to be subject to automated decision-making:** Request human review of automated decisions that significantly affect you (e.g., fraud scoring)"
+    },
+    {
+      "id": "privacy_data-section-15-chunk-0",
+      "source": "privacy_data.md",
+      "section": "5.3 California Customers (CCPA/CPRA)",
+      "text": "### 5.3 California Customers (CCPA/CPRA)\n- **Right to know:** Request disclosure of categories and specific pieces of personal information collected\n- **Right to delete:** Request deletion of personal information\n- **Right to opt out of sale/sharing:** The Platform does NOT sell personal data, but you can opt out of data sharing for cross-context behavioral advertising\n- **Right to non-discrimination:** The Platform will not discriminate against you for exercising your privacy rights"
+    },
+    {
+      "id": "privacy_data-section-16-chunk-0",
+      "source": "privacy_data.md",
+      "section": "6. Data Retention",
+      "text": "## 6. Data Retention\n\n| Data Type | Retention Period |\n|-----------|-----------------|\n| Account information | Duration of account + 3 years after deletion |\n| Transaction history | 7 years (regulatory requirement) |\n| Customer support transcripts | 3 years from last interaction |\n| Browsing behavior | 2 years from collection |\n| Marketing preferences | Duration of account |\n| Payment data (tokenized) | Duration of account + removal within 30 days of account closure |"
+    },
+    {
+      "id": "privacy_data-section-17-chunk-0",
+      "source": "privacy_data.md",
+      "section": "7. Data Security",
+      "text": "## 7. Data Security"
+    },
+    {
+      "id": "privacy_data-section-18-chunk-0",
+      "source": "privacy_data.md",
+      "section": "7.1 Technical Measures",
+      "text": "### 7.1 Technical Measures\n- All data encrypted at rest (AES-256) and in transit (TLS 1.3)\n- PCI DSS Level 1 compliance for payment data\n- Regular penetration testing (quarterly) and vulnerability assessments\n- SOC 2 Type II certification\n- Data centers located in the US (Oregon, Virginia) with redundancy"
+    },
+    {
+      "id": "privacy_data-section-19-chunk-0",
+      "source": "privacy_data.md",
+      "section": "7.2 Incident Response",
+      "text": "### 7.2 Incident Response\n- In the event of a data breach:\n  1. Contain the breach and assess scope\n  2. Notify affected customers within **72 hours** (per GDPR and most US state laws)\n  3. Notify relevant regulatory authorities (DPA for EU, AG for US states)\n  4. Provide affected customers with free credit monitoring for **12 months**\n  5. Publish a public incident report within 30 days"
+    },
+    {
+      "id": "privacy_data-section-20-chunk-0",
+      "source": "privacy_data.md",
+      "section": "8. Customer Support Data Handling",
+      "text": "## 8. Customer Support Data Handling"
+    },
+    {
+      "id": "privacy_data-section-21-chunk-0",
+      "source": "privacy_data.md",
+      "section": "8.1 Rules for Support Agents",
+      "text": "### 8.1 Rules for Support Agents\nWhen handling customer support interactions, agents must:\n- **Never ask for full credit card numbers** — only the last 4 digits for verification\n- **Never share customer data** with other customers, sellers, or unauthorized parties\n- **Always verify identity** before making account changes (2 of 3: account email, phone on file, last order number)\n- **Mask sensitive data** in support tickets and notes (no full SSN, no full card numbers)\n- **Record calls only with consent** and inform the customer at the start of the call"
+    },
+    {
+      "id": "privacy_data-section-22-chunk-0",
+      "source": "privacy_data.md",
+      "section": "8.2 Data Minimization",
+      "text": "### 8.2 Data Minimization\n- Collect only the data necessary to resolve the support issue\n- Do not retain customer data beyond what is captured in the ticket system\n- Redact any sensitive data inadvertently shared by the customer in chat/email\n\n---\n\n**Policy Contact:** privacy@The Platform.com  \n**Data Protection Officer (EU):** dpo@The Platform.com  \n**Escalation:** Privacy complaints → Legal & Compliance at legal@The Platform.com  \n**Policy Owner:** Chief Privacy Officer"
+    },
+    {
+      "id": "promotional_offers-section-0-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "Promotional Offers & Discounts Policy",
+      "text": "# Promotional Offers & Discounts Policy\n\n**Document ID:** POL-PO-006  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 20, 2026  \n**Department:** Marketing & Revenue  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "promotional_offers-section-1-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy governs all promotional offers, discount codes, coupons, flash sales, and special pricing events on the The Platform platform. All support agents must reference this policy when handling promo-related inquiries."
+    },
+    {
+      "id": "promotional_offers-section-2-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "2. Types of Promotions",
+      "text": "## 2. Types of Promotions"
+    },
+    {
+      "id": "promotional_offers-section-3-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "2.1 Discount Coupons (Promo Codes)",
+      "text": "### 2.1 Discount Coupons (Promo Codes)\n- Alphanumeric codes entered at checkout (e.g., SAVE20, WELCOME10).\n- Types:\n  - **Percentage discount:** e.g., 20% off (capped at a maximum discount amount)\n  - **Fixed amount discount:** e.g., $15 off orders over $75\n  - **Free shipping:** Overrides standard shipping charges\n  - **BOGO (Buy One, Get One):** Free or discounted item on qualifying purchases"
+    },
+    {
+      "id": "promotional_offers-section-4-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "2.2 Automatic Discounts",
+      "text": "### 2.2 Automatic Discounts\n- Applied automatically at checkout without needing a code\n- Displayed on product pages and in the cart\n- Examples: \"Buy 3, Get 10% Off,\" seasonal auto-discounts, bulk pricing"
+    },
+    {
+      "id": "promotional_offers-section-5-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "2.3 Flash Sales",
+      "text": "### 2.3 Flash Sales\n- Limited-time sales events lasting **2-24 hours**\n- Products are discounted by **20-70%** during the event\n- Quantities are limited — once stock runs out, the sale price expires\n- No rainchecks: If an item sells out during a flash sale, The Platform does not honor the sale price for future restocking"
+    },
+    {
+      "id": "promotional_offers-section-6-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "2.4 Loyalty Member Exclusive Offers",
+      "text": "### 2.4 Loyalty Member Exclusive Offers\n- Available only to members of the The Platform Loyalty Program\n- Typically **5-15%** additional discount on select categories\n- Loyalty offers can be combined with certain promo codes (see stacking rules in Section 4)"
+    },
+    {
+      "id": "promotional_offers-section-7-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "2.5 Referral Discounts",
+      "text": "### 2.5 Referral Discounts\n- **Referrer:** Receives a **$10 credit** when the referred person makes their first purchase of $50+\n- **Referred customer:** Receives **15% off** their first order (max $25 discount)\n- Referral credits expire **90 days** after being issued\n- Maximum **10 referral credits** per account per calendar year\n- Referral benefits do not apply to gift card purchases or subscription orders"
+    },
+    {
+      "id": "promotional_offers-section-8-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "2.6 Birthday Discounts",
+      "text": "### 2.6 Birthday Discounts\n- Loyalty members receive a **20% off** coupon valid for 7 days around their birthday (3 days before through 4 days after)\n- Maximum discount: $50\n- Valid on a single order; non-transferable\n- Cannot be combined with other percentage-based coupons"
+    },
+    {
+      "id": "promotional_offers-section-9-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "3. Coupon Rules and Restrictions",
+      "text": "## 3. Coupon Rules and Restrictions"
+    },
+    {
+      "id": "promotional_offers-section-10-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "3.1 General Rules",
+      "text": "### 3.1 General Rules\n- Only **one promo code** can be applied per order (unless specifically stated as stackable).\n- Promo codes are case-insensitive (e.g., SAVE20 = save20).\n- Minimum purchase requirements must be met after other discounts and before tax/shipping.\n- Promo codes cannot be applied retroactively to orders that have already been placed.\n- Promo codes cannot be used on: gift cards, digital subscriptions, marketplace seller items (unless the seller participates), or items already marked as \"Final Sale.\""
+    },
+    {
+      "id": "promotional_offers-section-11-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "3.2 Expiration",
+      "text": "### 3.2 Expiration\n- All promo codes have an expiration date displayed in the promotional email/advertisement.\n- Expired promo codes cannot be honored. Support agents are not authorized to extend or reactivate expired promo codes.\n- Exception: If a promo code fails due to a **technical glitch** during its valid period (documented by the engineering team), a one-time manual discount may be applied by a support supervisor."
+    },
+    {
+      "id": "promotional_offers-section-12-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "3.3 Geographic Restrictions",
+      "text": "### 3.3 Geographic Restrictions\n- Some promo codes are region-specific (e.g., US-only, EU-only).\n- The geographic restriction is based on the **shipping address**, not the billing address or account location.\n- Region-specific promos are clearly labeled in the promotional material."
+    },
+    {
+      "id": "promotional_offers-section-13-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "3.4 Single-Use vs. Multi-Use",
+      "text": "### 3.4 Single-Use vs. Multi-Use\n- **Single-use codes:** Tied to a specific customer account. Cannot be shared or reused. (e.g., JANE-WELCOME-15)\n- **Multi-use codes:** Can be used by any customer, subject to an overall redemption limit. (e.g., SUMMER25 — valid for the first 5,000 redemptions)\n- Abuse of multi-use codes (e.g., creating multiple accounts) is a violation of The Platform Terms of Service and may result in order cancellation and account suspension."
+    },
+    {
+      "id": "promotional_offers-section-14-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "4. Stacking Rules",
+      "text": "## 4. Stacking Rules"
+    },
+    {
+      "id": "promotional_offers-section-15-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "4.1 Allowed Combinations",
+      "text": "### 4.1 Allowed Combinations\n| Promo Type | + Promo Code | + Auto Discount | + Loyalty Discount | + Free Ship Promo |\n|-----------|-------------|---------------|-------------------|-----------------|\n| **Promo Code** | ❌ | ✅ | ❌ | ✅ |\n| **Auto Discount** | ✅ | ✅ | ✅ | ✅ |\n| **Loyalty Discount** | ❌ | ✅ | ❌ | ✅ |\n| **Free Ship Promo** | ✅ | ✅ | ✅ | ❌ |\n\n**Summary:**\n- You **CANNOT** combine two promo codes.\n- You **CANNOT** combine a promo code with a loyalty-exclusive discount.\n- Automatic discounts stack with everything except another automatic discount on the same item.\n- Free shipping promos stack with most other offers."
+    },
+    {
+      "id": "promotional_offers-section-16-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "4.2 Discount Order of Application",
+      "text": "### 4.2 Discount Order of Application\nWhen multiple valid discounts apply, they are applied in this order:\n1. Automatic discounts (product-level)\n2. Promo code discount (order-level)\n3. Loyalty tier discount (if no promo code is applied)\n4. Store credit / gift card balance\n5. Free shipping (if applicable)"
+    },
+    {
+      "id": "promotional_offers-section-17-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "5. Price Matching",
+      "text": "## 5. Price Matching"
+    },
+    {
+      "id": "promotional_offers-section-18-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "5.1 The Platform Price Match Guarantee",
+      "text": "### 5.1 The Platform Price Match Guarantee\n- The Platform will match a lower price from a **qualifying competitor** if the customer reports it within **7 days** of purchase.\n- **Qualifying competitors:** Amazon.com, Walmart.com, Target.com, BestBuy.com (US only)\n- The item must be identical (same model, brand, SKU, condition — new only).\n- The competitor's price must be their current, publicly listed price (not a clearance, outlet, or membership-exclusive price).\n- The price match is applied as a refund of the difference to the original payment method."
+    },
+    {
+      "id": "promotional_offers-section-19-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "5.2 Exclusions from Price Matching",
+      "text": "### 5.2 Exclusions from Price Matching\n- Marketplace/third-party seller items (on either The Platform or the competitor)\n- Items purchased during flash sales or with promo codes\n- Bundle deals or combo offers\n- Items with a purchase limit (e.g., \"limit 2 per customer\")\n- Prices that appear to be the result of a technical error\n- International prices (price matching is US domestic only)"
+    },
+    {
+      "id": "promotional_offers-section-20-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "6. Handling Coupon-Related Complaints",
+      "text": "## 6. Handling Coupon-Related Complaints"
+    },
+    {
+      "id": "promotional_offers-section-21-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "6.1 \"Coupon Didn't Work at Checkout\"",
+      "text": "### 6.1 \"Coupon Didn't Work at Checkout\"\n1. Verify the code is valid (not expired, correct spelling).\n2. Check product eligibility (not a restricted category).\n3. Check minimum order value.\n4. Check geographic restriction.\n5. If all conditions are met and the code still fails, escalate to the Promotions Team with the promo code, order number, and screenshots."
+    },
+    {
+      "id": "promotional_offers-section-22-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "6.2 \"I Forgot to Apply My Coupon\"",
+      "text": "### 6.2 \"I Forgot to Apply My Coupon\"\n- Promo codes **cannot** be applied after order placement.\n- If the order has not yet shipped, the customer may cancel and re-order with the coupon applied.\n- Support agents are **not authorized** to apply retroactive discounts or issue manual credits in lieu of a coupon, unless approved by a supervisor."
+    },
+    {
+      "id": "promotional_offers-section-23-chunk-0",
+      "source": "promotional_offers.md",
+      "section": "6.3 \"The Sale Price Changed Before I Checked Out\"",
+      "text": "### 6.3 \"The Sale Price Changed Before I Checked Out\"\n- Flash sale and promotional prices are valid only while stock lasts and during the stated promotion period.\n- If a customer had the item in their cart but the price changed before checkout, The Platform is not obligated to honor the previous price.\n- As a goodwill gesture, a supervisor may approve a **5% courtesy discount** (max $20) for affected customers.\n\n---\n\n**Policy Contact:** promotions@The Platform.com  \n**Escalation:** Promotion issues → Marketing Operations Lead at promo-escalation@The Platform.com  \n**Policy Owner:** VP of Marketing"
+    },
+    {
+      "id": "returns_refunds-section-0-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "Returns & Refunds Policy",
+      "text": "# Returns & Refunds Policy\n\n**Document ID:** POL-RR-001  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 15, 2026  \n**Department:** Customer Experience  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "returns_refunds-section-1-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThe platform is committed to ensuring customer satisfaction with every purchase. This policy outlines the terms, conditions, and procedures for processing returns and refunds across all product categories sold on the platform. All customer support agents must strictly adhere to these guidelines when handling return and refund requests."
+    },
+    {
+      "id": "returns_refunds-section-2-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "2. General Return Window",
+      "text": "## 2. General Return Window"
+    },
+    {
+      "id": "returns_refunds-section-3-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "2.1 Standard Return Window",
+      "text": "### 2.1 Standard Return Window\n- All products purchased from the platform are eligible for return within **30 calendar days** from the date of delivery.\n- The return window begins on the day the package is marked as \"Delivered\" in the platform logistics system, regardless of when the customer physically receives or opens the package.\n- Returns initiated after 30 days will be automatically declined unless an exception applies (see Section 6)."
+    },
+    {
+      "id": "returns_refunds-section-4-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "2.2 Extended Return Window — Holiday Season",
+      "text": "### 2.2 Extended Return Window — Holiday Season\n- For purchases made between **November 15 and December 31**, the return window is extended to **60 calendar days** from the delivery date.\n- This extension applies automatically to all eligible products and requires no additional action from the customer.\n- The holiday extension does not apply to perishable goods, digital products, or final sale items."
+    },
+    {
+      "id": "returns_refunds-section-5-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "2.3 Extended Return Window — Loyalty Members",
+      "text": "### 2.3 Extended Return Window — Loyalty Members\n- **Gold Tier** members receive a **45-day** return window on all eligible purchases.\n- **Platinum Tier** members receive a **60-day** return window on all eligible purchases.\n- Loyalty tier return windows do not stack with the holiday extension; the longer window applies."
+    },
+    {
+      "id": "returns_refunds-section-6-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "3. Eligible Products for Return",
+      "text": "## 3. Eligible Products for Return"
+    },
+    {
+      "id": "returns_refunds-section-7-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "3.1 Products Eligible for Full Refund",
+      "text": "### 3.1 Products Eligible for Full Refund\nThe following product categories are eligible for a full refund when returned in original, unopened condition:\n- Electronics and accessories (phones, tablets, laptops, headphones, chargers)\n- Clothing and footwear (all sizes, all brands)\n- Home and kitchen appliances (small appliances, cookware, utensils)\n- Books and media (physical books, DVDs, Blu-rays)\n- Toys and games (board games, action figures, puzzles)\n- Sports and outdoor equipment (fitness gear, camping equipment)\n- Furniture and home decor (shipped items under 50 lbs)\n- Office supplies and stationery"
+    },
+    {
+      "id": "returns_refunds-section-8-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "3.2 Products Eligible for Partial Refund (Opened/Used)",
+      "text": "### 3.2 Products Eligible for Partial Refund (Opened/Used)\nProducts that have been opened or lightly used may be returned for a partial refund:\n- **Electronics:** Opened but functional electronics may be returned for a **85% refund** of the purchase price. Original packaging and all accessories must be included.\n- **Clothing (worn once, tags removed):** May be returned for a **90% refund** if washed and in wearable condition.\n- **Home appliances (used):** May be returned for a **75% refund** if functional and cleaned."
+    },
+    {
+      "id": "returns_refunds-section-9-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "3.3 Products NOT Eligible for Return",
+      "text": "### 3.3 Products NOT Eligible for Return\nThe following categories are **final sale** and cannot be returned under any circumstances:\n- **Perishable goods:** Fresh food, flowers, live plants, frozen items\n- **Hygiene products:** Intimate apparel, swimwear (if hygiene seal is broken), personal care items (opened), face masks\n- **Customized/personalized items:** Engraved products, custom prints, monogrammed merchandise\n- **Digital products:** Software licenses, digital gift cards, downloadable content, subscription activations\n- **Hazardous materials:** Flammable liquids, aerosol cans, batteries sold individually\n- **Gift cards:** Physical and digital gift cards (can be transferred but not refunded)\n- **Clearance/Final Sale items:** Products explicitly marked as \"Final Sale\" or \"No Returns\" a"
+    },
+    {
+      "id": "returns_refunds-section-9-chunk-1",
+      "source": "returns_refunds.md",
+      "section": "3.3 Products NOT Eligible for Return",
+      "text": "sold individually\n- **Gift cards:** Physical and digital gift cards (can be transferred but not refunded)\n- **Clearance/Final Sale items:** Products explicitly marked as \"Final Sale\" or \"No Returns\" at the point of purchase\n- **Undergarments and hosiery:** For hygiene reasons, regardless of whether the seal has been broken"
+    },
+    {
+      "id": "returns_refunds-section-10-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "4. Refund Methods and Processing Times",
+      "text": "## 4. Refund Methods and Processing Times"
+    },
+    {
+      "id": "returns_refunds-section-11-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "4.1 Refund to Original Payment Method",
+      "text": "### 4.1 Refund to Original Payment Method\n- **Credit/Debit Card:** Refund processed within **5-7 business days** after return is received and inspected. Actual bank posting may take an additional 3-5 business days.\n- **PayPal:** Refund processed within **3-5 business days** after return inspection.\n- **Platform Wallet:** Refund processed within **24 hours** after return is received (instant for Platinum members).\n- **Cash on Delivery (COD):** Refunded via bank transfer within **7-10 business days**. Customer must provide bank account details.\n- **Gift Card Payment:** Refunded as a new gift card balance within **24 hours**."
+    },
+    {
+      "id": "returns_refunds-section-12-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "4.2 Store Credit Option",
+      "text": "### 4.2 Store Credit Option\n- Customers may opt for **Platform Store Credit** instead of a refund to the original payment method.\n- Store credit is processed within **24 hours** and includes a **10% bonus** (e.g., a $50 refund = $55 store credit).\n- Store credit never expires and can be used across all product categories.\n- Store credit is non-transferable and cannot be converted back to cash."
+    },
+    {
+      "id": "returns_refunds-section-13-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "4.3 Exchange Option",
+      "text": "### 4.3 Exchange Option\n- Customers may exchange an item for a different size, color, or variant of the same product at no additional shipping cost.\n- Exchanges for a different product are treated as a return + new purchase.\n- Exchange requests must be initiated within the standard return window.\n- Price differences are charged or refunded accordingly."
+    },
+    {
+      "id": "returns_refunds-section-14-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "5. Return Shipping",
+      "text": "## 5. Return Shipping"
+    },
+    {
+      "id": "returns_refunds-section-15-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "5.1 Free Return Shipping",
+      "text": "### 5.1 Free Return Shipping\nFree return shipping is provided for:\n- Items that arrive damaged, defective, or materially different from the listing\n- Incorrect items sent by The Platform or fulfillment errors\n- All returns by **Platinum Tier** loyalty members (regardless of reason)\n- Items over $100 in value (standard return within return window)"
+    },
+    {
+      "id": "returns_refunds-section-16-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "5.2 Paid Return Shipping",
+      "text": "### 5.2 Paid Return Shipping\nFor all other returns:\n- A flat-rate return shipping fee of **$5.99** is deducted from the refund amount.\n- For items under $15, the return shipping fee is **$3.99**.\n- Customers may also use their own shipping method at their expense."
+    },
+    {
+      "id": "returns_refunds-section-17-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "5.3 Return Shipping Labels",
+      "text": "### 5.3 Return Shipping Labels\n- Prepaid return labels are generated automatically through the The Platform Returns Center.\n- Labels are valid for **14 days** from the date of return initiation.\n- If the label expires, the customer must initiate a new return request.\n- Return tracking is available via the The Platform tracking portal."
+    },
+    {
+      "id": "returns_refunds-section-18-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "6. Exceptions and Special Cases",
+      "text": "## 6. Exceptions and Special Cases"
+    },
+    {
+      "id": "returns_refunds-section-19-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "6.1 Damaged or Defective Items",
+      "text": "### 6.1 Damaged or Defective Items\n- Products that arrive damaged, defective, or not as described are eligible for a **full refund** plus free return shipping at any time within the first **90 days** of delivery.\n- Customers must provide photographic evidence (at least 2 photos) of the damage/defect.\n- In some cases, a replacement may be offered instead of a refund, subject to product availability.\n- For items under $25 that arrive damaged, The Platform may issue a full refund without requiring the item to be returned (\"Keep & Refund\" policy)."
+    },
+    {
+      "id": "returns_refunds-section-20-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "6.2 Missing Items",
+      "text": "### 6.2 Missing Items\n- If a package is marked as delivered but the customer reports non-receipt within **48 hours**, The Platform will:\n  1. Initiate a carrier investigation (takes 3-5 business days)\n  2. If unresolved, issue a full refund or replacement\n- Claims made after **72 hours** may require additional verification.\n- Repeated missing package claims (3+ within 6 months) trigger a review by the Trust & Safety team."
+    },
+    {
+      "id": "returns_refunds-section-21-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "6.3 Wrong Item Received",
+      "text": "### 6.3 Wrong Item Received\n- Customers who receive an incorrect item are eligible for a **full refund** and free return shipping.\n- A replacement of the correct item is shipped immediately upon return initiation (no need to wait for return receipt).\n- The customer is not required to return the wrong item if its value is under $25."
+    },
+    {
+      "id": "returns_refunds-section-22-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "6.4 Price Adjustment (Post-Purchase Price Drop)",
+      "text": "### 6.4 Price Adjustment (Post-Purchase Price Drop)\n- If an item's price drops within **7 days** of purchase, customers may request a price adjustment.\n- The difference is refunded to the original payment method.\n- Price adjustments are limited to **one per item per customer**.\n- Promotional/coupon discounts do not qualify for price adjustment."
+    },
+    {
+      "id": "returns_refunds-section-23-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "7. Fraud Prevention in Returns",
+      "text": "## 7. Fraud Prevention in Returns"
+    },
+    {
+      "id": "returns_refunds-section-24-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "7.1 Return Abuse Detection",
+      "text": "### 7.1 Return Abuse Detection\nThe Platform monitors return patterns for potential abuse. The following behaviors may trigger review:\n- Excessive return rate (>40% of purchases in any 90-day period)\n- Returning items that appear to have been used extensively (\"wardrobing\")\n- Returning different items than what was originally shipped\n- Serial return of high-value electronics"
+    },
+    {
+      "id": "returns_refunds-section-25-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "7.2 Account Restrictions",
+      "text": "### 7.2 Account Restrictions\n- Accounts flagged for return abuse may have their return privileges restricted or suspended.\n- Affected customers are notified via email and may appeal through the Customer Advocacy team.\n- Restrictions are reviewed quarterly."
+    },
+    {
+      "id": "returns_refunds-section-26-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "8. Regional Variations",
+      "text": "## 8. Regional Variations"
+    },
+    {
+      "id": "returns_refunds-section-27-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "8.1 California (USA)",
+      "text": "### 8.1 California (USA)\n- Per California state law, customers must be informed of the return policy at the point of sale.\n- Restocking fees are capped at **15%** of the item's purchase price for electronics."
+    },
+    {
+      "id": "returns_refunds-section-28-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "8.2 European Union",
+      "text": "### 8.2 European Union\n- EU customers have a **14-day statutory right of withdrawal** (cooling-off period) for online purchases, starting from the day the goods are received.\n- This is independent of and in addition to The Platform's 30-day return window.\n- Digital content: Right of withdrawal is waived once downloading/streaming begins, provided the customer was informed and gave explicit consent."
+    },
+    {
+      "id": "returns_refunds-section-29-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "8.3 India",
+      "text": "### 8.3 India\n- Returns are subject to **Indian Consumer Protection Act, 2019** provisions.\n- Certain categories (innerwear, grocery, beauty products that have been opened) are non-returnable per platform policy, aligned with industry standards.\n- COD refunds are processed via NEFT/IMPS to the customer's registered bank account within **7-10 business days**."
+    },
+    {
+      "id": "returns_refunds-section-30-chunk-0",
+      "source": "returns_refunds.md",
+      "section": "8.4 United Kingdom",
+      "text": "### 8.4 United Kingdom\n- Post-Brexit, UK customers retain a **14-day cooling-off period** for distance sales.\n- The consumer must bear the cost of returning goods unless the goods are faulty or not as described.\n- The Platform extends free return shipping for UK Platinum members regardless.\n\n---\n\n**Policy Contact:** returns@The Platform.com  \n**Escalation:** Return disputes may be escalated to the Customer Advocacy Team at advocacy@The Platform.com  \n**Policy Owner:** VP of Customer Experience"
+    },
+    {
+      "id": "shipping_domestic-section-0-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "Domestic Shipping Policy",
+      "text": "# Domestic Shipping Policy\n\n**Document ID:** POL-SD-002  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 10, 2026  \n**Department:** Logistics & Fulfillment  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "shipping_domestic-section-1-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy governs all domestic shipping operations for The Platform within the United States (including territories). It covers shipping methods, delivery timelines, free shipping thresholds, and handling of delivery-related issues."
+    },
+    {
+      "id": "shipping_domestic-section-2-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "2. Shipping Methods and Delivery Timelines",
+      "text": "## 2. Shipping Methods and Delivery Timelines"
+    },
+    {
+      "id": "shipping_domestic-section-3-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "2.1 Standard Shipping",
+      "text": "### 2.1 Standard Shipping\n- **Delivery Time:** 5-8 business days from order confirmation\n- **Cost:** $4.99 per order (flat rate, regardless of weight up to 70 lbs)\n- **Carrier:** USPS, UPS Ground, or FedEx Ground (assigned automatically based on destination and package dimensions)\n- **Tracking:** Full tracking provided via The Platform order tracking page\n- **Availability:** All 50 US states, DC, Puerto Rico, and US Virgin Islands"
+    },
+    {
+      "id": "shipping_domestic-section-4-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "2.2 Expedited Shipping",
+      "text": "### 2.2 Expedited Shipping\n- **Delivery Time:** 2-3 business days from order confirmation\n- **Cost:** $9.99 per order (flat rate for items under 20 lbs), $14.99 for items 20-70 lbs\n- **Carrier:** UPS 2-Day or FedEx 2-Day\n- **Cutoff Time:** Orders placed before **2:00 PM EST** ship the same business day\n- **Availability:** Continental US only (48 states + DC). Not available for Alaska, Hawaii, or US territories."
+    },
+    {
+      "id": "shipping_domestic-section-5-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "2.3 Overnight/Next-Day Shipping",
+      "text": "### 2.3 Overnight/Next-Day Shipping\n- **Delivery Time:** 1 business day from order confirmation\n- **Cost:** $19.99 per order (items under 10 lbs), $29.99 (items 10-50 lbs)\n- **Carrier:** UPS Next Day Air or FedEx Priority Overnight\n- **Cutoff Time:** Orders placed before **12:00 PM (Noon) EST** qualify for next-business-day delivery\n- **Availability:** Continental US only. Not available for PO Boxes, APO/FPO addresses, or rural routes.\n- **Restrictions:** Not available for oversized items (any dimension > 60 inches), hazardous materials, or items fulfilled by third-party sellers."
+    },
+    {
+      "id": "shipping_domestic-section-6-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "2.4 Same-Day Delivery",
+      "text": "### 2.4 Same-Day Delivery\n- **Delivery Time:** Within 6 hours of order confirmation\n- **Cost:** $14.99 (items under 10 lbs), **FREE** for Platinum Tier members\n- **Availability:** Select metro areas only: New York, Los Angeles, Chicago, Houston, Phoenix, San Francisco, Seattle, Miami, Dallas, Atlanta, Boston, Denver\n- **Cutoff Time:** Orders placed before **10:00 AM local time**\n- **Restrictions:** Limited to items stocked in local The Platform fulfillment hubs. Not available for marketplace/third-party seller items."
+    },
+    {
+      "id": "shipping_domestic-section-7-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "3. Free Shipping",
+      "text": "## 3. Free Shipping"
+    },
+    {
+      "id": "shipping_domestic-section-8-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "3.1 Free Shipping Threshold",
+      "text": "### 3.1 Free Shipping Threshold\n- Orders totaling **$35 or more** qualify for **free standard shipping** (5-8 business days).\n- The $35 threshold applies to the subtotal after discounts/coupons, before tax.\n- Gift card purchases do not count toward the free shipping threshold.\n- Items from multiple sellers can be combined to reach the threshold."
+    },
+    {
+      "id": "shipping_domestic-section-9-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "3.2 Free Shipping — Loyalty Program",
+      "text": "### 3.2 Free Shipping — Loyalty Program\n- **Silver Tier:** Free standard shipping on all orders (no minimum)\n- **Gold Tier:** Free standard shipping on all orders + free expedited shipping on orders over $75\n- **Platinum Tier:** Free standard, expedited, and overnight shipping on all orders + free same-day delivery in eligible areas"
+    },
+    {
+      "id": "shipping_domestic-section-10-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "3.3 Free Shipping Promotions",
+      "text": "### 3.3 Free Shipping Promotions\n- The Platform periodically offers free shipping promotions (e.g., Free Shipping Week, Black Friday Free Shipping). These are announced via email and on the The Platform homepage.\n- Promotional free shipping applies only during the promotion period and follows the promotion's specific terms."
+    },
+    {
+      "id": "shipping_domestic-section-11-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "4. Order Processing",
+      "text": "## 4. Order Processing"
+    },
+    {
+      "id": "shipping_domestic-section-12-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "4.1 Processing Times",
+      "text": "### 4.1 Processing Times\n- **Standard items (The Platform fulfilled):** 1-2 business days for processing before shipping\n- **Marketplace seller items:** 1-3 business days, depending on the seller's processing time (displayed on the product page)\n- **Made-to-order/custom items:** 5-10 business days for processing before shipping\n- **Pre-order items:** Ship on the announced release date. Customers are notified if there are delays."
+    },
+    {
+      "id": "shipping_domestic-section-13-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "4.2 Business Days Definition",
+      "text": "### 4.2 Business Days Definition\n- Business days are Monday through Friday, excluding federal holidays.\n- Orders placed on weekends or holidays are processed on the next business day.\n- Federal holidays observed: New Year's Day, Martin Luther King Jr. Day, Presidents' Day, Memorial Day, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving Day, Christmas Day."
+    },
+    {
+      "id": "shipping_domestic-section-14-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "4.3 Order Cutoff Times (Summary)",
+      "text": "### 4.3 Order Cutoff Times (Summary)\n\n| Shipping Method | Cutoff Time (EST) | Delivery Speed |\n|-----------------|-------------------|----------------|\n| Standard | End of business day | 5-8 business days |\n| Expedited | 2:00 PM | 2-3 business days |\n| Overnight | 12:00 PM (Noon) | 1 business day |\n| Same-Day | 10:00 AM local | Within 6 hours |"
+    },
+    {
+      "id": "shipping_domestic-section-15-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "5. Shipping Restrictions",
+      "text": "## 5. Shipping Restrictions"
+    },
+    {
+      "id": "shipping_domestic-section-16-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "5.1 Weight and Size Limits",
+      "text": "### 5.1 Weight and Size Limits\n- **Maximum package weight:** 150 lbs per individual package\n- **Items > 70 lbs:** Ship via freight carrier (LTL). Additional $49.99 freight surcharge applies. Delivery time: 7-14 business days.\n- **Oversized items (any dimension > 108 inches):** Must ship via freight. Customer contacted for delivery scheduling."
+    },
+    {
+      "id": "shipping_domestic-section-17-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "5.2 Address Restrictions",
+      "text": "### 5.2 Address Restrictions\n- **PO Boxes:** Standard shipping only. Expedited and overnight not available.\n- **APO/FPO/DPO (Military):** Standard shipping only. Delivery time: 10-21 business days. Free shipping for active military personnel (verification required).\n- **US Territories (Guam, USVI, American Samoa, Northern Mariana Islands):** Standard shipping only. Additional surcharge of $9.99 may apply. Delivery time: 10-15 business days."
+    },
+    {
+      "id": "shipping_domestic-section-18-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "5.3 Restricted Items",
+      "text": "### 5.3 Restricted Items\nThe following items have special shipping requirements:\n- **Lithium batteries:** Ground shipping only (no air freight). Cannot ship to PO Boxes.\n- **Flammable/hazardous materials:** Ground shipping only within continental US. Not available for Alaska, Hawaii, or territories.\n- **Alcohol and tobacco:** Shipped only to states where permitted by law. Adult signature required (21+ ID verification at delivery).\n- **Firearms and ammunition:** Shipped only to licensed FFL dealers. Additional regulatory compliance required.\n- **Live animals/plants:** Expedited shipping only to minimize transit time. Not available during extreme weather periods."
+    },
+    {
+      "id": "shipping_domestic-section-19-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "6. Delivery Issues",
+      "text": "## 6. Delivery Issues"
+    },
+    {
+      "id": "shipping_domestic-section-20-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "6.1 Late Delivery",
+      "text": "### 6.1 Late Delivery\n- If a package arrives later than the estimated delivery window:\n  - **Standard shipping:** The Platform offers a **$5 credit** for orders arriving 3+ days beyond the estimated window.\n  - **Expedited shipping:** Full shipping cost refunded if delivery exceeds 4 business days.\n  - **Overnight shipping:** Full shipping cost refunded + **$10 credit** if delivery takes more than 2 business days.\n  - **Same-Day delivery:** Full shipping cost refunded + **$15 credit** if delivery is not completed on the ordered day."
+    },
+    {
+      "id": "shipping_domestic-section-21-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "6.2 Lost Packages",
+      "text": "### 6.2 Lost Packages\n- If tracking shows no update for **7 business days** after the last scan, the package is considered lost.\n- The Platform will either reship the order or issue a full refund at the customer's preference.\n- Lost package claims must be filed within **30 days** of the estimated delivery date."
+    },
+    {
+      "id": "shipping_domestic-section-22-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "6.3 Damaged in Transit",
+      "text": "### 6.3 Damaged in Transit\n- If a package arrives with visible damage, the customer should:\n  1. Photograph the damaged packaging and item(s) before discarding anything\n  2. Report within **48 hours** of delivery through the The Platform Returns Center\n  3. The Platform will issue a full refund or send a replacement (customer choice)\n- The customer is not required to return the damaged item."
+    },
+    {
+      "id": "shipping_domestic-section-23-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "6.4 Delivery Attempts",
+      "text": "### 6.4 Delivery Attempts\n- Carriers make up to **3 delivery attempts** for packages requiring a signature.\n- After the third failed attempt, the package is returned to the The Platform fulfillment center.\n- The customer is notified via email each time an attempt is made and can provide delivery instructions (e.g., leave with neighbor, safe spot).\n- Platinum members can set permanent delivery preferences in their account settings."
+    },
+    {
+      "id": "shipping_domestic-section-24-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "7. Package Tracking",
+      "text": "## 7. Package Tracking"
+    },
+    {
+      "id": "shipping_domestic-section-25-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "7.1 Tracking Notifications",
+      "text": "### 7.1 Tracking Notifications\nCustomers receive automated notifications at the following stages:\n1. **Order Confirmed:** Order received and payment processed\n2. **Order Shipped:** Package picked up by carrier, tracking number provided\n3. **In Transit:** Package en route (daily updates)\n4. **Out for Delivery:** Package on the delivery vehicle\n5. **Delivered:** Package delivered to the specified address"
+    },
+    {
+      "id": "shipping_domestic-section-26-chunk-0",
+      "source": "shipping_domestic.md",
+      "section": "7.2 Tracking Issues",
+      "text": "### 7.2 Tracking Issues\n- If tracking information is not available within **48 hours** of order shipment confirmation, customers should contact The Platform support.\n- Tracking discrepancies (e.g., shows delivered but customer hasn't received) are handled under Section 6.2 (Lost Packages) if not resolved within 48 hours.\n\n---\n\n**Policy Contact:** shipping@The Platform.com  \n**Escalation:** Shipping disputes → Logistics Manager at logistics-escalation@The Platform.com  \n**Policy Owner:** VP of Logistics & Fulfillment"
+    },
+    {
+      "id": "shipping_international-section-0-chunk-0",
+      "source": "shipping_international.md",
+      "section": "International Shipping Policy",
+      "text": "# International Shipping Policy\n\n**Document ID:** POL-SI-003  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 12, 2026  \n**Department:** Logistics & Fulfillment — International  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "shipping_international-section-1-chunk-0",
+      "source": "shipping_international.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy covers all international shipping operations for The Platform, applicable to shipments destined outside the United States. It includes customs, duties, delivery timelines, and country-specific restrictions."
+    },
+    {
+      "id": "shipping_international-section-2-chunk-0",
+      "source": "shipping_international.md",
+      "section": "2. Supported Countries and Regions",
+      "text": "## 2. Supported Countries and Regions"
+    },
+    {
+      "id": "shipping_international-section-3-chunk-0",
+      "source": "shipping_international.md",
+      "section": "2.1 Tier 1 Countries (Full Service)",
+      "text": "### 2.1 Tier 1 Countries (Full Service)\nThe following countries receive full The Platform international support with expedited options:\n- **North America:** Canada, Mexico\n- **Europe:** United Kingdom, Germany, France, Netherlands, Italy, Spain, Ireland, Sweden, Belgium, Austria, Switzerland, Denmark, Norway, Finland, Poland, Portugal\n- **Asia-Pacific:** Japan, South Korea, Australia, New Zealand, Singapore, India\n- **Middle East:** United Arab Emirates, Saudi Arabia"
+    },
+    {
+      "id": "shipping_international-section-4-chunk-0",
+      "source": "shipping_international.md",
+      "section": "2.2 Tier 2 Countries (Standard Service)",
+      "text": "### 2.2 Tier 2 Countries (Standard Service)\nStandard international shipping only. No expedited or overnight options:\n- All other EU member states not listed in Tier 1\n- Brazil, Argentina, Chile, Colombia\n- South Africa, Nigeria, Kenya, Egypt\n- Thailand, Malaysia, Philippines, Indonesia, Vietnam\n- Israel, Turkey"
+    },
+    {
+      "id": "shipping_international-section-5-chunk-0",
+      "source": "shipping_international.md",
+      "section": "2.3 Restricted/Unsupported Countries",
+      "text": "### 2.3 Restricted/Unsupported Countries\nThe Platform does not ship to the following due to regulatory or logistical constraints:\n- Countries under US sanctions (Cuba, Iran, North Korea, Syria, Crimea region)\n- Countries with unreliable postal systems where shipment insurance is unavailable"
+    },
+    {
+      "id": "shipping_international-section-6-chunk-0",
+      "source": "shipping_international.md",
+      "section": "3. International Shipping Methods",
+      "text": "## 3. International Shipping Methods"
+    },
+    {
+      "id": "shipping_international-section-7-chunk-0",
+      "source": "shipping_international.md",
+      "section": "3.1 International Standard",
+      "text": "### 3.1 International Standard\n- **Delivery Time:** 10-21 business days\n- **Cost:** Starts at $14.99 (varies by weight, dimensions, and destination)\n- **Carriers:** USPS International, DHL eCommerce\n- **Tracking:** Available but may be limited within destination country"
+    },
+    {
+      "id": "shipping_international-section-8-chunk-0",
+      "source": "shipping_international.md",
+      "section": "3.2 International Expedited",
+      "text": "### 3.2 International Expedited\n- **Delivery Time:** 5-10 business days\n- **Cost:** Starts at $24.99 (varies by destination)\n- **Carriers:** DHL Express, UPS Worldwide Expedited, FedEx International Economy\n- **Tracking:** Full door-to-door tracking\n- **Availability:** Tier 1 countries only"
+    },
+    {
+      "id": "shipping_international-section-9-chunk-0",
+      "source": "shipping_international.md",
+      "section": "3.3 International Priority",
+      "text": "### 3.3 International Priority\n- **Delivery Time:** 2-5 business days\n- **Cost:** Starts at $39.99 (varies by destination)\n- **Carriers:** DHL Express, FedEx International Priority\n- **Tracking:** Full real-time tracking with delivery confirmation\n- **Availability:** Tier 1 countries only"
+    },
+    {
+      "id": "shipping_international-section-10-chunk-0",
+      "source": "shipping_international.md",
+      "section": "4. Customs, Duties, and Taxes",
+      "text": "## 4. Customs, Duties, and Taxes"
+    },
+    {
+      "id": "shipping_international-section-11-chunk-0",
+      "source": "shipping_international.md",
+      "section": "4.1 General Policy",
+      "text": "### 4.1 General Policy\n- All international orders may be subject to **import duties, taxes, and customs fees** imposed by the destination country's government.\n- **The Platform does NOT include customs duties or import taxes** in the product price or shipping cost. These are the **customer's responsibility** and are collected separately by the carrier at delivery or by the local customs authority.\n- Customers are advised to check their country's customs regulations before placing an order."
+    },
+    {
+      "id": "shipping_international-section-12-chunk-0",
+      "source": "shipping_international.md",
+      "section": "4.2 Duties Prepaid Option (DDP — Delivered Duty Paid)",
+      "text": "### 4.2 Duties Prepaid Option (DDP — Delivered Duty Paid)\n- Available for **Tier 1 countries only** at an additional cost (calculated at checkout).\n- The Platform pays the duties and taxes upfront so the customer has no surprise charges at delivery.\n- DDP pricing is an **estimate** and is non-refundable, even if actual duties are lower."
+    },
+    {
+      "id": "shipping_international-section-13-chunk-0",
+      "source": "shipping_international.md",
+      "section": "4.3 Customs Declarations",
+      "text": "### 4.3 Customs Declarations\n- The Platform accurately declares the value and contents of all international shipments on customs forms.\n- Customers must not request undervaluation or false declarations. Such requests will be declined.\n- Gift declarations are applied only when items are shipped to a different address from the billing address and the customer selects the \"Gift\" option at checkout."
+    },
+    {
+      "id": "shipping_international-section-14-chunk-0",
+      "source": "shipping_international.md",
+      "section": "4.4 Customs Delays",
+      "text": "### 4.4 Customs Delays\n- The Platform is not responsible for delays caused by customs inspection or clearance.\n- If a package is held in customs for more than **15 business days**, The Platform will assist the customer in contacting the carrier for resolution.\n- Customs rejections (e.g., prohibited items) result in the package being returned to The Platform. The customer is refunded the product price minus shipping costs."
+    },
+    {
+      "id": "shipping_international-section-15-chunk-0",
+      "source": "shipping_international.md",
+      "section": "5. International Returns",
+      "text": "## 5. International Returns"
+    },
+    {
+      "id": "shipping_international-section-16-chunk-0",
+      "source": "shipping_international.md",
+      "section": "5.1 Return Window",
+      "text": "### 5.1 Return Window\n- International customers have the same **30-day return window** from delivery (60 days for holiday purchases, extended for loyalty tiers).\n- EU customers retain their **14-day statutory cooling-off right** per EU consumer protection law.\n- UK customers have a **14-day cooling-off right** per UK Consumer Contracts Regulations 2013."
+    },
+    {
+      "id": "shipping_international-section-17-chunk-0",
+      "source": "shipping_international.md",
+      "section": "5.2 Return Shipping Costs",
+      "text": "### 5.2 Return Shipping Costs\n- **Customer-paid returns:** International return shipping is the customer's responsibility unless the item is damaged, defective, or incorrectly shipped.\n- **The Platform-paid returns:** For damaged/defective items, The Platform provides a prepaid return label for Tier 1 countries. For Tier 2 countries, The Platform reimburses up to $25 in return shipping costs upon receipt of a shipping receipt.\n- **Platinum members:** Free return shipping from all Tier 1 and Tier 2 countries."
+    },
+    {
+      "id": "shipping_international-section-18-chunk-0",
+      "source": "shipping_international.md",
+      "section": "5.3 Customs Duties on Returns",
+      "text": "### 5.3 Customs Duties on Returns\n- Customs duties paid by the customer on the original delivery are **NOT refunded by The Platform**, as these are collected by the destination country's government.\n- Customers should contact their local customs authority for duty reclaim procedures."
+    },
+    {
+      "id": "shipping_international-section-19-chunk-0",
+      "source": "shipping_international.md",
+      "section": "6. Country-Specific Rules",
+      "text": "## 6. Country-Specific Rules"
+    },
+    {
+      "id": "shipping_international-section-20-chunk-0",
+      "source": "shipping_international.md",
+      "section": "6.1 Canada",
+      "text": "### 6.1 Canada\n- Shipments under **CAD $20** are generally duty-free.\n- GST/HST applies to most imported goods.\n- The Platform offers DDP option for Canadian orders.\n- Delivery to remote areas (Northern Canada) may take an additional 5-10 business days."
+    },
+    {
+      "id": "shipping_international-section-21-chunk-0",
+      "source": "shipping_international.md",
+      "section": "6.2 European Union",
+      "text": "### 6.2 European Union\n- Per EU regulations, VAT is charged on all goods imported into the EU.\n- For shipments valued under **€150**, The Platform collects VAT at checkout via the EU's Import One-Stop Shop (IOSS) system, eliminating surprise charges at delivery.\n- For shipments over €150, customs duties + VAT are collected at delivery.\n- All EU returns benefit from the 14-day cooling-off period under the EU Consumer Rights Directive."
+    },
+    {
+      "id": "shipping_international-section-22-chunk-0",
+      "source": "shipping_international.md",
+      "section": "6.3 United Kingdom",
+      "text": "### 6.3 United Kingdom\n- UK VAT (20%) is collected at checkout for shipments under **£135** through the UK's simplified customs process.\n- For shipments over £135, duties and VAT are collected by the carrier at the point of delivery.\n- Post-Brexit, UK is treated as a Tier 1 international destination with full shipping options."
+    },
+    {
+      "id": "shipping_international-section-23-chunk-0",
+      "source": "shipping_international.md",
+      "section": "6.4 India",
+      "text": "### 6.4 India\n- Import duties on electronics can range from **10-30%** depending on the product category.\n- The Platform provides an estimated duty calculator at checkout for Indian customers.\n- Cash on Delivery is not available for international shipments to India.\n- Delivery in India is handled by BlueDart / DTDC for the last-mile segment."
+    },
+    {
+      "id": "shipping_international-section-24-chunk-0",
+      "source": "shipping_international.md",
+      "section": "6.5 Australia",
+      "text": "### 6.5 Australia\n- GST (10%) applies to all goods imported into Australia valued over **AUD $1,000**.\n- For goods under AUD $1,000, GST is collected at checkout by The Platform.\n- Certain items (e.g., food products, plant-based materials, wooden items) may be subject to inspection by the Australian Border Force."
+    },
+    {
+      "id": "shipping_international-section-25-chunk-0",
+      "source": "shipping_international.md",
+      "section": "6.6 Japan",
+      "text": "### 6.6 Japan\n- Consumption tax (10%) applies to all imported goods.\n- Customs duties vary by product category (typically 0-15% for consumer goods).\n- Japan Post handles the final domestic delivery.\n- Delivery address must be provided in both English and Japanese characters."
+    },
+    {
+      "id": "shipping_international-section-26-chunk-0",
+      "source": "shipping_international.md",
+      "section": "7. International Shipping Restrictions",
+      "text": "## 7. International Shipping Restrictions"
+    },
+    {
+      "id": "shipping_international-section-27-chunk-0",
+      "source": "shipping_international.md",
+      "section": "7.1 Prohibited Items (International)",
+      "text": "### 7.1 Prohibited Items (International)\nIn addition to domestic restrictions, the following items cannot be shipped internationally:\n- Currency and negotiable instruments\n- Precious metals (gold, silver) in bulk\n- Weapons of any kind (including replicas)\n- Controlled substances and drug paraphernalia\n- Counterfeit goods\n- Any item prohibited by the destination country's import regulations"
+    },
+    {
+      "id": "shipping_international-section-28-chunk-0",
+      "source": "shipping_international.md",
+      "section": "7.2 Value Limits",
+      "text": "### 7.2 Value Limits\n- Single package value must not exceed **$2,500** for standard international shipping.\n- For items valued over $2,500, only International Priority shipping with enhanced insurance is available.\n- Items valued over $10,000 require formal customs entry and additional documentation.\n\n---\n\n**Policy Contact:** international@The Platform.com  \n**Escalation:** International shipping issues → Global Logistics Manager at global-logistics@The Platform.com  \n**Policy Owner:** VP of International Operations"
+    },
+    {
+      "id": "warranty_policy-section-0-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "Product Warranty Policy",
+      "text": "# Product Warranty Policy\n\n**Document ID:** POL-WR-011  \n**Effective Date:** January 1, 2026  \n**Last Updated:** March 10, 2026  \n**Department:** Product Quality & Compliance  \n**Classification:** Internal Policy — Customer-Facing  \n\n---"
+    },
+    {
+      "id": "warranty_policy-section-1-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "1. Overview",
+      "text": "## 1. Overview\n\nThis policy outlines the warranty coverage, claims process, and limitations for products sold on The Platform. Warranty coverage varies by product category and seller type."
+    },
+    {
+      "id": "warranty_policy-section-2-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "2. The Platform Standard Warranty",
+      "text": "## 2. The Platform Standard Warranty"
+    },
+    {
+      "id": "warranty_policy-section-3-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "2.1 Coverage Period",
+      "text": "### 2.1 Coverage Period\n- **Electronics (laptops, tablets, phones, monitors):** 1-year limited warranty from the date of delivery\n- **Small appliances (blenders, coffee makers, toasters):** 1-year limited warranty\n- **Large appliances (refrigerators, washers, dryers):** 2-year limited warranty\n- **Furniture:** 1-year limited warranty against manufacturing defects\n- **Clothing and accessories:** 90-day warranty against manufacturing defects (stitching, zippers, fabric tears under normal use)\n- **Toys and sports equipment:** 6-month warranty against manufacturing defects"
+    },
+    {
+      "id": "warranty_policy-section-4-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "2.2 What's Covered",
+      "text": "### 2.2 What's Covered\nThe The Platform Standard Warranty covers:\n- Manufacturing defects (hardware malfunction, component failure under normal use)\n- Materials defects (premature wear, discoloration, or degradation under normal conditions)\n- Assembly defects (parts missing from factory, misaligned components)"
+    },
+    {
+      "id": "warranty_policy-section-5-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "2.3 What's NOT Covered",
+      "text": "### 2.3 What's NOT Covered\nThe warranty does NOT cover:\n- **Physical damage:** Drops, spills, cracks, scratches, or any damage resulting from misuse, abuse, or accidents\n- **Water damage:** Unless the product is rated as water-resistant/waterproof (e.g., IP67/IP68)\n- **Normal wear and tear:** Battery degradation, cosmetic wear, fading\n- **Unauthorized modifications:** Products modified, rooted, jailbroken, or repaired by unauthorized service providers\n- **Software issues:** Operating system bugs, third-party app compatibility, or malware (for electronics)\n- **Consumable components:** Battery replacements beyond 6 months, printer ink/toner, filters, bulbs\n- **Cosmetic imperfections:** Minor scratches or blemishes that do not affect functionality\n- **Acts of God:** Damage caused by natural d"
+    },
+    {
+      "id": "warranty_policy-section-5-chunk-1",
+      "source": "warranty_policy.md",
+      "section": "2.3 What's NOT Covered",
+      "text": "eplacements beyond 6 months, printer ink/toner, filters, bulbs\n- **Cosmetic imperfections:** Minor scratches or blemishes that do not affect functionality\n- **Acts of God:** Damage caused by natural disasters, power surges (unless a surge protector was used and failed), or extreme environmental conditions"
+    },
+    {
+      "id": "warranty_policy-section-6-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "3. Extended Warranty (The Platform Protection Plan)",
+      "text": "## 3. Extended Warranty (The Platform Protection Plan)"
+    },
+    {
+      "id": "warranty_policy-section-7-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "3.1 Plan Options",
+      "text": "### 3.1 Plan Options\n- **1-Year Extension:** Extends coverage by 12 months after the standard warranty expires. Cost: 8-12% of product price.\n- **2-Year Extension:** Extends coverage by 24 months. Cost: 14-18% of product price.\n- **Accidental Damage Protection (ADP):** Covers drops, spills, and cracks. Can be added to either extension plan for an additional 5% of product price."
+    },
+    {
+      "id": "warranty_policy-section-8-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "3.2 Extended Warranty Coverage",
+      "text": "### 3.2 Extended Warranty Coverage\nIn addition to standard warranty coverage, the extended warranty includes:\n- **Power surge protection:** Coverage for damage caused by power surges\n- **Mechanical/electrical failure:** Extended coverage for component failures beyond the standard period\n- **No deductibles:** All covered claims are processed without deductibles\n- **Replacement guarantee:** If the product cannot be repaired, a replacement of equal or greater value is provided"
+    },
+    {
+      "id": "warranty_policy-section-9-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "3.3 How to Purchase",
+      "text": "### 3.3 How to Purchase\n- Extended warranty plans can be purchased at the time of product purchase (at checkout) or within **30 days** of delivery\n- Plans cannot be purchased after 30 days from delivery\n- Plans are non-transferable and tied to the original purchaser's The Platform account\n- Plans are non-refundable after 30 days of purchase (full refund available within 30 days if no claims have been filed)"
+    },
+    {
+      "id": "warranty_policy-section-10-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "4. Warranty Claims Process",
+      "text": "## 4. Warranty Claims Process"
+    },
+    {
+      "id": "warranty_policy-section-11-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "4.1 How to File a Claim",
+      "text": "### 4.1 How to File a Claim\n1. Go to the The Platform Warranty Center (Order History → Select Item → \"Warranty Claim\")\n2. Describe the issue and provide supporting photos/videos\n3. The Platform reviews the claim within **3 business days**\n4. If approved:\n   - For items under $100: A replacement is shipped, and the customer is NOT required to return the defective item\n   - For items $100+: A prepaid return label is provided; replacement/refund is issued upon receipt and inspection of the defective item\n5. If denied: The customer receives a detailed explanation and may appeal within **14 days**"
+    },
+    {
+      "id": "warranty_policy-section-12-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "4.2 Repair vs. Replace Decision",
+      "text": "### 4.2 Repair vs. Replace Decision\n- The Platform reserves the right to repair or replace the defective product at its discretion\n- If a replacement of the exact model is unavailable, a comparable or upgraded model is offered\n- The customer may choose a full refund instead of a replacement (refund based on the current depreciated value for claims outside the first 6 months — see depreciation schedule below)"
+    },
+    {
+      "id": "warranty_policy-section-13-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "4.3 Depreciation Schedule (for refund-in-lieu-of-replacement)",
+      "text": "### 4.3 Depreciation Schedule (for refund-in-lieu-of-replacement)\n| Claim Timing | Refund Value |\n|--------------|-------------|\n| 0-6 months | 100% of purchase price |\n| 6-12 months | 85% of purchase price |\n| 12-18 months (extended warranty) | 70% of purchase price |\n| 18-24 months (extended warranty) | 60% of purchase price |\n| 24+ months (extended warranty) | 50% of purchase price |"
+    },
+    {
+      "id": "warranty_policy-section-14-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "5. Third-Party Seller Warranties",
+      "text": "## 5. Third-Party Seller Warranties"
+    },
+    {
+      "id": "warranty_policy-section-15-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "5.1 Seller-Provided Warranties",
+      "text": "### 5.1 Seller-Provided Warranties\n- Third-party sellers may offer their own warranty terms, which are displayed on the product page\n- Seller warranties are administered by the seller, not The Platform\n- The Platform does not guarantee or take responsibility for seller warranty claims\n- If a seller fails to honor their stated warranty, the customer may file an A-to-Z claim (see Marketplace Seller Policy)"
+    },
+    {
+      "id": "warranty_policy-section-16-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "5.2 Manufacturer Warranties",
+      "text": "### 5.2 Manufacturer Warranties\n- Many products sold on The Platform (both 1P and 3P) come with manufacturer warranties\n- Manufacturer warranty claims must be filed directly with the manufacturer\n- The Platform provides the purchase receipt and proof of authenticity upon customer request to facilitate manufacturer warranty claims\n- The Platform is not a party to manufacturer warranty agreements"
+    },
+    {
+      "id": "warranty_policy-section-17-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "6. Regional Warranty Variations",
+      "text": "## 6. Regional Warranty Variations"
+    },
+    {
+      "id": "warranty_policy-section-18-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "6.1 European Union",
+      "text": "### 6.1 European Union\n- Per EU law, consumers have a minimum **2-year legal guarantee** on all consumer goods, regardless of the seller's stated warranty period\n- This legal guarantee covers any defect that becomes apparent within 2 years of delivery\n- For defects appearing within the first **12 months**, the defect is presumed to have existed at the time of delivery (burden of proof on the seller)"
+    },
+    {
+      "id": "warranty_policy-section-19-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "6.2 United Kingdom",
+      "text": "### 6.2 United Kingdom\n- UK consumers are protected by the **Consumer Rights Act 2015**, which provides a 30-day right to reject faulty goods for a full refund, and up to **6 years** to claim for goods that do not conform to the contract"
+    },
+    {
+      "id": "warranty_policy-section-20-chunk-0",
+      "source": "warranty_policy.md",
+      "section": "6.3 Australia",
+      "text": "### 6.3 Australia\n- Australian Consumer Law provides guarantees that cannot be excluded by warranty terms. Products must be of acceptable quality, fit for purpose, and match their description, regardless of warranty period\n\n---\n\n**Policy Contact:** warranty@The Platform.com  \n**Escalation:** Warranty disputes → Quality Assurance Manager at warranty-escalation@The Platform.com  \n**Policy Owner:** VP of Product Quality"
+    }
+  ]
+}
