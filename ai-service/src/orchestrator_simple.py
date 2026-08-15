@@ -1,5 +1,6 @@
 """
 Simplified orchestrator using Groq SDK directly (no CrewAI)
+Uses Google Gemini for embeddings (reliable, free, production-ready)
 """
 import json
 import os
@@ -10,14 +11,21 @@ import faiss
 import numpy as np
 from dotenv import load_dotenv
 from groq import Groq
+from google import genai
 
 from src.models import FinalResolution, TicketInput
 
 load_dotenv()
 
+# Configure Gemini API with new client
+gemini_api_key = os.getenv("GEMINI_API_KEY")
+gemini_client = None
+if gemini_api_key:
+    gemini_client = genai.Client(api_key=gemini_api_key)
+
 groq_client = None
 MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "gemini-embedding-001"  # Gemini embedding model (768-dim)
 
 PROJECT_DIRECTORY = Path(__file__).resolve().parent.parent
 POLICIES_DIRECTORY = PROJECT_DIRECTORY / "data" / "policies"
@@ -94,78 +102,81 @@ def load_and_chunk_policy_documents():
 
 def create_embeddings(texts):
     """
-    Use Hugging Face Router API for embeddings (zero local RAM usage).
-    Uses new router.huggingface.co endpoint to avoid Render DNS issues.
+    Generates embeddings using the new google-genai library.
+    Handles batching for API limits (processes one at a time).
     """
-    hf_token = os.getenv("HF_TOKEN")
+    if not gemini_client:
+        raise ValueError("GEMINI_API_KEY not set")
     
-    if hf_token:
-        # NEW: Use HF Router API (fixes Render DNS timeout)
-        import requests
-        api_url = "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2"
-        headers = {"Authorization": f"Bearer {hf_token}"}
+    embeddings = []
+    total = len(texts) if isinstance(texts, list) else 1
+    
+    # Handle both single text and list of texts
+    text_list = texts if isinstance(texts, list) else [texts]
+    
+    for idx, text in enumerate(text_list, 1):
+        if idx % 50 == 0:
+            print(f"  Embedded {idx}/{total} chunks...")
         
-        embeddings = []
-        for text in texts:
-            try:
-                response = requests.post(
-                    api_url,
-                    headers=headers,
-                    json={"inputs": [text], "options": {"wait_for_model": True}},
-                    timeout=30
-                )
-                
-                if response.status_code == 200:
-                    embeddings.append(response.json()[0])
-                else:
-                    print(f"HF API error: {response.status_code}, falling back to local")
-                    # Fallback to local model
-                    from sentence_transformers import SentenceTransformer
-                    model = SentenceTransformer(EMBEDDING_MODEL)
-                    return [embedding.tolist() for embedding in model.encode(texts, convert_to_numpy=True)]
-            except Exception as e:
-                print(f"HF API exception: {e}, falling back to local")
-                from sentence_transformers import SentenceTransformer
-                model = SentenceTransformer(EMBEDDING_MODEL)
-                return [embedding.tolist() for embedding in model.encode(texts, convert_to_numpy=True)]
-        
-        return embeddings
-    else:
-        # Fallback: local sentence-transformers (requires RAM)
-        print("HF_TOKEN not set, using local sentence-transformers model")
-        from sentence_transformers import SentenceTransformer
-        model = SentenceTransformer(EMBEDDING_MODEL)
-        embeddings = model.encode(texts, convert_to_numpy=True)
-        return [embedding.tolist() for embedding in embeddings]
+        response = gemini_client.models.embed_content(
+            model=EMBEDDING_MODEL,
+            contents=text
+        )
+        embeddings.append(response.embeddings[0].values)
+    
+    return embeddings if isinstance(texts, list) else embeddings[0]
 
 def build_policy_index():
     """
-    Load pre-built FAISS index from repository.
-    Index building happens only locally with `python build_index.py`.
+    Load pre-built FAISS index or build if it doesn't exist.
     """
     global faiss_index, indexed_policies
     
-    if not FAISS_INDEX_PATH.exists() or not FAISS_METADATA_PATH.exists():
-        raise FileNotFoundError(
-            f"Pre-built FAISS index not found at {FAISS_INDEX_PATH}. "
-            "Run 'python build_index.py' locally first."
-        )
+    if FAISS_INDEX_PATH.exists() and FAISS_METADATA_PATH.exists():
+        print("Loading pre-built FAISS index...")
+        faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
+        with open(FAISS_METADATA_PATH, "r") as f:
+            saved_metadata = json.load(f)
+        indexed_policies = saved_metadata.get("policies", [])
+        print(f"✓ Loaded {len(indexed_policies)} policy vectors from pre-built index.")
+        return
     
-    print("Loading pre-built FAISS index...")
-    faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
-    with open(FAISS_METADATA_PATH, "r") as f:
-        saved_metadata = json.load(f)
-    indexed_policies = saved_metadata.get("policies", [])
-    print(f"✓ Loaded {len(indexed_policies)} policy vectors from pre-built index.")
+    # Build index if it doesn't exist
+    print("Building FAISS index with Gemini embeddings...")
+    FAISS_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    
+    current_policies = load_and_chunk_policy_documents()
+    print("Creating embeddings...")
+    texts = [p["text"] for p in current_policies]
+    embeddings = create_embeddings(texts)
+    embedding_matrix = np.array(embeddings).astype("float32")
+    dimension = embedding_matrix.shape[1]
+    
+    faiss_index = faiss.IndexFlatL2(dimension)
+    faiss_index.add(embedding_matrix)
+    indexed_policies = current_policies
+    
+    faiss.write_index(faiss_index, str(FAISS_INDEX_PATH))
+    with open(FAISS_METADATA_PATH, "w") as f:
+        json.dump({"policies": indexed_policies, "embedding_model": EMBEDDING_MODEL}, f)
+    print(f"✓ FAISS knowledge base created with {len(indexed_policies)} vectors ({dimension}-dim).")
 
 def search_policies(query, number_of_results=3):
     """
-    Semantic search using pre-built FAISS index and HF Router API for query embeddings.
+    Semantic search using pre-built FAISS index and Gemini API for query embeddings.
     """
     try:
-        query_embedding = create_embeddings([query])[0]
+        # Get query embedding from Gemini
+        response = gemini_client.models.embed_content(
+            model=EMBEDDING_MODEL,
+            contents=query  # Changed from 'content' to 'contents'
+        )
+        query_embedding = response.embeddings[0].values
+        
+        # Search FAISS index
         query_vector = np.array([query_embedding]).astype("float32")
         distances, indices = faiss_index.search(query_vector, number_of_results)
+        
         results = []
         for idx, distance in zip(indices[0], distances[0]):
             policy = indexed_policies[idx]
@@ -177,39 +188,36 @@ def search_policies(query, number_of_results=3):
             })
         return results
     except Exception as e:
-        print(f"Search error: {e}, using keyword fallback")
-        # Fallback to keyword search if embeddings fail
-        return keyword_search_policies(query, number_of_results)
+        print(f"Semantic search error: {e}")
+        # Fallback to keyword search
+        return keyword_search_fallback(query, number_of_results)
 
-def keyword_search_policies(query, number_of_results=3):
-    """
-    Keyword-based policy search fallback.
-    """
+def keyword_search_fallback(query, number_of_results=3):
+    """Keyword-based fallback when semantic search fails."""
     if not indexed_policies:
         return []
     
     query_lower = query.lower()
     query_words = set(query_lower.split())
     
-    scored_policies = []
+    scored = []
     for policy in indexed_policies:
-        policy_text_lower = policy["text"].lower()
-        policy_words = set(policy_text_lower.split())
+        text_lower = policy["text"].lower()
+        words = set(text_lower.split())
         
-        word_matches = len(query_words.intersection(policy_words))
-        substring_match = 5 if query_lower in policy_text_lower else 0
-        score = word_matches + substring_match
+        matches = len(query_words.intersection(words))
+        substring = 10 if query_lower in text_lower else 0
+        score = matches + substring
         
         if score > 0:
-            scored_policies.append({
-                "score": score,
+            scored.append({
                 "citation": f"{policy['source']} — {policy['section']}",
                 "text": policy["text"],
-                "similarity": round(min(score / 10.0, 0.95), 3)
+                "similarity": round(min(score / 20.0, 0.9), 3)
             })
     
-    scored_policies.sort(key=lambda x: x["score"], reverse=True)
-    return scored_policies[:number_of_results] if scored_policies else [
+    scored.sort(key=lambda x: x["similarity"], reverse=True)
+    return scored[:number_of_results] if scored else [
         {
             "citation": f"{p['source']} — {p['section']}",
             "text": p["text"],

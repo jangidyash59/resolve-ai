@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from config.settings import settings
-from src.orchestrator import build_policy_index, search_policies
+from src.orchestrator_simple import build_policy_index, search_policies
 
 
 def build():

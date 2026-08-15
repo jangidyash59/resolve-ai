@@ -9,8 +9,8 @@ openai>=1.68.0,<2.0.0  # OpenAI SDK works with Grok API
 faiss-cpu>=1.7.4
 numpy>=1.26.0,<3.0.0
 
-# Free Embeddings (HuggingFace - NO API COST)
-sentence-transformers>=2.2.0
+# Embeddings - Google Gemini API (NEW library with AQ key support)
+google-genai>=1.0.0
 
 # Structured data
 pydantic>=2.7.0,<3.0.0
@@ -19,5 +19,5 @@ pydantic>=2.7.0,<3.0.0
 python-dotenv>=1.0.0
 groq
 
-# HTTP requests for HF Inference API
+# HTTP requests
 requests>=2.31.0
