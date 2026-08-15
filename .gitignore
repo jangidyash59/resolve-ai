@@ -9,17 +9,19 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+venv/
+*.so
 
-# ── Vector Store (auto-rebuilt at startup) ────
-data/vectorstore_hf/
-data/vectorstore/
-faiss_store/
+# ── Node.js ───────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# ── Docs images (replaced by /screenshots) ───
-docs/images/
-
-# ── Evaluation raw JSON (keep .md reports) ───
-evaluation_results/*.json
+# ── Build outputs ─────────────────────────────
+dist/
+.next/
+out/
 
 # ── IDE ───────────────────────────────────────
 .vscode/
@@ -31,5 +33,5 @@ evaluation_results/*.json
 .DS_Store
 Thumbs.db
 
-# ── Assessment PDF (keep off public repos) ────
-*.pdf
+# ── Keep faiss_store (committed to Git) ───────
+# Pre-built FAISS index is intentionally tracked
