@@ -1,8 +1,14 @@
 """
 Simplified orchestrator using Groq SDK directly (no CrewAI)
 Uses Google Gemini for embeddings (reliable, free, production-ready)
+
+Features:
+- Circuit breaker for hallucination prevention
+- Semantic similarity threshold gating
+- Auto-escalation for out-of-domain queries
 """
 import json
+import logging
 import os
 import re
 from pathlib import Path
@@ -15,7 +21,23 @@ from google import genai
 
 from src.models import FinalResolution, TicketInput
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 load_dotenv()
+
+# ============================================================================
+# CIRCUIT BREAKER CONFIGURATION
+# ============================================================================
+# Similarity threshold for automatic escalation (L2-based metric: 0.0 - 1.0)
+# Higher values = more strict (more escalations)
+# Lower values = more lenient (fewer escalations)
+# Recommended range: 0.60 - 0.75
+SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", "0.65"))
 
 # Configure Gemini API with new client
 gemini_api_key = os.getenv("GEMINI_API_KEY")
@@ -164,12 +186,13 @@ def build_policy_index():
 def search_policies(query, number_of_results=3):
     """
     Semantic search using pre-built FAISS index and Gemini API for query embeddings.
+    Returns policies with similarity scores for circuit breaker evaluation.
     """
     try:
         # Get query embedding from Gemini
         response = gemini_client.models.embed_content(
             model=EMBEDDING_MODEL,
-            contents=query  # Changed from 'content' to 'contents'
+            contents=query
         )
         query_embedding = response.embeddings[0].values
         
@@ -186,9 +209,14 @@ def search_policies(query, number_of_results=3):
                 "text": policy["text"],
                 "similarity": round(similarity, 3)
             })
+        
+        # Log retrieval metrics
+        if results:
+            logger.debug(f"Semantic search: query='{query[:50]}...' top_score={results[0]['similarity']:.3f}")
+        
         return results
     except Exception as e:
-        print(f"Semantic search error: {e}")
+        logger.error(f"Semantic search error: {e}")
         # Fallback to keyword search
         return keyword_search_fallback(query, number_of_results)
 
@@ -254,9 +282,66 @@ Return ONLY JSON:
     return safe_json(chat(prompt, 0.5), {"customer_response": "Thank you. We'll respond shortly.", "internal_notes": "", "next_steps": [], "citations": []})
 
 def run_resolution_pipeline(ticket_text, order_context):
-    classification = triage_ticket(ticket_text, order_context)
+    """
+    Main resolution pipeline with circuit breaker logic.
+    
+    Flow:
+    1. Retrieve policies via semantic search
+    2. Check top similarity score against threshold
+    3. If below threshold: auto-escalate (bypass LLM entirely)
+    4. If above threshold: proceed with LLM-based resolution
+    """
+    # Step 1: Retrieve relevant policies
     policies = search_policies(ticket_text, 3)
+    
+    # Step 2: Circuit Breaker - Check similarity threshold
+    top_score = policies[0]["similarity"] if policies else 0.0
+    
+    if not policies or top_score < SIMILARITY_THRESHOLD:
+        # BYPASS LLM: Query is out-of-domain or low confidence
+        logger.warning(
+            f"Circuit breaker triggered | "
+            f"score={top_score:.3f} threshold={SIMILARITY_THRESHOLD} | "
+            f"query='{ticket_text[:80]}...'"
+        )
+        
+        return {
+            "classification": {
+                "issue_type": "General / Unknown",
+                "priority": "medium",
+                "requires_escalation": True,
+                "rationale": f"Out-of-domain query (similarity score: {top_score:.3f} < {SIMILARITY_THRESHOLD})"
+            },
+            "status": "escalated",
+            "customer_response": (
+                "Thank you for contacting support. Your inquiry requires specialized "
+                "attention and has been forwarded directly to our human support team. "
+                "A specialist will review your case and respond shortly."
+            ),
+            "internal_notes": (
+                f"AUTO-ESCALATED: Query failed semantic similarity threshold. "
+                f"Top policy match score: {top_score:.3f} (threshold: {SIMILARITY_THRESHOLD}). "
+                f"This indicates the query may be outside our knowledge base coverage."
+            ),
+            "next_steps": [
+                "Route to Human Tier-2 Support",
+                "Manual review required",
+                "Verify query is within supported domains"
+            ],
+            "citations": [],
+            "requires_escalation": True,
+            "rationale": f"Query relevance below threshold ({top_score:.3f} < {SIMILARITY_THRESHOLD})"
+        }
+    
+    # Step 3: Proceed with normal LLM-based resolution
+    logger.info(
+        f"Similarity check passed | "
+        f"score={top_score:.3f} threshold={SIMILARITY_THRESHOLD} | "
+        f"proceeding to LLM"
+    )
+    classification = triage_ticket(ticket_text, order_context)
     resolution = generate_resolution(ticket_text, policies, order_context, classification)
+    
     return {
         "classification": classification,
         "status": "resolved",

@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from src.models import TicketInput, OrderContext, OrderItem, CustomerTier
 from src.orchestrator_simple import SupportOrchestrator
+from src.monitoring import CircuitBreakerMetrics
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -48,6 +49,7 @@ app.add_middleware(
 
 # Global orchestrator instance
 orchestrator: Optional[SupportOrchestrator] = None
+metrics_tracker: Optional[CircuitBreakerMetrics] = None
 
 
 # Request/Response Models for API
@@ -114,10 +116,11 @@ class HealthResponse(BaseModel):
 @app.on_event("startup")
 async def startup_event():
     """Initialize the AI orchestrator on startup"""
-    global orchestrator
+    global orchestrator, metrics_tracker
     try:
         logger.info("Initializing ResolveAI orchestrator...")
         orchestrator = SupportOrchestrator()
+        metrics_tracker = CircuitBreakerMetrics()
         logger.info("✓ Orchestrator initialized successfully")
     except Exception as e:
         logger.error(f"Failed to initialize orchestrator: {str(e)}")
@@ -211,6 +214,22 @@ async def resolve_ticket(ticket_request: TicketRequest):
         processing_time_ms = (time.time() - start_time) * 1000
         logger.info(f"✓ Ticket {ticket_request.ticket_id} resolved in {processing_time_ms:.0f}ms")
         
+        # Record metrics (retrieve top similarity from search)
+        from src.orchestrator_simple import search_policies, SIMILARITY_THRESHOLD
+        policies = search_policies(ticket_request.ticket_text, 1)
+        top_similarity = policies[0]["similarity"] if policies else 0.0
+        
+        if metrics_tracker:
+            metrics_tracker.record_ticket(
+                ticket_id=ticket_request.ticket_id,
+                query=ticket_request.ticket_text,
+                top_similarity=top_similarity,
+                threshold=SIMILARITY_THRESHOLD,
+                action="escalated" if result.requires_escalation else "resolved",
+                latency_ms=processing_time_ms,
+                token_usage=None  # Can be tracked if LLM client exposes token count
+            )
+        
         # Convert to API response
         return TicketResponse(
             ticket_id=result.ticket_id,
@@ -249,6 +268,26 @@ async def search_policies_endpoint(query: str, k: int = 3):
         from src.orchestrator_simple import search_policies
         results = search_policies(query, k)
         return {"query": query, "results": results}
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e)
+        )
+
+
+# Metrics endpoint (for monitoring circuit breaker performance)
+@app.get("/api/metrics")
+async def get_metrics():
+    """Get circuit breaker performance metrics"""
+    if not metrics_tracker:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Metrics tracker not initialized"
+        )
+    
+    try:
+        summary = metrics_tracker.get_summary()
+        return summary
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
