@@ -47,7 +47,7 @@ if gemini_api_key:
     gemini_client = genai.Client(api_key=gemini_api_key)
 
 groq_client = None
-MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 EMBEDDING_MODEL = "gemini-embedding-001"  # Gemini embedding model (768-dim)
 
 PROJECT_DIRECTORY = Path(__file__).resolve().parent.parent
