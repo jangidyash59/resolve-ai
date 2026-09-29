@@ -25,9 +25,10 @@ RUN mkdir -p faiss_store
 # Expose port
 EXPOSE 8000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+# Health check (allow 5 minutes for initial index building)
+HEALTHCHECK --interval=30s --timeout=15s --start-period=300s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
 # Run the application (index builds automatically on startup)
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Increase timeout for Render deployment
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--timeout-keep-alive", "300"]

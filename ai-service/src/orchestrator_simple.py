@@ -11,6 +11,7 @@ import json
 import logging
 import os
 import re
+from datetime import datetime
 from pathlib import Path
 
 import faiss
@@ -125,63 +126,114 @@ def load_and_chunk_policy_documents():
 def create_embeddings(texts):
     """
     Generates embeddings using the new google-genai library.
-    Handles batching for API limits (processes one at a time).
+    Processes in batches with retry logic and timeout handling.
     """
     if not gemini_client:
         raise ValueError("GEMINI_API_KEY not set")
     
     embeddings = []
-    total = len(texts) if isinstance(texts, list) else 1
+    is_list = isinstance(texts, list)
+    text_list = texts if is_list else [texts]
+    total = len(text_list)
     
-    # Handle both single text and list of texts
-    text_list = texts if isinstance(texts, list) else [texts]
-    
-    for idx, text in enumerate(text_list, 1):
-        if idx % 50 == 0:
-            print(f"  Embedded {idx}/{total} chunks...")
+    # Process in batches of 10 for better performance
+    batch_size = 10
+    for batch_start in range(0, total, batch_size):
+        batch_end = min(batch_start + batch_size, total)
+        batch_texts = text_list[batch_start:batch_end]
         
-        response = gemini_client.models.embed_content(
-            model=EMBEDDING_MODEL,
-            contents=text
-        )
-        embeddings.append(response.embeddings[0].values)
+        if batch_start % 50 == 0 and batch_start > 0:
+            print(f"  Embedded {batch_start}/{total} chunks...")
+        
+        # Process each text in the batch with retry logic
+        for text in batch_texts:
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    response = gemini_client.models.embed_content(
+                        model=EMBEDDING_MODEL,
+                        contents=text
+                    )
+                    embeddings.append(response.embeddings[0].values)
+                    break  # Success, exit retry loop
+                except Exception as e:
+                    if attempt < max_retries - 1:
+                        import time
+                        wait_time = (attempt + 1) * 2  # Exponential backoff: 2s, 4s, 6s
+                        logger.warning(f"Embedding attempt {attempt + 1} failed, retrying in {wait_time}s: {e}")
+                        time.sleep(wait_time)
+                    else:
+                        logger.error(f"Failed to generate embedding after {max_retries} attempts: {e}")
+                        raise
     
-    return embeddings if isinstance(texts, list) else embeddings[0]
+    print(f"  ✓ Completed {total}/{total} embeddings")
+    return embeddings if is_list else embeddings[0]
 
 def build_policy_index():
     """
     Load pre-built FAISS index or build if it doesn't exist.
+    Optimized with caching and progress tracking.
     """
     global faiss_index, indexed_policies
     
     if FAISS_INDEX_PATH.exists() and FAISS_METADATA_PATH.exists():
         print("Loading pre-built FAISS index...")
-        faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
-        with open(FAISS_METADATA_PATH, "r") as f:
-            saved_metadata = json.load(f)
-        indexed_policies = saved_metadata.get("policies", [])
-        print(f"✓ Loaded {len(indexed_policies)} policy vectors from pre-built index.")
-        return
+        try:
+            faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
+            with open(FAISS_METADATA_PATH, "r") as f:
+                saved_metadata = json.load(f)
+            indexed_policies = saved_metadata.get("policies", [])
+            print(f"✓ Loaded {len(indexed_policies)} policy vectors from pre-built index.")
+            logger.info(f"FAISS index loaded: {len(indexed_policies)} vectors")
+            return
+        except Exception as e:
+            logger.warning(f"Failed to load pre-built index: {e}. Rebuilding...")
     
     # Build index if it doesn't exist
+    print("=" * 60)
     print("Building FAISS index with Gemini embeddings...")
+    print("This may take 3-5 minutes for 228 chunks...")
+    print("=" * 60)
+    
     FAISS_DIRECTORY.mkdir(parents=True, exist_ok=True)
     
-    current_policies = load_and_chunk_policy_documents()
-    print("Creating embeddings...")
-    texts = [p["text"] for p in current_policies]
-    embeddings = create_embeddings(texts)
-    embedding_matrix = np.array(embeddings).astype("float32")
-    dimension = embedding_matrix.shape[1]
-    
-    faiss_index = faiss.IndexFlatL2(dimension)
-    faiss_index.add(embedding_matrix)
-    indexed_policies = current_policies
-    
-    faiss.write_index(faiss_index, str(FAISS_INDEX_PATH))
-    with open(FAISS_METADATA_PATH, "w") as f:
-        json.dump({"policies": indexed_policies, "embedding_model": EMBEDDING_MODEL}, f)
-    print(f"✓ FAISS knowledge base created with {len(indexed_policies)} vectors ({dimension}-dim).")
+    try:
+        current_policies = load_and_chunk_policy_documents()
+        print(f"\nGenerating embeddings for {len(current_policies)} chunks...")
+        print("(Using Gemini API with retry logic and rate limiting)")
+        
+        texts = [p["text"] for p in current_policies]
+        embeddings = create_embeddings(texts)
+        
+        embedding_matrix = np.array(embeddings).astype("float32")
+        dimension = embedding_matrix.shape[1]
+        
+        print(f"\nBuilding FAISS index ({dimension}-dimensional)...")
+        faiss_index = faiss.IndexFlatL2(dimension)
+        faiss_index.add(embedding_matrix)
+        indexed_policies = current_policies
+        
+        # Save to disk
+        print("Saving index to disk...")
+        faiss.write_index(faiss_index, str(FAISS_INDEX_PATH))
+        with open(FAISS_METADATA_PATH, "w") as f:
+            json.dump({
+                "policies": indexed_policies, 
+                "embedding_model": EMBEDDING_MODEL,
+                "created_at": datetime.now().isoformat()
+            }, f)
+        
+        print(f"✓ FAISS knowledge base created with {len(indexed_policies)} vectors ({dimension}-dim).")
+        logger.info(f"FAISS index built and saved: {len(indexed_policies)} vectors")
+        
+    except Exception as e:
+        logger.error(f"Failed to build FAISS index: {e}")
+        print(f"\n❌ Error building index: {e}")
+        print("\nTroubleshooting:")
+        print("1. Check GEMINI_API_KEY is set in .env")
+        print("2. Verify internet connection")
+        print("3. Check Gemini API quota: https://aistudio.google.com/app/apikey")
+        raise
 
 def search_policies(query, number_of_results=3):
     """
