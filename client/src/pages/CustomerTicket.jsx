@@ -69,7 +69,7 @@ function CustomerTicket() {
       }
 
       const response = await axios.post(`${API_URL}/api/tickets`, payload, {
-        timeout: 90000
+        timeout: 360000 // 6 minutes - allows for AI service cold start and index building
       })
 
       setResult(response.data.ticket)

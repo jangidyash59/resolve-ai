@@ -47,13 +47,13 @@ router.post(
       ticket.status = 'processing';
       await ticket.save();
 
-      // Call FastAPI AI service
+      // Call FastAPI AI service with extended timeout
       try {
         const aiResponse = await axios.post(
           `${AI_SERVICE_URL}/api/resolve-ticket`,
           ticketData,
           {
-            timeout: 60000, // 60 second timeout
+            timeout: 360000, // 6 minute timeout (allows for index building on cold start)
             headers: { 'Content-Type': 'application/json' }
           }
         );
