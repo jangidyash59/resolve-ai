@@ -7,25 +7,26 @@
 }
 
 :root {
-  --primary: #7c3aed;
-  --primary-dark: #6d28d9;
-  --primary-light: #a78bfa;
-  --secondary: #06b6d4;
+  --primary: #ff6b35;
+  --primary-dark: #e55a2b;
+  --primary-light: #ff8c61;
+  --secondary: #ffa500;
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
-  --dark: #0f172a;
-  --dark-light: #1e293b;
-  --gray: #64748b;
-  --gray-light: #cbd5e1;
-  --white: #ffffff;
-  --border: rgba(255, 255, 255, 0.1);
-  --shadow: rgba(0, 0, 0, 0.3);
+  --dark: #1a1a1a;
+  --dark-light: #2a2a2a;
+  --gray: #6b7280;
+  --gray-light: #d1d5db;
+  --white: #fafafa;
+  --off-white: #f5f5f5;
+  --border: rgba(255, 107, 53, 0.15);
+  --shadow: rgba(255, 107, 53, 0.2);
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1f1f1f 100%);
   color: var(--white);
   min-height: 100vh;
   line-height: 1.6;
@@ -82,7 +83,7 @@ body {
 .glass-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px var(--shadow);
-  border-color: rgba(124, 58, 237, 0.3);
+  border-color: rgba(255, 107, 53, 0.4);
 }
 
 .btn {
@@ -102,12 +103,12 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: var(--white);
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 8px 28px rgba(255, 107, 53, 0.6);
 }
 
 .btn-primary:disabled {
@@ -151,7 +152,7 @@ body {
 .select:focus {
   outline: none;
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
 }
 
 .textarea {
@@ -204,8 +205,8 @@ body {
 }
 
 .badge-primary {
-  background: rgba(124, 58, 237, 0.15);
-  border: 1px solid rgba(124, 58, 237, 0.3);
+  background: rgba(255, 107, 53, 0.15);
+  border: 1px solid rgba(255, 107, 53, 0.3);
   color: var(--primary-light);
 }
 

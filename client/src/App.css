@@ -6,7 +6,7 @@
 
 /* Navigation */
 .nav {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(26, 26, 26, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   padding: 16px 0;
@@ -61,7 +61,7 @@
 }
 
 .nav-link.active {
-  background: rgba(124, 58, 237, 0.15);
+  background: rgba(255, 107, 53, 0.15);
   color: var(--primary-light);
   font-weight: 600;
 }
@@ -74,7 +74,7 @@
 
 /* Footer */
 .footer {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(26, 26, 26, 0.8);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
   padding: 24px 0;
@@ -95,8 +95,8 @@
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1f1f1f 100%);
+  border: 1px solid rgba(255, 107, 53, 0.25);
   border-radius: 20px;
   padding: 48px 40px;
   position: relative;
@@ -111,7 +111,7 @@
   right: -60px;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -167,8 +167,8 @@
 
 .stat-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.12);
-  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 0 12px 32px rgba(255, 107, 53, 0.15);
+  border-color: rgba(255, 107, 53, 0.3);
 }
 
 .stat-value {
