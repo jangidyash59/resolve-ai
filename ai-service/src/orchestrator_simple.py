@@ -179,25 +179,39 @@ def build_policy_index():
     if FAISS_INDEX_PATH.exists() and FAISS_METADATA_PATH.exists():
         print("Loading pre-built FAISS index...")
         try:
+            import time
+            start_time = time.time()
+            
             faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
             with open(FAISS_METADATA_PATH, "r") as f:
                 saved_metadata = json.load(f)
             indexed_policies = saved_metadata.get("policies", [])
-            print(f"✓ Loaded {len(indexed_policies)} policy vectors from pre-built index.")
-            logger.info(f"FAISS index loaded: {len(indexed_policies)} vectors")
+            
+            load_time = time.time() - start_time
+            print(f"✓ Loaded {len(indexed_policies)} policy vectors in {load_time:.2f}s")
+            logger.info(f"FAISS index loaded: {len(indexed_policies)} vectors in {load_time:.2f}s")
             return
         except Exception as e:
-            logger.warning(f"Failed to load pre-built index: {e}. Rebuilding...")
+            logger.error(f"Failed to load pre-built index: {e}")
+            print(f"❌ Failed to load index: {e}")
+            print("This is a CRITICAL ERROR on Render - the pre-built index should exist in git!")
+            raise RuntimeError(f"FAISS index loading failed: {e}. Check if faiss_store/ is in git.")
     
-    # Build index if it doesn't exist
+    # Build index if it doesn't exist (should NOT happen on Render)
+    logger.warning("Pre-built index not found! Building from scratch (this will take 3-5 minutes)")
     print("=" * 60)
-    print("Building FAISS index with Gemini embeddings...")
-    print("This may take 3-5 minutes for 228 chunks...")
+    print("⚠️  WARNING: Building FAISS index from scratch")
+    print("This should NOT happen on deployed instances!")
+    print("The index should be pre-built and committed to git.")
+    print("Building now will take 3-5 minutes and may timeout...")
     print("=" * 60)
     
     FAISS_DIRECTORY.mkdir(parents=True, exist_ok=True)
     
     try:
+        import time
+        build_start = time.time()
+        
         current_policies = load_and_chunk_policy_documents()
         print(f"\nGenerating embeddings for {len(current_policies)} chunks...")
         print("(Using Gemini API with retry logic and rate limiting)")
@@ -223,8 +237,9 @@ def build_policy_index():
                 "created_at": datetime.now().isoformat()
             }, f)
         
-        print(f"✓ FAISS knowledge base created with {len(indexed_policies)} vectors ({dimension}-dim).")
-        logger.info(f"FAISS index built and saved: {len(indexed_policies)} vectors")
+        build_time = time.time() - build_start
+        print(f"✓ FAISS index built in {build_time:.2f}s with {len(indexed_policies)} vectors.")
+        logger.info(f"FAISS index built and saved: {len(indexed_policies)} vectors in {build_time:.2f}s")
         
     except Exception as e:
         logger.error(f"Failed to build FAISS index: {e}")
@@ -233,6 +248,7 @@ def build_policy_index():
         print("1. Check GEMINI_API_KEY is set in .env")
         print("2. Verify internet connection")
         print("3. Check Gemini API quota: https://aistudio.google.com/app/apikey")
+        print("4. On Render: Ensure faiss_store/ is committed to git!")
         raise
 
 def search_policies(query, number_of_results=3):

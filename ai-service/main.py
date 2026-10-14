@@ -118,13 +118,38 @@ async def startup_event():
     """Initialize the AI orchestrator on startup"""
     global orchestrator, metrics_tracker
     try:
-        logger.info("Initializing ResolveAI orchestrator...")
+        import time
+        start_time = time.time()
+        
+        logger.info("=" * 60)
+        logger.info("ResolveAI AI Service Starting...")
+        logger.info("=" * 60)
+        logger.info(f"Environment: {os.getenv('RENDER', 'local')}")
+        logger.info(f"GROQ_MODEL: {os.getenv('GROQ_MODEL', 'not set')}")
+        logger.info(f"EMBEDDING_MODEL: {os.getenv('EMBEDDING_MODEL', 'not set')}")
+        logger.info(f"VECTOR_STORE_PATH: {os.getenv('VECTOR_STORE_PATH', 'not set')}")
+        
+        logger.info("\nInitializing orchestrator...")
         orchestrator = SupportOrchestrator()
         metrics_tracker = CircuitBreakerMetrics()
-        logger.info("✓ Orchestrator initialized successfully")
+        
+        startup_time = time.time() - start_time
+        logger.info(f"✓ Orchestrator initialized in {startup_time:.2f}s")
+        logger.info("=" * 60)
+        logger.info("Service Ready!")
+        logger.info("=" * 60)
+        
     except Exception as e:
-        logger.error(f"Failed to initialize orchestrator: {str(e)}")
-        raise
+        logger.error("=" * 60)
+        logger.error("STARTUP FAILED!")
+        logger.error("=" * 60)
+        logger.error(f"Error: {str(e)}")
+        logger.error("Stack trace:", exc_info=True)
+        
+        # Don't raise - let health endpoint report the error
+        # This allows Render to keep the service running
+        logger.error("Service will run in degraded mode - check /health endpoint")
+        logger.error("=" * 60)
 
 
 # Health check endpoint
@@ -132,11 +157,17 @@ async def startup_event():
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
     """Health check endpoint for monitoring"""
+    is_initialized = orchestrator is not None
+    
+    # Log health check for debugging (but not too verbose)
+    if not is_initialized:
+        logger.warning("Health check: Service NOT initialized")
+    
     return HealthResponse(
-        status="healthy" if orchestrator else "initializing",
+        status="healthy" if is_initialized else "unhealthy",
         service="ResolveAI AI Service",
         version="1.0.0",
-        faiss_initialized=orchestrator is not None
+        faiss_initialized=is_initialized
     )
 
 

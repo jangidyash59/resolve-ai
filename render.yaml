@@ -10,8 +10,8 @@ services:
     plan: starter
     branch: main
     rootDir: ai-service
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r requirements.txt && python -c "import os; print('FAISS index already exists, skipping build' if os.path.exists('faiss_store/index.faiss') else 'Index will load from git')"
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --timeout-keep-alive 300
     envVars:
       - key: GROQ_API_KEY
         sync: false
